@@ -1,129 +1,183 @@
+/* PAGE BASE */
+.spiritual-header {
+  height: 73vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('../image/sprits.webp');
 
+  background-size: cover;
+  background-position: center;
+  color: #fff;
 
-/* HEADER */
-.header {
-    height: 80vh;
-    background: url('https://source.unsplash.com/1600x900/?temple,india') no-repeat center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  animation: zoomBg 10s infinite alternate;
 }
 
-.header h1 {
-    color: white;
-    background: rgba(0,0,0,0.5);
-    padding: 20px 40px;
-    border-radius: 10px;
-    font-size: 40px;
+.spiritual-header h1 {
+  font-size: 3rem;
+  padding: 20px 40px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.4);
+  text-shadow: 0 0 15px #ff9800;
 }
 
 /* INTRO */
-.intro {
-    text-align: center;
-    padding: 40px;
+.spiritual-intro {
+  text-align: center;
+  padding: 40px;
 }
 
 /* TRIANGLE */
-.triangle {
-    position: relative;
-    width: 300px;
-    height: 260px;
-    margin: 50px auto;
+.spiritual-triangle {
+  position: relative;
+  width: 320px;
+  height: 280px;
+  margin: 50px auto;
 }
 
-.point {
-    position: absolute;
-    width: 120px;
-    text-align: center;
+.spiritual-point {
+  position: absolute;
+  width: 120px;
+  text-align: center;
+  transition: 0.4s;
 }
 
-.point img {
-    width: 100%;
-    border-radius: 50%;
-    border: 4px solid #ff9800;
+.spiritual-point img {
+  width: 100%;
+  border-radius: 50%;
+  border: 4px solid #ff9800;
+  transition: 0.4s;
 }
 
-.point h3 {
-    margin: 10px 0;
+/* HOVER EFFECT */
+.spiritual-point:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff9800;
 }
 
 /* POSITIONS */
-.top { top: 0; left: 90px; }
+.top { top: 0; left: 100px; }
 .left { bottom: 0; left: 0; }
 .right { bottom: 0; right: 0; }
 
 /* LINES */
-.line {
-    position: absolute;
-    background: #ff9800;
+.spiritual-line {
+  position: absolute;
+  background: #ff9800;
 }
 
 .line1 {
-    width: 2px;
-    height: 120px;
-    left: 150px;
-    top: 60px;
+  width: 2px;
+  height: 120px;
+  left: 160px;
+  top: 60px;
 }
 
 .line2 {
-    width: 150px;
-    height: 2px;
-    bottom: 60px;
-    left: 0;
+  width: 150px;
+  height: 2px;
+  bottom: 60px;
+  left: 10px;
 }
 
 .line3 {
-    width: 150px;
-    height: 2px;
-    bottom: 60px;
-    right: 0;
+  width: 150px;
+  height: 2px;
+  bottom: 60px;
+  right: 10px;
 }
 
 /* CARDS */
-.section {
-    padding: 40px;
-    text-align: center;
+.spiritual-section {
+  padding: 50px;
+  text-align: center;
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
+.spiritual-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
 }
 
-.card {
-    width: 300px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    overflow: hidden;
+.spiritual-card {
+  width: 300px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.4s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.spiritual-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-.card h3 {
-    margin: 10px 0;
+/* CARD HOVER */
+.spiritual-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-.card p {
-    padding: 0 15px;
+.spiritual-card button {
+  margin: 15px;
+  padding: 10px;
+  background: linear-gradient(45deg, #ff9800, #ff5722);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s;
 }
 
-.card button {
-    margin: 15px;
-    padding: 10px;
-    background: #ff9800;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
+.spiritual-card button:hover {
+  background: linear-gradient(45deg, #ff5722, #ff9800);
+}
+.spiritual-quote {
+  text-align: center;
+  padding: 60px 20px;
+  color: #683a3a;
 }
 
-/* FOOTER */
+.spiritual-quote h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
 
+/* SANSKRIT STYLE */
+.sanskrit {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffcc70;
+  line-height: 1.8;
+  margin-bottom: 15px;
+
+  /* PREMIUM EFFECT */
+  text-shadow: 0 0 10px rgba(255, 152, 0, 0.7);
+}
+
+/* MEANING */
+.meaning {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.spiritual-cards-slogan {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  background-color: black;
+}
+
+/* ANIMATION */
+@keyframes zoomBg {
+  from { background-size: 100%; }
+  to { background-size: 110%; }
+}
