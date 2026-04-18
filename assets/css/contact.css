@@ -1,78 +1,162 @@
-.contactUs {
-  margin: 0;
+/* PAGE WRAPPER */
+.contactus {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #4facfe, #00f2fe);
-}
-
-.contact-section {
-  text-align: center;
-  padding: 50px 20px;
+  background: linear-gradient(to right, #1e3c72, #2a5298);
   color: white;
+  min-height: 100vh;
 }
 
-.contact-section h1 {
-  font-size: 40px;
+/* SECTION */
+.contactus .contact-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contactus h1 {
+  font-size: 2.5rem;
   margin-bottom: 10px;
 }
 
-.subtitle {
-  font-size: 18px;
+.contactus .subtitle {
+  opacity: 0.8;
   margin-bottom: 40px;
 }
 
-.card-container {
+
+/* CONTAINER CENTER */
+.contactus .card-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
+  align-items: center;
+  width: 100%;
 }
 
-.card {
-  background: white;
-  color: #333;
-  width: 280px;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  transition: 0.3s;
+/* CARD */
+.contactus .card {
+  position: relative;
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  transition: 0.4s;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
-.card:hover {
-  transform: translateY(-10px) scale(1.05);
+/* CARD */
+.contactus .card {
+  position: relative;
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  transition: 0.4s;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  z-index: 1;
 }
 
-.card img {
-  width: 100px;
-  height: 100px;
+/* GRADIENT BORDER FIX */
+.contactus .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 2px;
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  
+  /* FIX */
+  z-index: -1;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+/* HOVER */
+.contactus .card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+.contactus .card:hover::before {
+  opacity: 1;
+}
+
+/* IMAGE */
+.contactus .card img {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #4facfe;
+  border: 4px solid #00c6ff;
+  margin-bottom: 15px;
+  transition: 0.4s;
 }
 
-.card h2 {
+.contactus .card:hover img {
+  box-shadow: 0 0 15px #00c6ff, 0 0 30px #0072ff;
+}
+
+/* TEXT */
+.contactus .card h2 {
   margin: 10px 0 5px;
 }
 
-.role {
-  color: #4facfe;
-  font-weight: bold;
+.contactus .role {
+  color: #00c6ff;
+  margin-bottom: 10px;
+  font-weight: 500;
 }
 
-.card p {
-  margin: 5px 0;
+/* INFO */
+.contactus .info {
+  font-size: 0.9rem;
+  margin: 8px 0;
+  opacity: 0.9;
 }
 
-button {
+/* BUTTONS */
+.contactus .btn-group {
   margin-top: 15px;
-  padding: 10px 20px;
-  border: none;
-  background: #4facfe;
+}
+
+.contactus .btn {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  text-decoration: none;
   color: white;
-  border-radius: 25px;
-  cursor: pointer;
+  font-size: 0.85rem;
   transition: 0.3s;
 }
 
-button:hover {
-  background: #00c6ff;
+/* BUTTON COLORS */
+.contactus .call {
+  background: #0072ff;
+}
+
+.contactus .call:hover {
+  background: #0056cc;
+}
+
+.contactus .email {
+  background: #ff6b6b;
+}
+
+.contactus .email:hover {
+  background: #e55050;
+}
+
+.contactus .whatsapp {
+  background: #25d366;
+}
+
+.contactus .whatsapp:hover {
+  background: #1da851;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .contactus h1 {
+    font-size: 2rem;
+  }
 }
