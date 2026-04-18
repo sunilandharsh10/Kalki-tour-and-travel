@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/aboutus.css">
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <title>About Us - WanderGuide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
+  <script src="../assets/js/layout.js"></script>
+</head>
+
+<body>
+ <div id="header"></div>
+<div class="aboutus">
+
+  <header>
+    <h1>🌍 About WanderGuide</h1>
+    <p>We turn journeys into unforgettable stories.</p>
+  </header>
+
+  <section class="container">
+    <div class="card" onclick="toggle(this)">
+      <h3>Our Mission</h3>
+      <p class="hidden">To help travelers explore the world with confidence, local insights, and unforgettable experiences.</p>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+      <h3>Who We Are</h3>
+      <p class="hidden">A passionate team of explorers, storytellers, and local guides bringing authentic travel experiences.</p>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+      <h3>What We Offer</h3>
+      <p class="hidden">Custom travel plans, hidden destinations, real-time guidance, and immersive cultural experiences.</p>
+    </div>
+
+    <div class="card" onclick="toggle(this)">
+      <h3>Why Choose Us</h3>
+      <p class="hidden">Because we go beyond maps — we connect you with the soul of each destination.</p>
+    </div>
+  </section>
+
+  <!-- TEAM SECTION -->
+  <section class="team">
+    <h2>Meet Our Guides ✨</h2>
+    <div class="team-grid">
+
+      <div class="member">
+        <img src="https://source.unsplash.com/300x300/?man,travel" alt="Guide 1">
+        <h4>Arjun Mehta</h4>
+        <p>Adventure Specialist – Loves trekking and hidden mountain trails.</p>
+      </div>
+
+      <div class="member">
+        <img src="https://source.unsplash.com/300x300/?woman,travel" alt="Guide 2">
+        <h4>Sara Khan</h4>
+        <p>Cultural Expert – Passionate about history and local traditions.</p>
+      </div>
+
+      <div class="member">
+        <img src="https://source.unsplash.com/300x300/?guide,travel" alt="Guide 3">
+        <h4>Ravi Sharma</h4>
+        <p>City Explorer – Knows every hidden spot in urban destinations.</p>
+      </div>
+
+      <div class="member">
+        <img src="https://source.unsplash.com/300x300/?tourist,explore" alt="Guide 4">
+        <h4>Emily D'Souza</h4>
+        <p>Food Guide – Helps you discover authentic local cuisine.</p>
+      </div>
+
+    </div>
+  </section>
+  <footer>
+    <div id="footer"></div>
+  </footer>
+
+</div>
+</body>
+</html>
+<script>
+ function toggle(card) {
+      const text = card.querySelector('.hidden');
+      text.style.display = text.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
