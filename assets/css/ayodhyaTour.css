@@ -1,0 +1,563 @@
+/* ─── RESET & BASE ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --ayodhyaTour-saffron:    #C85A00;
+      --ayodhyaTour-gold:       #E8A200;
+      --ayodhyaTour-deep:       #1A0A2E;
+      --ayodhyaTour-ink:        #2D1B4E;
+      --ayodhyaTour-plum:       #4A2472;
+      --ayodhyaTour-violet:     #7B4FA6;
+      --ayodhyaTour-lavender:   #C4A8E0;
+      --ayodhyaTour-cream:      #FDF8F0;
+      --ayodhyaTour-parchment:  #F5EDD8;
+      --ayodhyaTour-teal:       #0D7A6E;
+      --ayodhyaTour-teal-light: #E0F5F2;
+      --ayodhyaTour-border:     rgba(74,36,114,0.15);
+      --ayodhyaTour-text:       #2D1B4E;
+      --ayodhyaTour-muted:      #6B5A82;
+      --ayodhyaTour-font-display: 'Playfair Display', Georgia, serif;
+      --ayodhyaTour-font-body:    'DM Sans', sans-serif;
+      --ayodhyaTour-radius:     12px;
+      --ayodhyaTour-radius-sm:  8px;
+    }
+ 
+    /* body {
+      font-family: var(--ayodhyaTour-font-body);
+      background: var(--ayodhyaTour-cream);
+      color: var(--ayodhyaTour-text);
+      line-height: 1.6;
+      min-height: 100vh;
+    } */
+ 
+    /* ─── LAYOUT WRAPPER ─── */
+    .ayodhyaTour-wrap {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 0 4rem;
+    }
+ 
+    /* ─── HEADER BANNER ─── */
+    .ayodhyaTour-header {
+      position: relative;
+      width: 100%;
+      min-height: 280px;
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: flex-end;
+    }
+ 
+    .ayodhyaTour-header-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('../image/ramsita.png');
+      background-size: cover;
+      background-position: center 40%;                                                                                                                       
+      transform: scale(1.04);
+      transition: transform 8s ease;
+    }
+    .ayodhyaTour-header:hover .ayodhyaTour-header-bg { transform: scale(1); }
+ 
+    .ayodhyaTour-header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,4,20,0.15) 0%,
+        rgba(10,4,20,0.3) 40%,
+        rgba(10,4,20,0.82) 100%
+      );
+    }
+ 
+    .ayodhyaTour-header-inner {
+      position: relative;
+      z-index: 2;
+      padding: 2.5rem 2.5rem 2.8rem;
+      width: 100%;
+      max-width: 760px;
+    }
+ 
+    .ayodhyaTour-header-badge {
+      display: inline-block;
+      background: var(--ayodhyaTour-saffron);
+      color: #fff;
+      font-family: var(--ayodhyaTour-font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+ 
+    .ayodhyaTour-header h1 {
+      font-family: var(--ayodhyaTour-font-display);
+      font-size: 48px;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 1.25rem;
+    }
+ 
+    .ayodhyaTour-header h1 em {
+      font-style: italic;
+      color: var(--ayodhyaTour-gold);
+    }
+ 
+    .ayodhyaTour-header blockquote {
+      border-left: 2px solid var(--ayodhyaTour-saffron);
+      padding-left: 1rem;
+      font-family: var(--ayodhyaTour-font-display);
+      font-style: italic;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+ 
+    /* ─── TWO COLUMN BODY ─── */
+    .ayodhyaTour-body {
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 310px;
+      gap: 1.75rem;
+      align-items: start;
+    }
+ 
+    .ayodhyaTour-main { display: flex; flex-direction: column; gap: 1.5rem; }
+    .ayodhyaTour-sidebar { display: flex; flex-direction: column; gap: 1.5rem; position: sticky; top: 1.5rem; }
+ 
+    /* ─── CARD ─── */
+    .ayodhyaTour-card {
+      background: #fff;
+      border: 1px solid var(--ayodhyaTour-border);
+      border-radius: var(--ayodhyaTour-radius);
+      padding: 1.5rem;
+    }
+ 
+    .ayodhyaTour-card-accent {
+      border-top: 3px solid var(--ayodhyaTour-plum);
+    }
+ 
+    /* ─── SECTION HEADING ─── */
+    .ayodhyaTour-section-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ayodhyaTour-saffron);
+      margin-bottom: 0.4rem;
+    }
+ 
+    .ayodhyaTour-section-title {
+      font-family: var(--ayodhyaTour-font-display);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ayodhyaTour-ink);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+ 
+    /* ─── SHIVA SECTION ─── */
+    .ayodhyaTour-shiva p {
+      font-size: 14px;
+      color: var(--ayodhyaTour-muted);
+      line-height: 1.8;
+    }
+    .ayodhyaTour-shiva p + p { margin-top: 12px; }
+ 
+    /* ─── FESTIVALS GRID ─── */
+    .ayodhyaTour-festivals-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+ 
+    .ayodhyaTour-festival-item {
+      background: var(--ayodhyaTour-parchment);
+      border-radius: var(--ayodhyaTour-radius-sm);
+      padding: 1rem;
+      border-left: 3px solid var(--ayodhyaTour-gold);
+    }
+ 
+    .ayodhyaTour-festival-item strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ayodhyaTour-ink);
+      margin-bottom: 6px;
+    }
+ 
+    .ayodhyaTour-festival-item p {
+      font-size: 12px;
+      color: var(--ayodhyaTour-muted);
+      line-height: 1.6;
+    }
+ 
+    /* ─── BEST TIME ─── */
+    .ayodhyaTour-besttime {
+      background: var(--ayodhyaTour-teal-light);
+      border-radius: var(--ayodhyaTour-radius-sm);
+      padding: 12px 16px;
+      font-size: 13.5px;
+      color: var(--ayodhyaTour-teal);
+      line-height: 1.65;
+    }
+ 
+    /* ─── PILLS ─── */
+    .ayodhyaTour-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+ 
+    .ayodhyaTour-pill {
+      background: var(--ayodhyaTour-parchment);
+      border: 1px solid var(--ayodhyaTour-border);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 12.5px;
+      color: var(--ayodhyaTour-text);
+    }
+ 
+    .ayodhyaTour-pill-violet {
+      background: #F0E8FA;
+      border-color: rgba(123,79,166,0.2);
+      color: var(--ayodhyaTour-plum);
+    }
+ 
+    /* ─── ITINERARY ACCORDION ─── */
+    .ayodhyaTour-acc-list { display: flex; flex-direction: column; gap: 0; }
+ 
+    .ayodhyaTour-acc-item {
+      border-bottom: 1px solid var(--ayodhyaTour-border);
+    }
+    .ayodhyaTour-acc-item:first-child { border-top: 1px solid var(--ayodhyaTour-border); }
+ 
+    .ayodhyaTour-acc-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 13px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: var(--ayodhyaTour-font-body);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ayodhyaTour-ink);
+      text-align: left;
+      gap: 12px;
+    }
+ 
+    .ayodhyaTour-acc-btn:hover { color: var(--ayodhyaTour-plum); }
+ 
+    .ayodhyaTour-acc-btn .step-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--ayodhyaTour-parchment);
+      border: 1px solid var(--ayodhyaTour-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--ayodhyaTour-muted);
+      flex-shrink: 0;
+    }
+ 
+    .ayodhyaTour-acc-btn.open .step-num {
+      background: var(--ayodhyaTour-plum);
+      border-color: var(--ayodhyaTour-plum);
+      color: #fff;
+    }
+ 
+    .ayodhyaTour-acc-btn .acc-label { flex: 1; }
+ 
+    .ayodhyaTour-acc-btn .acc-icon {
+      font-size: 18px;
+      color: var(--ayodhyaTour-muted);
+      transition: transform 0.25s ease;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .ayodhyaTour-acc-btn.open .acc-icon { transform: rotate(45deg); color: var(--ayodhyaTour-plum); }
+ 
+    .ayodhyaTour-acc-content {
+      display: none;
+      padding: 0 0 13px 38px;
+      font-size: 13px;
+      color: var(--ayodhyaTour-muted);
+      line-height: 1.7;
+    }
+    .ayodhyaTour-acc-content.open { display: block; }
+ 
+    /* ─── PAYMENT SIDEBAR ─── */
+    .ayodhyaTour-payment {
+      background: var(--ayodhyaTour-deep);
+      border-radius: var(--ayodhyaTour-radius);
+      padding: 1.5rem;
+      color: #fff;
+    }
+ 
+    .ayodhyaTour-payment-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ayodhyaTour-gold);
+      margin-bottom: 1rem;
+    }
+ 
+    .ayodhyaTour-payment-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+    }
+    .ayodhyaTour-payment-row:last-of-type { border-bottom: none; }
+ 
+    .ayodhyaTour-payment-row .r-label { color: rgba(255,255,255,0.65); }
+    .ayodhyaTour-payment-row .r-val { font-weight: 500; color: #fff; }
+ 
+    .ayodhyaTour-payment-total {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .ayodhyaTour-payment-total .r-label { font-weight: 500; color: #fff; font-size: 13px; }
+    .ayodhyaTour-payment-total .r-val { font-size: 22px; font-weight: 500; color: var(--ayodhyaTour-gold); font-family: var(--ayodhyaTour-font-display); }
+ 
+    .ayodhyaTour-payment-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+ 
+    .ayodhyaTour-payment-method {
+      font-size: 11px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 3px 10px;
+      color: rgba(255,255,255,0.8);
+    }
+ 
+    /* ─── ADDONS ─── */
+    .ayodhyaTour-addons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+ 
+    .ayodhyaTour-addon {
+      background: #F0E8FA;
+      border-radius: var(--ayodhyaTour-radius-sm);
+      padding: 9px 11px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ayodhyaTour-plum);
+      line-height: 1.4;
+    }
+ 
+    /* ─── CONTACT ─── */
+    .ayodhyaTour-contact {
+      background: var(--ayodhyaTour-saffron);
+      border-radius: var(--ayodhyaTour-radius);
+      padding: 1.5rem;
+      color: #fff;
+    }
+ 
+    .ayodhyaTour-contact-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 12px;
+    }
+ 
+    .ayodhyaTour-contact p {
+      font-size: 13.5px;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+ 
+    .ayodhyaTour-contact .btn {
+      display: block;
+      margin-top: 16px;
+      background: #fff;
+      color: var(--ayodhyaTour-saffron);
+      text-align: center;
+      padding: 10px;
+      border-radius: var(--ayodhyaTour-radius-sm);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+   /* CARD */
+.ayodhyaTour-card-integrity {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+.ayodhyaTour-section-label-integrity {
+  font-size: 14px;
+  color: #ff7a00;
+  font-weight: 600;
+}
+
+.ayodhyaTour-section-title-integrity {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #ff7a00;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* TOP BAR */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  background: #ff7a00;
+  border: none;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* TIMELINE */
+.ayodhyaTour-acc-list-integrity {
+  position: relative;
+  margin-left: 25px;
+}
+
+/* LINE */
+.ayodhyaTour-acc-list-integrity::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #e0e0e0;
+}
+
+/* ITEM */
+.ayodhyaTour-acc-item-integrity {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+/* STEP CIRCLE */
+.step-num {
+  position: absolute;
+  left: -10px;
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border: 2px solid #ff7a00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #ff7a00;
+  z-index: 2;
+}
+
+/* ACTIVE STEP */
+.ayodhyaTour-acc-item-integrity.active .step-num {
+  background: #ff7a00;
+  color: #fff;
+}
+
+/* BUTTON */
+.ayodhyaTour-acc-btn-integrity {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 5px 0 5px 40px;
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* ICON */
+.acc-icon {
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+/* ROTATE ICON */
+.ayodhyaTour-acc-item-integrity.active .acc-icon {
+  transform: rotate(45deg);
+}
+
+/* CONTENT */
+.ayodhyaTour-acc-content-integrity {
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 40px;
+  font-size: 14px;
+  color: #555;
+  transition: 0.4s ease;
+}
+
+/* OPEN CONTENT */
+.ayodhyaTour-acc-item-integrity.active .ayodhyaTour-acc-content-integrity {
+  max-height: 500px;
+  margin-top: 10px;
+}
+
+.ayodhyaTour-acc-content-integrity ul {
+  padding-left: 30px; /* controls tab space */
+}
+
+.ayodhyaTour-acc-content-integrity li {
+  margin-bottom: 6px;
+}
+
+/* HOVER */
+.ayodhyaTour-acc-btn-integrity:hover {
+  color: #ff7a00;
+}
+    .ayodhyaTour-contact .btn:hover { opacity: 0.9; }
+ 
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 720px) {
+      .ayodhyaTour-body { grid-template-columns: 1fr; }
+      .ayodhyaTour-sidebar { position: static; }
+      .ayodhyaTour-header h1 { font-size: 32px; }
+      .ayodhyaTour-festivals-grid { grid-template-columns: 1fr; }
+    }
