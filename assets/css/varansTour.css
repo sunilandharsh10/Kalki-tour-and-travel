@@ -410,8 +410,7 @@
     }
    /* CARD */
 .varansiTour-card-integrity {
-  max-width: 800px;
-  margin: auto;
+  max-width: 100%;
   background: #fff;
   border-radius: 12px;
   padding: 25px;
