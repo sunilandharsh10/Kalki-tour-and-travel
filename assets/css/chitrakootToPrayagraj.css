@@ -1,0 +1,358 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefaf5;
+            color: #1e1e2a;
+            line-height: 1.5;
+        } */
+
+        /* container */
+        .ayodhya-tour-wrap {
+            max-width: 1440px;
+            margin: 0 auto;
+            background: #fffef7;
+        }
+
+        /* hero section */
+        .hero-ayodhya {
+            position: relative;
+            background: linear-gradient(135deg, #1a2a1f 0%, #2e3b2c 100%);
+            padding: 3rem 2rem 4rem 2rem;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-ayodhya::before {
+            content: "🕉️";
+            font-size: 180px;
+            opacity: 0.08;
+            position: absolute;
+            bottom: -30px;
+            right: 0;
+            font-family: monospace;
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #e6b422cc;
+            backdrop-filter: blur(4px);
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-ayodhya h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-ayodhya h1 span {
+            color: #ffd966;
+            border-bottom: 2px solid #ffb347;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 1rem auto 0;
+            opacity: 0.9;
+        }
+
+        .duration-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #00000055;
+            border-radius: 60px;
+            padding: 0.5rem 1.3rem;
+            margin-top: 1.5rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* main layout */
+        .tour-grid {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 2rem;
+            padding: 2.5rem 2rem 3rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* left content */
+        .places-list {
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            border-left: 5px solid #e6b422;
+            padding-left: 1rem;
+            margin-bottom: 1.8rem;
+            color: #2c2c2a;
+        }
+
+        .place-card {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #f0e4d4;
+        }
+
+        .place-icon {
+            background: #fff2e0;
+            width: 56px;
+            height: 56px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #c27e2e;
+            flex-shrink: 0;
+        }
+
+        .place-info h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: #2a3b2c;
+        }
+
+        .place-info h3 i {
+            font-size: 0.9rem;
+            color: #d4a373;
+            margin-left: 6px;
+        }
+
+        .place-info p {
+            color: #4a4a4f;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .highlight {
+            background: #fef3e2;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            color: #b45f1b;
+        }
+
+        /* itinerary day boxes */
+        .itinerary {
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+            padding: 1.8rem 2rem;
+        }
+
+        .day-box {
+            background: #fef8f0;
+            border-radius: 24px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .day-title {
+            font-weight: 700;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+            color: #a55913;
+        }
+
+        .day-title i {
+            font-size: 1.4rem;
+        }
+
+        .day-list {
+            list-style: none;
+            padding-left: 0.5rem;
+        }
+
+        .day-list li {
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            font-size: 0.96rem;
+        }
+
+        .day-list li i {
+            color: #e6b422;
+            font-size: 0.8rem;
+            width: 20px;
+            margin-top: 0.2rem;
+        }
+
+        /* sidebar */
+        .sidebar-card {
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            position: sticky;
+            top: 20px;
+        }
+
+        .price-header {
+            background: #2e3b2c;
+            color: white;
+            padding: 1.2rem 1.5rem;
+            text-align: center;
+        }
+
+        .price-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .price-header p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .package-options {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid #eee6dd;
+        }
+
+        .car-type {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.7rem 0;
+            border-bottom: 1px dashed #f0e0cf;
+            font-weight: 500;
+        }
+
+        .car-type span:first-child i {
+            width: 24px;
+            color: #c2823a;
+        }
+
+        .price-tag {
+            font-weight: 700;
+            color: #1e4d2e;
+            font-size: 1.05rem;
+        }
+
+        .included-list {
+            padding: 1.2rem 1.5rem;
+        }
+
+        .included-list h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .included-list ul {
+            list-style: none;
+        }
+
+        .included-list li {
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .included-list li i {
+            color: #2c8c4a;
+            width: 20px;
+        }
+
+        .contact-btn {
+            background: #e6b422;
+            color: #2c2c1c;
+            padding: 0.8rem;
+            text-align: center;
+            font-weight: 700;
+            border-radius: 40px;
+            margin: 1rem 1.5rem 1.8rem;
+            transition: 0.2s;
+            display: block;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .contact-btn i {
+            margin-right: 8px;
+        }
+
+        .contact-btn:hover {
+            background: #d9a71a;
+            transform: scale(0.98);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #25D366;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            z-index: 99;
+            text-decoration: none;
+        }
+
+        /* footer {
+            background: #1e2a1b;
+            color: #ddd8cc;
+            text-align: center;
+            padding: 1.8rem;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        } */
+
+        @media (max-width: 880px) {
+            .tour-grid {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+            .hero-ayodhya h1 {
+                font-size: 2rem;
+            }
+            .places-list, .itinerary {
+                padding: 1.2rem;
+            }
+            .sidebar-card {
+                position: static;
+            }
+        }
