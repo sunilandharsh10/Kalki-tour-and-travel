@@ -2,103 +2,180 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spiritual Triangle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Spiritual Triangle | Varanasi · Prayagraj · Ayodhya</title>
+
+<!-- Google Fonts + Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- External stylesheets -->
 <link rel="stylesheet" href="/assets/css/index.css">
 <link rel="stylesheet" href="../assets/css/spiritualTriangle.css">
- <link rel="stylesheet" href="../assets/css/footer.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/footer.css">
 <script src="../assets/js/layout.js"></script>
 
-
 </head>
-
 <body>
 
 <div id="header"></div>
 
-<!-- HERO -->
-<div class="spiritual-header">
-  <h1>🔱 Spiritual Triangle</h1>
-</div>
+<div class="spiritual-triangle-unique">
 
-<!-- INTRO -->
- <div class="spiritual-cards-slogan">
-<div class="spiritual-quote">
-
-  <h2>🔱 Explore India’s Divine Spiritual Triangle</h2>
-
-  <p class="sanskrit">
-    गंगे च यमुने चैव गोदावरि सरस्वति।<br>
-    नर्मदे सिन्धु कावेरी जलेऽस्मिन् सन्निधिं कुरु॥
-  </p>
-
-  <p class="meaning">
-    Meaning-: A sacred invocation of holy rivers—perfect for Prayagraj (Sangam).
-  </p>
-
-</div>
-</div>
-
-<!-- TRIANGLE -->
-<div class="spiritual-triangle">
-
-  <div class="spiritual-point top">
-    <img src="../assets/image/varansi.webp">
-    <h3>Varanasi</h3>
+  <!-- hero section -->
+  <div class="spiritual-hero-unique">
+    <div class="spiritual-badge-unique"><i class="fas fa-map-marked-alt"></i> Sacred Trinity · India</div>
+    <h1>🔱 <span>Spiritual Triangle</span> ✨</h1>
+    <div class="tagline-unique">Varanasi · Prayagraj · Ayodhya — the eternal circuit of Moksha, Faith & Dharma</div>
+    <div class="hero-buttons" style="margin-top: 30px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="#booking" class="btn-book" style="background: #c67a3a; color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 600;"><i class="fas fa-calendar-check"></i> Book Now</a>
+            <a href="tel:+919682701873" class="btn-call" style="background: #2c7a4d; color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 600;"><i class="fas fa-phone-alt"></i> Call Now</a>
+            <a href="https://wa.me/919682701873?text=I'm%20interested%20in%20Chitrakoot%20tour%20from%20Prayagraj" class="btn-price" style="background: #25d366; color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 600;" target="_blank"><i class="fab fa-whatsapp"></i> Get Best Price</a>
+        </div>
   </div>
 
-  <div class="spiritual-point left">
-    <img src="../assets/image/prayagraj.webp">
-    <h3>Prayagraj</h3>
+  <!-- mantra + sanskrit shloka -->
+  <div class="mantra-container-unique">
+    <div class="sanskrit-text-unique">
+      ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् ।<br>
+      उर्वारुकमिव बन्धनान् मृत्योर्मुक्षीय माऽमृतात् ॥
+    </div>
+    <div class="meaning-unique">
+      <i class="fas fa-om"></i> “We worship the three-eyed Lord Shiva, who nourishes all beings. May He liberate us from the bondage of worldly attachments, just as a cucumber is gently severed from its vine.” — A sacred prayer resonating across the triangle.
+    </div>
   </div>
 
-  <div class="spiritual-point right">
-    <img src="../assets/image/ayodhya.webp">
-    <h3>Ayodhya</h3>
+  <!-- unique triangle SVG (dynamic geometric) -->
+  <div class="triangle-visual-unique">
+    <svg class="triangle-svg-unique" viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="gradLine" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#e6b422" />
+          <stop offset="100%" stop-color="#c2822e" />
+        </linearGradient>
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+          <feMerge>
+            <feMergeNode in="offsetblur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+      
+      <!-- connecting lines with glow -->
+      <line x1="350" y1="60" x2="100" y2="300" stroke="url(#gradLine)" stroke-width="2.5" stroke-dasharray="6 5" opacity="0.8"/>
+      <line x1="350" y1="60" x2="600" y2="300" stroke="url(#gradLine)" stroke-width="2.5" stroke-dasharray="6 5" opacity="0.8"/>
+      <line x1="100" y1="300" x2="600" y2="300" stroke="#cf9f4a" stroke-width="2" stroke-dasharray="8 4" opacity="0.6"/>
+      
+      <!-- central divine dot -->
+      <circle cx="350" cy="180" r="22" fill="#ffefcf" stroke="#e6b422" stroke-width="2" filter="url(#glow)"/>
+      <text x="350" y="185" text-anchor="middle" fill="#a05e1a" font-size="12" font-weight="bold">ॐ</text>
+      
+      <!-- Nodes: Varanasi -->
+      <circle cx="350" cy="60" r="38" fill="#fdf3e0" stroke="#e6b422" stroke-width="2.5" filter="url(#glow)"/>
+      <image href="../assets/image/varansi.webp" x="325" y="36" width="50" height="50" clip-path="circle(50%)" style="border-radius: 50%;" />
+      <text x="350" y="118" text-anchor="middle" class="city-label" fill="#422c14">🔱 Varanasi</text>
+      
+      <!-- Prayagraj left -->
+      <circle cx="100" cy="300" r="38" fill="#fdf3e0" stroke="#e6b422" stroke-width="2.5" filter="url(#glow)"/>
+      <image href="../assets/image/prayagraj.webp" x="75" y="276" width="50" height="50" style="border-radius: 50%;" />
+      <text x="100" y="358" text-anchor="middle" class="city-label" fill="#422c14">🌊 Prayagraj</text>
+      
+      <!-- Ayodhya right -->
+      <circle cx="600" cy="300" r="38" fill="#fdf3e0" stroke="#e6b422" stroke-width="2.5" filter="url(#glow)"/>
+      <image href="../assets/image/ayodhya.webp" x="575" y="276" width="50" height="50" style="border-radius: 50%;" />
+      <text x="600" y="358" text-anchor="middle" class="city-label" fill="#422c14">🏹 Ayodhya</text>
+    </svg>
   </div>
 
-  <div class="spiritual-line line1"></div>
-  <div class="spiritual-line line2"></div>
-  <div class="spiritual-line line3"></div>
+  <!-- Detailed pillar cards (unmatched content) -->
+  <div class="pillars-unique">
+    <!-- Varanasi Card -->
+    <div class="pillar-card-unique">
+      <div class="pillar-img-unique">
+        <img src="../assets/image/varansi.webp" alt="Varanasi Ghats">
+      </div>
+      <div class="pillar-content-unique">
+        <h3>🕉️ Varanasi</h3>
+        <p>The city of light, where salvation is granted. Kashi Vishwanath, Ganga Aarti, and the timeless cycle of life & death.</p>
+        <ul class="feature-list">
+          <li><i class="fas fa-fire"></i> Dashashwamedh Ganga Aarti</li>
+          <li><i class="fas fa-temple"></i> Kashi Vishwanath Jyotirlinga</li>
+          <li><i class="fas fa-street-view"></i> Banaras ki galiyaan & silk weaves</li>
+        </ul>
+        <a href="#" class="btn-sacred">Explore Kashi <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
 
+    <!-- Prayagraj Card -->
+    <div class="pillar-card-unique">
+      <div class="pillar-img-unique">
+        <img src="../assets/image/prayagraj.webp" alt="Triveni Sangam Prayagraj">
+      </div>
+      <div class="pillar-content-unique">
+        <h3>🌊 Prayagraj</h3>
+        <p>Triveni Sangam — the confluence of Ganga, Yamuna & mythical Saraswati. The land of Kumbh Mela and eternal faith.</p>
+        <ul class="feature-list">
+          <li><i class="fas fa-water"></i> Sacred dip at Sangam</li>
+          <li><i class="fas fa-tree"></i> Akshayavat (immortal banyan)</li>
+          <li><i class="fas fa-mosque"></i> Allahabad Fort & Patalpuri Temple</li>
+        </ul>
+        <a href="#" class="btn-sacred">Sacred Sangam <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- Ayodhya Card -->
+    <div class="pillar-card-unique">
+      <div class="pillar-img-unique">
+        <img src="../assets/image/ayodhya.webp" alt="Ram Mandir Ayodhya">
+      </div>
+      <div class="pillar-content-unique">
+        <h3>🏹 Ayodhya</h3>
+        <p>Birthplace of Lord Ram, the city of dharma. New Ram Janmabhoomi temple, Sarayu aarti & divine peace.</p>
+        <ul class="feature-list">
+          <li><i class="fas fa-crown"></i> Ram Janmabhoomi Mandir</li>
+          <li><i class="fas fa-hanukiah"></i> Hanuman Garhi & Kanak Bhawan</li>
+          <li><i class="fas fa-river"></i> Sarayu Aarti & Laser show</li>
+        </ul>
+        <a href="#" class="btn-sacred">Visit Ayodhya <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unique Itinerary / Spiritual journey -->
+  <div class="journey-unique">
+    <h2><i class="fas fa-charging-station"></i> The Divine Circuit — Suggested Pilgrimage</h2>
+    <div class="timeline-flex">
+      <div class="timeline-day">
+        <h3><i class="fas fa-sun"></i> Day 1: Varanasi</h3>
+        <p>Morning boat ride on Ganga, Kashi Vishwanath darshan, Sarnath excursion, evening Ganga Aarti at Dashashwamedh.</p>
+      </div>
+      <div class="timeline-day">
+        <h3><i class="fas fa-cloud-sun"></i> Day 2: Prayagraj</h3>
+        <p>Drive to Prayagraj (3 hrs). Triveni Sangam boat ride, Akshayavat, Hanuman Mandir, and witness the confluence magic.</p>
+      </div>
+      <div class="timeline-day">
+        <h3><i class="fas fa-moon"></i> Day 3: Ayodhya</h3>
+        <p>Morning departure to Ayodhya (2.5 hrs). Ram Janmabhoomi, Hanuman Garhi, Kanak Bhavan, Sarayu evening aarti.</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 1.8rem;">
+      <span style="background:#2e3a24; color:#ffefcf; padding: 0.5rem 1.2rem; border-radius: 50px;"><i class="fas fa-hands-praying"></i> Complete the triangle — book a guided spiritual tour</span>
+    </div>
+  </div>
+
+  <!-- small mystical quote -->
+  <div style="text-align: center; margin: 0 1rem 1.5rem; padding: 0.5rem; font-size: 0.9rem; color:#8b6946;">
+    <i class="fas fa-yin-yang"></i> From the burning ghats of Kashi to the sacred confluence of Prayag and the Ram Janmabhoomi of Ayodhya — the triangle of liberation.
+  </div>
 </div>
-
-<!-- CARDS -->
-<section class="spiritual-section">
-    <div style="margin: 19px;">
-        <h2>Spiritual Destinations</h2>
-    </div>
-  
-
-  <div class="spiritual-cards">
-
-    <div class="spiritual-card">
-      <img src="../assets/image/varansi.webp">
-      <h3>Varanasi</h3>
-      <p>Famous for Ganga Aarti and ancient temples.</p>
-      <!-- <button>Explore</button> -->
-    </div>
-
-    <div class="spiritual-card">
-      <img src="../assets/image/prayagraj.webp">
-      <h3>Prayagraj</h3>
-      <p>Holy Triveni Sangam and Kumbh Mela destination.</p>
-      <!-- <button>Explore</button> -->
-    </div>
-
-    <div class="spiritual-card">
-      <img src="../assets/image/ayodhya.webp">
-      <h3>Ayodhya</h3>
-      <p>Birthplace of Lord Ram and spiritual hub.</p>
-      <!-- <button>Explore</button> -->
-    </div>
-
-  </div>
-</section>
 
 <div id="footer"></div>
+
+<!-- floating WhatsApp button -->
+<a href="https://wa.me/919682701873?text=I'm%20interested%20in%20Spiritual%20Triangle%20Tour" class="whatsapp-float-triangle" target="_blank">
+  <i class="fab fa-whatsapp"></i> Book Triangle
+</a>
 
 </body>
 </html>

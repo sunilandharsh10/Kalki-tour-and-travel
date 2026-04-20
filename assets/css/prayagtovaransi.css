@@ -1,0 +1,345 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f0;
+            color: #1f2a1b;
+            line-height: 1.5;
+        }
+
+        .prayagToVaransi-wrap {
+            max-width: 1440px;
+            margin: 0 auto;
+            background: #fffbf5;
+            box-shadow: 0 0 40px rgba(0,0,0,0.02);
+        }
+
+        /* ========= HERO SECTION ========= */
+        .prayagToVaransi-hero {
+            position: relative;
+            background: linear-gradient(105deg, #1a2f1a 0%, #2c3e2a 100%);
+            padding: 2.8rem 2rem 3.5rem;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .prayagToVaransi-hero::after {
+            content: "🔱";
+            font-size: 190px;
+            opacity: 0.07;
+            position: absolute;
+            bottom: -40px;
+            right: -20px;
+            font-family: monospace;
+            pointer-events: none;
+        }
+
+        .prayagToVaransi-hero-badge {
+            background: #e6b422dd;
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 0.3rem 1.4rem;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .prayagToVaransi-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.7rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .prayagToVaransi-hero h1 span {
+            color: #ffda77;
+            border-bottom: 2px solid #ffb347;
+        }
+
+        .prayagToVaransi-route-highlight {
+            background: rgba(0,0,0,0.4);
+            border-radius: 80px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0.6rem 1.8rem;
+            margin-top: 1.4rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+
+        .prayagToVaransi-route-highlight i {
+            color: #ffc857;
+        }
+
+        /* main grid */
+        .prayagToVaransi-container {
+            display: grid;
+            grid-template-columns: 1fr 370px;
+            gap: 2rem;
+            max-width: 1280px;
+            margin: 2.5rem auto;
+            padding: 0 1.8rem;
+        }
+
+        /* left side */
+        .prayagToVaransi-places-section {
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .prayagToVaransi-section-head {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            border-left: 5px solid #e6b422;
+            padding-left: 1rem;
+            margin-bottom: 1.8rem;
+            color: #2c3e1f;
+        }
+
+        .prayagToVaransi-place-item {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #f3e5d5;
+        }
+
+        .prayagToVaransi-place-icon {
+            width: 58px;
+            height: 58px;
+            background: #fff0e0;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #bc732a;
+            flex-shrink: 0;
+        }
+
+        .prayagToVaransi-place-details h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .prayagToVaransi-time-badge {
+            background: #fff0df;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            color: #b45f1b;
+        }
+
+        .prayagToVaransi-place-details p {
+            color: #4d4c48;
+            font-size: 0.92rem;
+            margin-top: 0.3rem;
+        }
+
+        .prayagToVaransi-food-note {
+            background: #fff7e8;
+            border-radius: 24px;
+            padding: 1rem 1.4rem;
+            margin: 0.5rem 0 0.2rem;
+            display: inline-block;
+        }
+
+        /* itinerary timeline */
+        .prayagToVaransi-timeline-card {
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+            padding: 1.8rem 2rem;
+        }
+
+        .prayagToVaransi-timeline-step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .prayagToVaransi-step-time {
+            min-width: 80px;
+            font-weight: 700;
+            color: #c67c2e;
+            background: #fef3e2;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .prayagToVaransi-step-desc {
+            font-weight: 500;
+        }
+
+        /* sidebar */
+        .prayagToVaransi-sidebar-card {
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            position: sticky;
+            top: 20px;
+        }
+
+        .prayagToVaransi-price-head {
+            background: #2e3b2c;
+            color: white;
+            padding: 1.2rem;
+            text-align: center;
+        }
+
+        .prayagToVaransi-price-head h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .prayagToVaransi-vehicle-option {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #f0e2d2;
+        }
+
+        .prayagToVaransi-vehicle-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.7rem 0;
+            border-bottom: 1px dashed #f1e3d3;
+            font-weight: 500;
+        }
+
+        .prayagToVaransi-vehicle-row span:first-child i {
+            width: 26px;
+            color: #c2823a;
+        }
+
+        .prayagToVaransi-price-value {
+            font-weight: 800;
+            color: #1f5436;
+            font-size: 1rem;
+        }
+
+        .prayagToVaransi-inclusion-box {
+            padding: 1.2rem 1.5rem;
+        }
+
+        .prayagToVaransi-inclusion-box h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .prayagToVaransi-inclusion-box ul {
+            list-style: none;
+        }
+
+        .prayagToVaransi-inclusion-box li {
+            margin-bottom: 0.65rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.88rem;
+        }
+
+        .prayagToVaransi-inclusion-box li i.fa-check-circle {
+            color: #2c8c4a;
+        }
+
+        .prayagToVaransi-exclusion-box {
+            background: #fef6ef;
+            border-radius: 20px;
+            margin: 0.2rem 1.5rem 1.2rem;
+            padding: 1rem 1.2rem;
+        }
+
+        .prayagToVaransi-exclusion-box li i {
+            color: #c25d3a;
+        }
+
+        .prayagToVaransi-book-btn {
+            background: #e6b422;
+            color: #2c2b1a;
+            display: block;
+            text-align: center;
+            margin: 1.2rem 1.5rem 1.8rem;
+            padding: 0.85rem;
+            border-radius: 60px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .prayagToVaransi-book-btn i {
+            margin-right: 8px;
+        }
+
+        .prayagToVaransi-book-btn:hover {
+            background: #d9a71a;
+            transform: scale(0.98);
+        }
+
+        .prayagToVaransi-whatsapp-float {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            background: #25D366;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+            color: white;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            z-index: 99;
+            text-decoration: none;
+        }
+
+        .prayagToVaransi-footer {
+            background: #1e2a1b;
+            color: #ccc5b5;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 880px) {
+            .prayagToVaransi-container {
+                grid-template-columns: 1fr;
+                padding: 0 1.2rem;
+            }
+            .prayagToVaransi-hero h1 {
+                font-size: 1.9rem;
+            }
+            .prayagToVaransi-places-section, .prayagToVaransi-timeline-card {
+                padding: 1.2rem;
+            }
+            .prayagToVaransi-sidebar-card {
+                position: static;
+            }
+        }
