@@ -410,8 +410,7 @@
     }
    /* CARD */
 .ayodhyaTour-card-integrity {
-  max-width: 800px;
-  margin: auto;
+  max-width: 100%;
   background: #fff;
   border-radius: 12px;
   padding: 25px;
@@ -459,12 +458,12 @@
 
 /* LINE */
 .ayodhyaTour-acc-list-integrity::before {
-  content: "";
-  position: absolute;
-  left: 15px;
-  top: 0;
-  width: 2px;
-  height: 100%;
+ content: "";
+ position: absolute;
+  left: 4px;
+  top: 5px;
+  width: 3px;
+  height: 99%;
   background: #e0e0e0;
 }
 

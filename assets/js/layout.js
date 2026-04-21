@@ -10,7 +10,7 @@ fetch("../layout/footer.html")
     document.getElementById("footer").innerHTML = data;
   });
 
-  fetch("../layout/cabServices.html")
+  fetch("../layout/cabServicesbook.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("cab-section").innerHTML = data;

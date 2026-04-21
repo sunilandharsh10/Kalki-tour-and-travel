@@ -104,26 +104,118 @@ body{background:#f8f9fa;}
 }
 
 /* Navbar */
-.navbar{
-position:sticky;top:0;z-index:1000;
-display:flex;justify-content:space-between;
-align-items:center;padding:15px 30px;
-background:#0d1b2a;color:#fff;
-}
-.logo{font-size:22px;font-weight:bold;}
-.nav-links{display:flex;align-items:center;}
-.nav-links a{color:#fff;margin-left:20px;text-decoration:none;}
-.nav-links a:hover{color:#fca311;}
-.hamburger{display:none;font-size:26px;cursor:pointer;}
 
-.dropdown{position:relative;margin-left:20px;}
-.dropdown-content{
-position:absolute;top:100%;left:0;
-background:#fff;min-width:200px;
-opacity:0;visibility:hidden;transition:.3s;
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:#0d1b2a;
+    color:#fff;
 }
-.dropdown-content a{display:block;padding:10px;color:#000;}
-.dropdown:hover .dropdown-content{opacity:1;visibility:visible;}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+}
+
+.nav-links a{
+    color:#fff;
+    margin-left:20px;
+    text-decoration:none;
+}
+
+.nav-links a:hover{
+    color:#fca311;
+}
+
+.hamburger{
+    display:none;
+    font-size:26px;
+    cursor:pointer;
+}
+
+/* Dropdown */
+.dropdown{
+    position:relative;
+    margin-left:20px;
+}
+
+.dropdown-content{
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#fff;
+    min-width:200px;
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a{
+    display:block;
+    padding:10px;
+    color:#000;
+    text-decoration:none;
+}
+
+.dropdown-content a:hover{
+    background:#f1f1f1;
+}
+
+.dropdown:hover .dropdown-content{
+    opacity:1;
+    visibility:visible;
+}
+
+/* Submenu (2nd level) */
+.submenu{
+    position:relative;
+}
+
+.submenu > a{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.submenu-content{
+    position:absolute;
+    top:0;
+    left:100%;
+    background:#fff;
+    min-width:200px;
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+
+.submenu-content a{
+    display:block;
+    padding:10px;
+    color:#000;
+    text-decoration:none;
+}
+
+.submenu-content a:hover{
+    background:#f1f1f1;
+}
+
+.submenu:hover .submenu-content{
+    opacity:1;
+    visibility:visible;
+}
 
 /* Hero */
 .hero{

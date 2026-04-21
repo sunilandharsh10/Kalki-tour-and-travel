@@ -38,7 +38,7 @@
             <div class="varansiTour-header-inner">
                 <div class="varansiTour-header-badge">1 Day Tour · Prayag Tourist Guide</div>
 
-                <h1>Spiritual Journey<br>to <em>Kashi</em></h1>
+                <h1>Spiritual Journey<br>to <em>Varanasi (Kashi)</em></h1>
                 <blockquote>
                     "Benares is older than history, older than tradition, older even than legend…" – Mark Twain<br><br>
                     Embark on a transformative journey to Varanasi (also known as Kashi or Banaras), a city that
@@ -152,7 +152,7 @@
                             <div class="varansiTour-section-label-integrity">Day plan</div>
                             <div class="varansiTour-section-title-integrity">Varanasi: The Eternal City</div>
                         </div>
-                        <button class="toggle-btn" onclick="toggleAll()">Expand All</button>
+                        <button class="toggle-btn" id="toggleAllBtn" onclick="toggleAll()">Expand All</button>
                     </div>
 
                     <div class="varansiTour-acc-list-integrity">
@@ -161,7 +161,7 @@
                             <button class="varansiTour-acc-btn-integrity" onclick="varansiToggle(this)">
                                 <span class="step-num">1</span>
                                 <span>Kashi Vishwanath Temple</span>
-                                <span class="acc-icon">+</span>
+                                <span class="acc-icon">-</span>
                             </button>
                             <div class="varansiTour-acc-content-integrity">
                                 <p>One of the 12 sacred Jyotirlingas.</p>                                  
@@ -336,8 +336,8 @@
                 <!-- CONTACT -->
                 <div class="varansiTour-contact">
                     <div class="varansiTour-contact-label">Get in touch</div>
-                    <p>📞 +91 7985348413</p>
-                    <p>✉️ info@prayagtouristguide.com</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> +91 7985348413</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i> info@prayagtouristguide.com</p>
                     <a href="#" class="btn">Book now</a>
                 </div>
 
@@ -346,29 +346,55 @@
     </div>
 
     <script>
-        function varansiToggle(btn) {
-            const content = btn.nextElementSibling;
-            const isOpen = content.classList.contains('open');
-            document.querySelectorAll('.varansiTour-acc-content').forEach(c => c.classList.remove('open'));
-            document.querySelectorAll('.varansiTour-acc-btn').forEach(b => b.classList.remove('open'));
-            if (!isOpen) {
-                content.classList.add('open');
-                btn.classList.add('open');
-            }
+
+        function updateIcon(item) {
+            const btn = item.querySelector('.varansiTour-acc-btn-integrity');
+            const iconSpan = btn.querySelector('.acc-icon');
+            const isActive = item.classList.contains('active');
+            iconSpan.textContent = isActive ? '−' : '+';
         }
+        
         function varansiToggle(btn) {
             const item = btn.parentElement;
 
             document.querySelectorAll('.varansiTour-acc-item-integrity').forEach(el => {
-                if (el !== item) el.classList.remove('active');
+                if (el !== item) {
+                    el.classList.remove('active');
+                    const iconSpan = el.querySelector('.acc-icon');
+                    const isActive = item.classList.contains('active');
+                    iconSpan.textContent = isActive ? '−' : '+';
+                }
             });
+           
 
             item.classList.toggle('active');
+            const iconSpan = el.querySelector('.acc-icon');
+            const isActive = item.classList.contains('active');
+            iconSpan.textContent = isActive ? '−' : '+';
         }
 
         function toggleAll() {
-            document.querySelectorAll('.varansiTour-acc-item-integrity')
-                .forEach(el => el.classList.toggle('active'));
+            const allItems = document.querySelectorAll('.varansiTour-acc-item-integrity');
+            const toggleBtn = document.getElementById('toggleAllBtn');
+            
+            // Check if all items are expanded
+            const allExpanded = Array.from(allItems).every(item => item.classList.contains('active'));
+            
+            if (allExpanded) {
+                // Collapse all items
+                allItems.forEach(item => {
+                    item.classList.remove('active');
+                    updateIcon(item);
+                });
+                toggleBtn.textContent = 'Expand All';
+            } else {
+                // Expand all items
+                allItems.forEach(item => {
+                    item.classList.add('active');
+                    updateIcon(item);
+                });
+                toggleBtn.textContent = 'Collapse All';
+            }
         }
     </script>
     <div id="footer"></div>

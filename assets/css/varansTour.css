@@ -458,13 +458,15 @@
 
 /* LINE */
 .varansiTour-acc-list-integrity::before {
-  content: "";
-  position: absolute;
-  left: 15px;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: #e0e0e0;
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 5px;
+    width: 3px;
+    height: 98%;
+    background: #e0e0e0;
+
+
 }
 
 /* ITEM */
@@ -516,12 +518,13 @@
 .acc-icon {
   font-size: 20px;
   transition: 0.3s;
+  color: gray;
 }
 
 /* ROTATE ICON */
-.varansiTour-acc-item-integrity.active .acc-icon {
+/* .varansiTour-acc-item-integrity.active .acc-icon {
   transform: rotate(45deg);
-}
+} */
 
 /* CONTENT */
 .varansiTour-acc-content-integrity {

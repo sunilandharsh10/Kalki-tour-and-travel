@@ -146,7 +146,7 @@ function initFormSubmission() {
 💬 *Special Request:* ${message || 'None'}%0A%0A
 🔹 *Please confirm availability & best price.`;
     
-    const whatsappUrl = `https://wa.me/919682701873?text=${waMessage}`;
+    const whatsappUrl = `https://wa.me/919935353482?text=${waMessage}`;
     
     // Show modal
     const modal = document.getElementById('successModal');

@@ -1,20 +1,8 @@
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #fef7f0;
-            color: #1f2a1b;
-            line-height: 1.5;
-        }
+       
 
         .prayagToVaransi-wrap {
-            max-width: 1440px;
-            margin: 0 auto;
+            max-width: 100%;
             background: #fffbf5;
             box-shadow: 0 0 40px rgba(0,0,0,0.02);
         }
