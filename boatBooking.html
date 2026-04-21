@@ -2,85 +2,133 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boat Booking</title>
-<link rel="stylesheet" href="../assets/css/index.css">
-<link rel="stylesheet" href="../assets/css/aboutus.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Boat Booking | Ganga Cruise · Shikara · Speed Boat | Prayag Tourist Guide</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- External CSS Files -->
 <link rel="stylesheet" href="../assets/css/boatBooking.css">
+<link rel="stylesheet" href="../assets/css/index.css">
 <link rel="stylesheet" href="../assets/css/footer.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
+
+<!-- External JS -->
 <script src="../assets/js/layout.js"></script>
+<script src="../assets/js/boatBooking.js" defer></script>
 
 </head>
-
 <body>
 <div id="header"></div>
-<!-- HEADER SLIDER -->
- <div>
-<div class="slider">
-    <div class="slides">
-        <img src="https://source.unsplash.com/1600x900/?boat,sea">
-        <img src="https://source.unsplash.com/1600x900/?yacht,water">
-        <img src="https://source.unsplash.com/1600x900/?lake,boat">
-    </div>
 
-    <div class="slider-text">
-        <h1>🚤 Book Your Perfect Boat Ride</h1>
-        <p>Luxury • Adventure • Relaxation</p>
-    </div>
-</div>
-
-<!-- BOAT TYPES -->
-<section class="section">
-    <h1><u>Choose Your Boat</u></h1>
-
-    <div class="b-cards">
-
-        <div class="b-card">
-            <img src="https://source.unsplash.com/400x300/?speedboat">
-            <h3>Speed Boat</h3>
-            <p>Fast and thrilling ride for adventure lovers.</p>
-            <div class="price">₹2,000 / hour</div>
-            <button>Book Now</button>
-        </div>
-
-        <div class="b-card">
-            <img src="https://source.unsplash.com/400x300/?yacht">
-            <h3>Luxury Yacht</h3>
-            <p>Enjoy premium experience with full comfort.</p>
-            <div class="price">₹10,000 / hour</div>
-            <button>Book Now</button>
-        </div>
-
-        <div class="b-card">
-            <img src="https://source.unsplash.com/400x300/?shikara">
-            <h3>Shikara Boat</h3>
-            <p>Peaceful ride perfect for couples & families.</p>
-            <div class="price">₹800 / hour</div>
-            <button>Book Now</button>
-        </div>
-
-        <div class="b-card">
-            <img src="https://source.unsplash.com/400x300/?houseboat">
-            <h3>House Boat</h3>
-            <p>Stay and travel with full facilities onboard.</p>
-            <div class="price">₹15,000 / day</div>
-            <button>Book Now</button>
-        </div>
-
-        <div class="b-card">
-            <img src="https://source.unsplash.com/400x300/?fishing,boat">
-            <h3>Fishing Boat</h3>
-            <p>Perfect for fishing trips and relaxing time.</p>
-            <div class="price">₹1,500 / hour</div>
-            <button>Book Now</button>
-        </div>
-
-    </div>
+<!-- HEADER SECTION -->
+<section class="booking-header">
+  <div class="booking-badge"><i class="fas fa-water"></i> Prayag Tourist Guide – Ganga Aarti & River Tours</div>
+  <h1>⛵ <span>Book Your Boat Experience</span> 🌊</h1>
+  <div class="booking-sub">Ganga Cruise · Shikara · Speed Boat · Row Boat — Sacred river journeys, sangam darshan & leisure trips with comfort & serenity</div>
 </section>
-</div>
-<div id="footer"></div>
 
+<div class="booking-container">
+  <!-- Boat Type Tabs -->
+  <div class="vehicle-tabs">
+    <button class="tab-btn active" data-category="shikara"><i class="fas fa-ship"></i> Shikara / Row Boat</button>
+    <button class="tab-btn" data-category="cruise"><i class="fas fa-sailboat"></i> Ganga Cruise</button>
+    <button class="tab-btn" data-category="speedboat"><i class="fas fa-rocket"></i> Speed Boat</button>
+  </div>
+
+  <!-- Boats Grid -->
+  <div class="vehicles-grid" id="vehiclesGrid"></div>
+
+  <!-- Booking Form Section -->
+  <div class="booking-form-section" id="bookingForm">
+    <div class="form-header">
+      <i class="fas fa-anchor"></i>
+      <h2>Request Boat Booking</h2>
+    </div>
+    <div class="selected-vehicle-display" id="selectedVehicleDisplay">
+      <i class="fas fa-ship"></i> No boat selected
+    </div>
+    
+    <form id="bookingFormElement">
+      <div class="form-grid">
+        <div class="input-group">
+          <label><i class="fas fa-user"></i> Full Name *</label>
+          <input type="text" id="fullName" required placeholder="Enter your full name">
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-phone-alt"></i> Phone Number *</label>
+          <input type="tel" id="phone" required placeholder="+91 XXXXX XXXXX">
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-envelope"></i> Email (Optional)</label>
+          <input type="email" id="email" placeholder="your@email.com">
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-calendar-alt"></i> Boat Date *</label>
+          <input type="date" id="journeyDate" required>
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-map-marker-alt"></i> Boarding Ghat *</label>
+          <input type="text" id="pickup" required placeholder="Dashashwamedh Ghat / Assi Ghat / Ram Ghat">
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-flag-checkered"></i> Destination / Route</label>
+          <input type="text" id="drop" placeholder="Sangam / Varanasi Ghats / Boat Ride circuit">
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-users"></i> Number of Passengers *</label>
+          <select id="passengers" required>
+            <option value="">Select</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+            <option>5</option><option>6</option><option>7</option><option>8</option>
+            <option>9</option><option>10</option><option>11</option><option>12</option>
+            <option>13</option><option>14</option><option>15</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-hourglass-half"></i> Ride Type</label>
+          <select id="tourType">
+            <option value="Sunrise Boat Ride">Sunrise Boat Ride</option>
+            <option value="Ganga Aarti Boat Tour">Ganga Aarti Boat Tour (Evening)</option>
+            <option value="Sangam Exploration">Sangam Exploration (Prayag)</option>
+            <option value="Full Day River Cruise">Full Day River Cruise</option>
+            <option value="Private Charter">Private Charter</option>
+          </select>
+        </div>
+        <div class="input-group full-width">
+          <label><i class="fas fa-comment"></i> Special Requests / Preferred Ghat & Timings</label>
+          <textarea id="message" placeholder="E.g., Need life jackets, wheelchair assistance, specific departure time, or temple visit by boat..."></textarea>
+        </div>
+      </div>
+      
+      <div class="summary-card">
+        <div>
+          <i class="fas fa-rupee-sign"></i> Estimated Fare: 
+          <strong id="estimatedFareDisplay">—</strong>
+        </div>
+        <div>
+          <i class="fas fa-clock"></i> Confirmation via WhatsApp / Call
+        </div>
+      </div>
+      
+      <button type="submit" class="submit-btn"><i class="fab fa-whatsapp"></i> Send Boat Booking Request</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal for success -->
+<div id="successModal" class="modal">
+  <div class="modal-content">
+    <i class="fab fa-whatsapp"></i>
+    <h3>Boat Request Sent!</h3>
+    <p>Our river team will contact you shortly on WhatsApp/call to confirm your boat booking and share details.</p>
+    <button onclick="closeModal()">OK, Got it</button>
+  </div>
+</div>
+
+<div id="footer"></div>
 </body>
 </html>

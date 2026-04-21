@@ -1,103 +1,578 @@
 
+  /* ============================================
+     BOAT SERVICES STYLESHEET
+     Dedicated styling for Prayag Tourist Guide Boat Booking
+     ============================================ */
 
-/* HEADER SLIDER */
-.slider {
-    position: relative;
-    height: 80vh;
-    overflow: hidden;
-}
+  /* ===== RESET & BASE ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-.slides {
-    display: flex;
-    width: 300%;
-    animation: slide 12s infinite;
-}
+  /* body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e6f3fa 100%);
+    color: #1a2c3e;
+    line-height: 1.5;
+  } */
 
-.slides img {
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
-}
-
-@keyframes slide {
-    0% {margin-left: 0;}
-    33% {margin-left: -100%;}
-    66% {margin-left: -200%;}
-    100% {margin-left: 0;}
-}
-
-.slider-text {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  /* ===== HEADER SECTION ===== */
+  .booking-header {
+    text-align: center;
+    padding: 3rem 1.5rem 2rem;
+    background: linear-gradient(115deg, #1a2a1a 0%, #2d3e2694 100%);
     color: white;
-    text-align: center;
-    background: rgba(0,0,0,0.5);
-    padding: 20px;
-    border-radius: 10px;
-}
+    margin-bottom: 2rem;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
 
-/* BOAT CARDS */
-/* .section {
-    padding: 40px;
-    text-align: center;
-} */
+  .booking-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+  }
 
-.b-cards {
-    margin-top: 30px;
+  .booking-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .booking-header h1 span {
+    background: linear-gradient(135deg, #ffe6b3, #ffd966);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .booking-sub {
+    font-size: 1rem;
+    opacity: 0.95;
+    max-width: 100%;
+    margin: 0 auto;
+    font-weight: 400;
+  }
+
+  /* ===== CONTAINER ===== */
+  .booking-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+  }
+
+  /* ===== TABS (Boat Categories) ===== */
+  .vehicle-tabs {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
-}
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
 
-.b-card {
-    width: 280px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    transition: 0.3s;
+  .tab-btn {
     background: white;
-}
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 60px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a5c7a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Inter', sans-serif;
+  }
 
-.b-card:hover {
-    transform: scale(1.05);
-}
+  .tab-btn i {
+    font-size: 1.2rem;
+  }
 
-.b-card img {
+  .tab-btn.active {
+    background: #0d5a7a;
+    color: white;
+    box-shadow: 0 8px 20px rgba(13,90,122,0.3);
+    transform: translateY(-2px);
+  }
+
+  .tab-btn:hover:not(.active) {
+    background: #e8f4f8;
+    transform: translateY(-1px);
+    color: #0a3e5c;
+  }
+
+  /* ===== BOATS GRID ===== */
+  .vehicles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.8rem;
+    margin-bottom: 3rem;
+  }
+
+  /* Boat Card - Marine theme with wave accents */
+  .vehicle-card {
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    cursor: pointer;
+    border: 2px solid transparent;
+    position: relative;
+  }
+
+  .vehicle-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 35px rgba(13,90,122,0.15);
+  }
+
+  .vehicle-card.selected {
+    border-color: #0d5a7a;
+    background: linear-gradient(135deg, #ffffff, #f0f9ff);
+    box-shadow: 0 15px 30px rgba(13,90,122,0.2);
+  }
+
+  /* Boat Icon Styling - Marine icons */
+  .vehicle-icon {
+    height: 200px;
+  background: linear-gradient(135deg, #2e3a24, #3e4e34);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  }
+
+  .vehicle-icon i {
+    font-size: 3rem;
+    filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.2));
+  }
+
+  .vehicle-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 1rem 1.2rem 0.3rem;
+    color: #1a2c3e;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .vehicle-capacity {
+    padding: 0 1.2rem;
+    font-size: 0.85rem;
+    color: #0d5a7a;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .vehicle-desc {
+    padding: 0 1.2rem;
+    font-size: 0.85rem;
+    color: #5a6e7c;
+    line-height: 1.45;
+    margin-bottom: 1rem;
+  }
+
+  .vehicle-price {
+    padding: 0 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e67e22;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .select-btn {
+    display: block;
+    width: calc(100% - 2.4rem);
+    margin: 0 1.2rem 1.5rem;
+    padding: 0.8rem;
+    background: #f0f9ff;
+    border: 1.5px solid #0d5a7a;
+    border-radius: 40px;
+    font-weight: 600;
+    color: #0d5a7a;
+    cursor: pointer;
+    transition: all 0.25s;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .select-btn:hover {
+    background: #0d5a7a;
+    color: white;
+    transform: scale(0.98);
+  }
+
+  .vehicle-card.selected .select-btn {
+    background: #0d5a7a;
+    color: white;
+  }
+
+  /* ===== BOOKING FORM SECTION ===== */
+  .booking-form-section {
+    background: white;
+  border-radius: 36px;
+  padding: 2rem;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  margin-top: 1rem;
+  border: 1px solid #ffe8cf;
+  }
+
+  .form-header {
+    display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0e0cf;
+  }
+
+  .form-header i {
+    font-size: 2rem;
+    margin-right: 0.8rem;
+    vertical-align: middle;
+  }
+
+  .form-header h2 {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .selected-vehicle-display {
+    background: #eef7fc;
+    padding: 1rem 2rem;
+    border-left: 5px solid #0d5a7a;
+    margin: 1.5rem 2rem 0;
+    border-radius: 16px;
+    font-weight: 500;
+    color: #0a3e5c;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .selected-vehicle-display i {
+    font-size: 1.4rem;
+    color: #0d5a7a;
+  }
+
+  /* Form Grid */
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .input-group.full-width {
+    grid-column: 1 / -1;
+  }
+
+  .input-group label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #1a5c7a;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .input-group label i {
+    width: 1.4rem;
+    color: #0d5a7a;
+  }
+
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    padding: 0.85rem 1rem;
+    border: 1.5px solid #dceef5;
+    border-radius: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.25s;
+    background: #fefefe;
+  }
+
+  .input-group input:focus,
+  .input-group select:focus,
+  .input-group textarea:focus {
+    outline: none;
+    border-color: #0d5a7a;
+    box-shadow: 0 0 0 3px rgba(13,90,122,0.1);
+  }
+
+  .input-group textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  /* Summary Card */
+  .summary-card {
+    background: linear-gradient(135deg, #fef9e6, #fff6e0);
+    padding: 1rem 2rem;
+    margin: 0 2rem 1.5rem;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border: 1px solid #ffe0a3;
+  }
+
+  .summary-card div {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .summary-card i {
+    font-size: 1.2rem;
+    color: #e67e22;
+  }
+
+  .summary-card strong {
+    font-size: 1.2rem;
+    color: #0d5a7a;
+  }
+
+  /* Submit Button */
+  .submit-btn {
+    display: block;
+    width: calc(100% - 4rem);
+    margin: 0 2rem 2rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37,211,102,0.3);
+    filter: brightness(1.02);
+  }
+
+  /* ===== MODAL ===== */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
 
-.b-card h3 {
-    margin: 10px 0;
-}
+  .modal-content {
+    background: white;
+    max-width: 400px;
+    width: 90%;
+    padding: 2rem;
+    border-radius: 32px;
+    text-align: center;
+    animation: modalSlideIn 0.3s ease;
+  }
 
-.b-card p {
-    padding: 0 10px;
-    font-size: 14px;
-}
+  .modal-content i {
+    font-size: 4rem;
+    color: #25D366;
+    margin-bottom: 1rem;
+  }
 
-.price {
-    color: #0077b6;
-    font-weight: bold;
-    margin: 10px 0;
-}
+  .modal-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #1a2c3e;
+  }
 
-.b-card button {
-    margin: 10px;
-    padding: 10px 15px;
-    background: #0077b6;
+  .modal-content p {
+    color: #5a6e7c;
+    margin-bottom: 1.8rem;
+  }
+
+  .modal-content button {
+    background: #0d5a7a;
     color: white;
     border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 40px;
+    font-weight: 600;
     cursor: pointer;
-    border-radius: 5px;
-}
+    transition: all 0.2s;
+  }
 
-.b-card button:hover {
-    background: #023e8a;
-}
+  .modal-content button:hover {
+    background: #0a3e5c;
+    transform: scale(0.98);
+  }
 
+  @keyframes modalSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .booking-header h1 {
+      font-size: 1.8rem;
+    }
+    
+    .booking-header {
+      padding: 2rem 1rem;
+    }
+    
+    .booking-container {
+      padding: 0 1rem 2rem;
+    }
+    
+    .vehicle-tabs {
+      gap: 0.6rem;
+    }
+    
+    .tab-btn {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.85rem;
+    }
+    
+    .vehicles-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+    
+    .form-grid {
+      padding: 1.2rem;
+      gap: 1rem;
+    }
+    
+    .selected-vehicle-display {
+      margin: 1rem 1.2rem 0;
+      font-size: 0.85rem;
+    }
+    
+    .summary-card {
+      margin: 0 1.2rem 1.2rem;
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .submit-btn {
+      width: calc(100% - 2.4rem);
+      margin: 0 1.2rem 1.5rem;
+    }
+    
+    .form-header h2 {
+      font-size: 1.3rem;
+    }
+    
+    .form-header i {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .vehicle-card h3 {
+      font-size: 1.2rem;
+    }
+    
+    .booking-badge {
+      font-size: 0.7rem;
+    }
+    
+    .input-group input,
+    .input-group select {
+      padding: 0.7rem;
+    }
+  }
+
+  /* ===== UTILITIES ===== */
+  .no-vehicles {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 28px;
+    color: #5a6e7c;
+    grid-column: 1 / -1;
+  }
+
+  /* Capacity warning style */
+  #boatCapacityWarn {
+    font-size: 0.75rem;
+    margin-top: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    background: #fff3e0;
+    border-radius: 12px;
+    display: inline-block;
+  }
+
+  /* Water wave decoration for boat cards */
+  .vehicle-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0d5a7a, #5bc0ff, #0d5a7a);
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 0 0 28px 28px;
+  }
+
+  .vehicle-card:hover::before {
+    opacity: 1;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
