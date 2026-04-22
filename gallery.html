@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Elysian Gallery | Cards + Slideshow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/gallery.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <script src="../assets/js/layout.js"></script>
+   
+</head>
+<body>  
+<div id="header"></div>  
+<div class="gallery-wrapper">
+    <div class="gallery-header">
+        <h1>✦ Gallery Section</h1>
+    </div>
+
+    <div class="tab-bar">
+        <button class="tab-btn photos-active active" id="photosTabBtn">
+            <i>📷</i> Photos
+        </button>
+        <button class="tab-btn videos-active" id="videosTabBtn">
+            <i>🎥</i> Videos
+        </button>
+    </div>
+
+    <!-- dynamic cards grid -->
+    <div id="cardsGrid" class="card-grid"></div>
+    
+</div>
+
+<!-- MODAL SLIDESHOW STRUCTURE -->
+<div id="slideshowModal" class="modal-slideshow">
+    <div class="modal-container">
+        <span class="close-modal">&times;</span>
+        <div class="modal-media-area" id="modalMediaArea">
+            <img id="modalMedia" class="modal-media" alt="slideshow media">
+        </div>
+        <div class="modal-caption" id="modalCaption">Title</div>
+        <button class="modal-nav modal-prev" id="modalPrevBtn">‹</button>
+        <button class="modal-nav modal-next" id="modalNextBtn">›</button>
+    </div>
+</div>
+ <div id="footer"></div>
+<script>
+    // ---------- MEDIA DATASETS with titles & descriptions (rich cards) ----------
+    const PHOTOS_CARDS = [
+        { type: "photo", url: "https://picsum.photos/id/104/900/700", title: "Crystal Lake", description: "Serene alpine waters at dawn, perfect reflection." },
+        { type: "photo", url: "https://picsum.photos/id/15/900/700", title: "Mystic Forest", description: "Ancient woods wrapped in morning fog." },
+        { type: "photo", url: "https://picsum.photos/id/169/900/700", title: "Golden Horizon", description: "Sunset paints the sky in molten gold." },
+        { type: "photo", url: "https://picsum.photos/id/155/900/700", title: "Grand Canyon Majesty", description: "Vast layered rock formations under blue sky." },
+        { type: "photo", url: "https://picsum.photos/id/29/900/700", title: "Coastal Serenity", description: "Waves gently kissing the tropical shore." },
+        { type: "photo", url: "https://picsum.photos/id/96/900/700", title: "Alpine Peaks", description: "Snow-capped mountains, wildflower meadows." }
+    ];
+
+    const VIDEOS_CARDS = [
+        { type: "video", url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4", poster: "https://picsum.photos/id/20/400/300", title: "Blazing Adventure", description: "Dynamic action sequence, fire and motion." },
+        { type: "video", url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4", poster: "https://picsum.photos/id/22/400/300", title: "Epic Escape", description: "Fast-paced chase through futuristic city." },
+        { type: "video", url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFunflies.mp4", poster: "https://picsum.photos/id/26/400/300", title: "Fun Flies", description: "Playful aerial adventure with vibrant energy." },
+        { type: "video", url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4", poster: "https://picsum.photos/id/36/400/300", title: "Meltdown Madness", description: "Explosive visual effects and rhythm." },
+        { type: "video", url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4", poster: "https://picsum.photos/id/47/400/300", title: "Sintel's Journey", description: "Fantasy short film, dragon & destiny." }
+    ];
+
+    // DOM elements
+    const photosTab = document.getElementById("photosTabBtn");
+    const videosTab = document.getElementById("videosTabBtn");
+    const cardsGrid = document.getElementById("cardsGrid");
+    const modal = document.getElementById("slideshowModal");
+    const modalMedia = document.getElementById("modalMedia");
+    const modalCaption = document.getElementById("modalCaption");
+    const modalPrev = document.getElementById("modalPrevBtn");
+    const modalNext = document.getElementById("modalNextBtn");
+    const closeModalBtn = document.querySelector(".close-modal");
+
+    // ---------- STATE ----------
+    let currentTab = "photos";          // 'photos' or 'videos'
+    let currentSlideIndex = 0;          // index inside current tab's media array for modal
+    let currentModalList = [];           // reference to current media list (photos or videos)
+    
+    // Helper: get media array based on tab
+    function getMediaArrayByTab(tab) {
+        return tab === "photos" ? PHOTOS_CARDS : VIDEOS_CARDS;
+    }
+
+    // render cards grid (each card has title, description, slide button)
+    function renderCards() {
+        const mediaArray = getMediaArrayByTab(currentTab);
+        if (!mediaArray.length) {
+            cardsGrid.innerHTML = `<div class="empty-tab">✨ No media in this tab, add some magic ✨</div>`;
+            return;
+        }
+        
+        let cardsHTML = "";
+        mediaArray.forEach((item, idx) => {
+            if (item.type === "photo") {
+                cardsHTML += `
+                    <div class="media-card" data-index="${idx}" data-type="photo">
+                        <div class="card-media" data-index="${idx}">
+                            <img src="${item.url}" alt="${item.title}" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">
+                                ${item.title} 
+                                <span class="type-badge">📷 PHOTO</span>
+                            </div>
+                            <div class="card-desc">${item.description}</div>
+                            <button class="slide-btn" data-slideidx="${idx}">🎬 VIEW SLIDESHOW →</button>
+                        </div>
+                    </div>
+                `;
+            } else {
+                // video card with poster as background thumb
+                const posterUrl = item.poster || "https://picsum.photos/id/100/400/250";
+                cardsHTML += `
+                    <div class="media-card" data-index="${idx}" data-type="video">
+                        <div class="card-media" data-index="${idx}">
+                            <div class="video-thumb-overlay" style="background-image: url('${posterUrl}');"></div>
+                        </div>
+                        <div class="card-info">
+                            <div class="card-title">
+                                ${item.title} 
+                                <span class="type-badge">🎬 VIDEO</span>
+                            </div>
+                            <div class="card-desc">${item.description}</div>
+                            <button class="slide-btn" data-slideidx="${idx}">🎬 VIEW SLIDESHOW →</button>
+                        </div>
+                    </div>
+                `;
+            }
+        });
+        cardsGrid.innerHTML = cardsHTML;
+        
+        // attach event listeners: click on card-media or slide-btn to open slideshow at that index
+        document.querySelectorAll('.media-card').forEach(card => {
+            const idxAttr = card.getAttribute('data-index');
+            if (idxAttr) {
+                const idx = parseInt(idxAttr, 10);
+                // click on media area opens slideshow
+                const mediaDiv = card.querySelector('.card-media');
+                if (mediaDiv) {
+                    mediaDiv.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        openSlideshow(idx);
+                    });
+                }
+                // button click
+                const btn = card.querySelector('.slide-btn');
+                if (btn) {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        openSlideshow(idx);
+                    });
+                }
+            }
+        });
+    }
+    
+    // OPEN SLIDESHOW MODAL for current tab at specific index
+    function openSlideshow(startIndex) {
+        const mediaList = getMediaArrayByTab(currentTab);
+        if (!mediaList.length) return;
+        currentModalList = mediaList;
+        currentSlideIndex = Math.min(startIndex, mediaList.length - 1);
+        if (currentSlideIndex < 0) currentSlideIndex = 0;
+        updateModalContent();
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+    
+    // update modal media (photo or video) based on currentSlideIndex and currentModalList
+    function updateModalContent() {
+        if (!currentModalList.length) return;
+        const media = currentModalList[currentSlideIndex];
+        if (!media) return;
+        
+        // clear previous content and rebuild
+        const mediaArea = document.getElementById("modalMediaArea");
+        // we will replace content of modalMedia (img or video)
+        const oldMedia = modalMedia;
+        const newMedia = media.type === "photo" ? document.createElement("img") : document.createElement("video");
+        newMedia.className = "modal-media";
+        if (media.type === "photo") {
+            newMedia.src = media.url;
+            newMedia.alt = media.title;
+        } else {
+            newMedia.src = media.url;
+            newMedia.controls = true;
+            newMedia.autoplay = false;
+            newMedia.muted = false;
+            newMedia.playsInline = true;
+            if (media.poster) newMedia.poster = media.poster;
+            newMedia.preload = "metadata";
+        }
+        // replace node
+        if (oldMedia && oldMedia.parentNode) {
+            oldMedia.parentNode.replaceChild(newMedia, oldMedia);
+        } else {
+            // fallback
+            mediaArea.innerHTML = '';
+            mediaArea.appendChild(newMedia);
+        }
+        // update global reference
+        window.modalMediaElem = newMedia;
+        document.getElementById("modalMedia")?.removeAttribute("id");
+        newMedia.id = "modalMedia";
+        // update caption
+        modalCaption.innerText = `${media.title}  •  ${media.type === "photo" ? "📸 Photography" : "🎬 Cinematic"}  |  ${currentSlideIndex+1} / ${currentModalList.length}`;
+    }
+    
+    function closeModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+        // pause any playing video inside modal
+        const vid = document.getElementById("modalMedia");
+        if (vid && vid.tagName === "VIDEO") {
+            vid.pause();
+        }
+    }
+    
+    function nextSlideModal() {
+        if (!currentModalList.length) return;
+        currentSlideIndex = (currentSlideIndex + 1) % currentModalList.length;
+        updateModalContent();
+    }
+    
+    function prevSlideModal() {
+        if (!currentModalList.length) return;
+        currentSlideIndex = (currentSlideIndex - 1 + currentModalList.length) % currentModalList.length;
+        updateModalContent();
+    }
+    
+    // Tab switching logic: update active UI, re-render cards, and reset modal list reference
+    function switchTab(tab) {
+        if (tab === currentTab) return;
+        currentTab = tab;
+        if (currentTab === "photos") {
+            photosTab.classList.add("active");
+            videosTab.classList.remove("active");
+        } else {
+            videosTab.classList.add("active");
+            photosTab.classList.remove("active");
+        }
+        renderCards();
+        // reset any open modal
+        if (modal.classList.contains("active")) closeModal();
+    }
+    
+    // Event binding
+    photosTab.addEventListener("click", () => switchTab("photos"));
+    videosTab.addEventListener("click", () => switchTab("videos"));
+    closeModalBtn.addEventListener("click", closeModal);
+    modalPrev.addEventListener("click", prevSlideModal);
+    modalNext.addEventListener("click", nextSlideModal);
+    // close modal on backdrop click
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+    });
+    // keyboard support for modal
+    document.addEventListener("keydown", (e) => {
+        if (!modal.classList.contains("active")) return;
+        if (e.key === "Escape") closeModal();
+        if (e.key === "ArrowLeft") prevSlideModal();
+        if (e.key === "ArrowRight") nextSlideModal();
+    });
+    
+    // initial render (photos active by default)
+    renderCards();
+    
+    // little extra: for video cards that have overlay, ensure hover effects stay
+    // dynamic adjustment for modal media ID after replace
+    function patchModalMediaRef() {
+        // just ensure no errors: after updateModalContent the new element has id modalMedia
+    }
+    window.updateModalContent = updateModalContent;
+</script>
+</body>
+</html>

@@ -197,7 +197,7 @@
 
     <!-- View More Button -->
     <div class="gallery-btn-wrapper">
-      <button class="gallery-btn" onclick="loadMore()">View More →</button>
+      <button class="gallery-btn"><a id="text-decor" href="gallery.html">View More →</a></button>
     </div>
 
   </section>
@@ -241,28 +241,7 @@
       document.getElementById("lightbox").style.display = "none";
     }
 
-    // Load More Images
-    function loadMore() {
-      let gallery = document.getElementById("gallery");
 
-      let newImages = [
-        "https://images.unsplash.com/photo-1548013146-72479768bada",
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
-      ];
-
-      newImages.forEach(src => {
-        let div = document.createElement("div");
-        div.className = "gallery-item";
-        div.onclick = function () { openLightbox(this); };
-
-        div.innerHTML = `<img src="${src}">
-                     <div class="overlay-text"><h4>New View</h4></div>`;
-
-        gallery.appendChild(div);
-      });
-    }
-
-    
   </script>
 
 </body>

@@ -384,6 +384,13 @@ background:#0d1b2a;text-align:center;
     height:200px;
   }
 }
+/* Mobile */
+@media(max-width:425px){
+  .gallery-item img {
+    height:200px;
+  }
+  
+}
 #text-decor{
   text-decoration: none;
   color:white;
