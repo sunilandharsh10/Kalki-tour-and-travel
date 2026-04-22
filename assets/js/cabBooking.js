@@ -1,202 +1,274 @@
-// ===== VEHICLE BOOKING APPLICATION =====
+document.addEventListener('DOMContentLoaded', function() {
+    // City-specific vehicle data
+    const cityData = {
+      varanasi: {
+        sedan: [
+          { id: "swift_varanasi", name: "Swift Desire", capacity: "4 Seats", airport: 1200, hr8: 2000, hr12: 2500, outstation: 12 },
+          { id: "ertiga_varanasi", name: "Ertiga", capacity: "5-6 Seats", airport: 1400, hr8: 2500, hr12: 3000, outstation: 14 }
+        ],
+        suv: [
+          { id: "innova_varanasi", name: "Toyota Innova", capacity: "7 Seats", airport: 1800, hr8: 2800, hr12: 3400, outstation: 16 },
+          { id: "crysta_varanasi", name: "Toyota Crysta", capacity: "7 Seats", airport: 1800, hr8: 3000, hr12: 4000, outstation: 19 }
+        ],
+        tempo: [
+          { id: "tempo_varanasi", name: "Tempo Traveller", capacity: "10-17 Seats", airport: 3000, hr8: 6000, hr12: 7000, outstation: 27 }
+        ]
+      },
+      prayag: {
+        sedan: [
+          { id: "swift_prayag", name: "Swift Desire", capacity: "4 Seats", airport: 1000, hr8: 2000, hr12: 2500, outstation: 12 },
+          { id: "ertiga_prayag", name: "Ertiga", capacity: "5-6 Seats", airport: 1200, hr8: 2500, hr12: 3000, outstation: 14 }
+        ],
+        suv: [
+          { id: "innova_prayag", name: "Toyota Innova", capacity: "7 Seats", airport: 1500, hr8: 2800, hr12: 3400, outstation: 17 },
+          { id: "crysta_prayag", name: "Toyota Crysta", capacity: "7 Seats", airport: 1700, hr8: 3000, hr12: 4000, outstation: 19 }
+        ],
+        tempo: [
+          { id: "tempo_prayag", name: "Tempo Traveller", capacity: "10-17 Seats", airport: 3000, hr8: 5500, hr12: 7000, outstation: 27 }
+        ]
+      },
+      ayodhya: {
+        sedan: [
+          { id: "swift_ayodhya", name: "Swift Desire", capacity: "4 Seats", airport: 1100, hr8: 1900, hr12: 2400, outstation: 12 },
+          { id: "ertiga_ayodhya", name: "Ertiga", capacity: "5-6 Seats", airport: 1300, hr8: 2400, hr12: 2900, outstation: 14 }
+        ],
+        suv: [
+          { id: "innova_ayodhya", name: "Toyota Innova", capacity: "7 Seats", airport: 1700, hr8: 2700, hr12: 3300, outstation: 16 },
+          { id: "crysta_ayodhya", name: "Toyota Crysta", capacity: "7 Seats", airport: 1800, hr8: 2900, hr12: 3900, outstation: 19 }
+        ],
+        tempo: [
+          { id: "tempo_ayodhya", name: "Tempo Traveller", capacity: "10-17 Seats", airport: 3000, hr8: 5800, hr12: 6800, outstation: 27 }
+        ]
+      }
+    };
 
-// Vehicle Data
-const vehicles = {
-  sedan: [
-    { name: "Swift Dzire / similar", icon: "fa-car-side", capacity: "4 + luggage", features: ["AC", "Clean Interior", "Good Mileage"], price: 3500, type: "Sedan" },
-    { name: "Honda Amaze", icon: "fa-car-side", capacity: "4 persons", features: ["Spacious", "Premium Audio"], price: 3800, type: "Sedan" },
-    { name: "Toyota Etios", icon: "fa-car-side", capacity: "4 + 2 bags", features: ["Comfort Seats", "USB Charging"], price: 3700, type: "Sedan" }
-  ],
-  suv: [
-    { name: "Maruti Ertiga", icon: "fa-car", capacity: "6-7 persons", features: ["7 Seater", "AC", "Family Friendly"], price: 5000, type: "SUV" },
-    { name: "Toyota Innova Crysta", icon: "fa-car", capacity: "7 persons", features: ["Premium", "Luggage Space", "Smooth Ride"], price: 6500, type: "SUV" },
-    { name: "Mahindra XUV700", icon: "fa-car", capacity: "7 persons", features: ["Luxury SUV", "Sunroof", "Powerful AC"], price: 7000, type: "SUV" }
-  ],
-  tempo: [
-    { name: "Tempo Traveller (9 Seater)", icon: "fa-truck", capacity: "9 persons", features: ["Pushback Seats", "AC", "Extra Legroom"], price: 8500, type: "Tempo" },
-    { name: "Tempo Traveller (12 Seater)", icon: "fa-truck", capacity: "12 persons", features: ["Spacious", "Charging Points", "Curtains"], price: 10000, type: "Tempo" },
-    { name: "Luxury Tempo (16 Seater)", icon: "fa-truck", capacity: "16 persons", features: ["LED Lights", "Music System", "Water Bottles"], price: 13000, type: "Tempo" }
-  ]
-};
+    let currentCity = 'varanasi';
+    let selectedCategory = 'sedan';
+    let selectedVehicleData = null;
 
-let selectedVehicle = null;
-let selectedCategory = "sedan";
+    // Get DOM elements
+    const vehiclesGrid = document.getElementById('vehiclesGrid');
+    const selectedDisplay = document.getElementById('selectedVehicleDisplay');
+    const estimatedFareSpan = document.getElementById('estimatedFareDisplay');
+    const tourTypeSelect = document.getElementById('tourType');
 
-// Render Vehicles based on category
-function renderVehicles(category) {
-  const grid = document.getElementById('vehiclesGrid');
-  const vehicleList = vehicles[category];
-  if (!vehicleList) return;
-
-  grid.innerHTML = vehicleList.map((v, idx) => `
-    <div class="vehicle-card" data-vehicle='${JSON.stringify(v)}'>
-      <div class="vehicle-img">
-        <i class="fas ${v.icon}"></i>
-        <div class="vehicle-badge">${v.type}</div>
-      </div>
-      <div class="vehicle-info">
-        <h3>${v.name}</h3>
-        <div class="capacity"><i class="fas fa-user-friends"></i> ${v.capacity}</div>
-        <div class="features">
-          ${v.features.map(f => `<span class="feature-tag">${f}</span>`).join('')}
-        </div>
-        <div class="price-row">
-          <div><span class="price">₹${v.price.toLocaleString()}</span> <small>/ per day</small></div>
-          <button class="book-now-btn" data-vehicle='${JSON.stringify(v)}'><i class="fas fa-ticket-alt"></i> Select</button>
-        </div>
-      </div>
-    </div>
-  `).join('');
-
-  // Attach event listeners to select buttons
-  document.querySelectorAll('.book-now-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const vehicleData = JSON.parse(btn.getAttribute('data-vehicle'));
-      selectVehicle(vehicleData);
-    });
-  });
-}
-
-// Select a vehicle
-function selectVehicle(vehicle) {
-  selectedVehicle = vehicle;
-  const displayDiv = document.getElementById('selectedVehicleDisplay');
-  displayDiv.innerHTML = `<i class="fas ${vehicle.icon}"></i> Selected: ${vehicle.name} (${vehicle.capacity}) — ₹${vehicle.price}/day`;
-  displayDiv.style.background = "#fff0df";
-  
-  // Update estimated fare preview
-  updateFarePreview();
-  
-  // Scroll to form
-  document.getElementById('bookingForm').scrollIntoView({ behavior: 'smooth' });
-}
-
-// Update fare preview display
-function updateFarePreview() {
-  const fareSpan = document.getElementById('estimatedFareDisplay');
-  if (selectedVehicle) {
-    fareSpan.innerHTML = `₹${selectedVehicle.price} + driver & fuel (final as per itinerary)`;
-    fareSpan.style.color = "#c2822e";
-  } else {
-    fareSpan.innerHTML = "— select a vehicle first";
-  }
-}
-
-// Tab switching logic
-function initTabs() {
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      selectedCategory = btn.getAttribute('data-category');
-      renderVehicles(selectedCategory);
-      // reset selected vehicle when changing category
-      selectedVehicle = null;
-      document.getElementById('selectedVehicleDisplay').innerHTML = `<i class="fas fa-car"></i> No vehicle selected`;
-      updateFarePreview();
-    });
-  });
-}
-
-// Handle form submission
-function initFormSubmission() {
-  const form = document.getElementById('bookingFormElement');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    if (!selectedVehicle) {
-      alert("Please select a vehicle first from the options above.");
+    // Check if elements exist before proceeding
+    if (!vehiclesGrid) {
+      console.error('vehiclesGrid element not found');
       return;
     }
-    
-    const fullName = document.getElementById('fullName').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const journeyDate = document.getElementById('journeyDate').value;
-    const pickup = document.getElementById('pickup').value.trim();
-    const drop = document.getElementById('drop').value.trim();
-    const passengers = document.getElementById('passengers').value;
-    const tourType = document.getElementById('tourType').value;
-    const message = document.getElementById('message').value;
-    const email = document.getElementById('email').value;
-    
-    if (!fullName || !phone || !journeyDate || !pickup || !drop || !passengers) {
-      alert("Please fill all required fields (*)");
-      return;
-    }
-    
-    // Phone number validation (basic)
-    if (phone.length < 10) {
-      alert("Please enter a valid phone number");
-      return;
-    }
-    
-    // Prepare WhatsApp message
-    const vehicleInfo = `${selectedVehicle.name} (${selectedVehicle.capacity}) | ₹${selectedVehicle.price}/day`;
-    const waMessage = `🙏 *New Booking Request - Prayag Tourist Guide* 🙏%0A%0A
-📌 *Vehicle:* ${vehicleInfo}%0A
-👤 *Name:* ${fullName}%0A
-📞 *Phone:* ${phone}%0A
-📧 *Email:* ${email || 'Not provided'}%0A
-📅 *Journey Date:* ${journeyDate}%0A
-📍 *Pickup:* ${pickup}%0A
-🏁 *Drop:* ${drop}%0A
-👥 *Passengers:* ${passengers}%0A
-🔄 *Tour Type:* ${tourType}%0A
-💬 *Special Request:* ${message || 'None'}%0A%0A
-🔹 *Please confirm availability & best price.`;
-    
-    const whatsappUrl = `https://wa.me/919935353482?text=${waMessage}`;
-    
-    // Show modal
-    const modal = document.getElementById('successModal');
-    modal.style.display = 'flex';
-    
-    // Open WhatsApp in new tab
-    window.open(whatsappUrl, '_blank');
-  });
-}
 
-// Close modal function (global for onclick)
-window.closeModal = function() {
-  document.getElementById('successModal').style.display = 'none';
-}
-
-// Close modal on outside click
-function initModalClose() {
-  window.onclick = function(event) {
-    const modal = document.getElementById('successModal');
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
-  }
-}
-
-// Set minimum date for journey date picker
-function setMinDate() {
-  const today = new Date().toISOString().split('T')[0];
-  const dateInput = document.getElementById('journeyDate');
-  if (dateInput) {
-    dateInput.min = today;
-  }
-}
-
-// Passenger change listener for visual update
-function initPassengerListener() {
-  const passengerSelect = document.getElementById('passengers');
-  if (passengerSelect) {
-    passengerSelect.addEventListener('change', () => {
-      if(selectedVehicle) updateFarePreview();
+    // City buttons
+    const cityBtns = document.querySelectorAll('.city-btn');
+    cityBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        cityBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        currentCity = this.getAttribute('data-city');
+        selectedVehicleData = null;
+        updateSelectedDisplay();
+        renderVehicles();
+      });
     });
-  }
-}
 
-// Initialize everything when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-  renderVehicles('sedan');
-  initTabs();
-  initFormSubmission();
-  initModalClose();
-  setMinDate();
-  initPassengerListener();
-});
+    // Tab buttons
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        selectedCategory = this.getAttribute('data-category');
+        selectedVehicleData = null;
+        updateSelectedDisplay();
+        renderVehicles();
+      });
+    });
+
+    // Tour type change
+    if (tourTypeSelect) {
+      tourTypeSelect.addEventListener('change', function() {
+        updateFareDisplay();
+        updateSelectedDisplay();
+      });
+    }
+
+    function getPriceForTourType(vehicle) {
+      const tourType = tourTypeSelect ? tourTypeSelect.value : 'Airport Transfer';
+      switch(tourType) {
+        case 'Airport Transfer': return vehicle.airport;
+        case '8 Hours / 80km': return vehicle.hr8;
+        case '12 Hours / 120km': return vehicle.hr12;
+        case 'Outstation': return `₹${vehicle.outstation}/km`;
+        default: return vehicle.airport;
+      }
+    }
+
+    function getRawPrice(vehicle) {
+      const tourType = tourTypeSelect ? tourTypeSelect.value : 'Airport Transfer';
+      switch(tourType) {
+        case 'Airport Transfer': return vehicle.airport;
+        case '8 Hours / 80km': return vehicle.hr8;
+        case '12 Hours / 120km': return vehicle.hr12;
+        case 'Outstation': return vehicle.outstation;
+        default: return vehicle.airport;
+      }
+    }
+
+    function updateFareDisplay() {
+      if (selectedVehicleData && estimatedFareSpan) {
+        const price = getPriceForTourType(selectedVehicleData);
+        const isOutstation = tourTypeSelect && tourTypeSelect.value === 'Outstation';
+        if (isOutstation) {
+          estimatedFareSpan.innerHTML = price;
+        } else {
+          estimatedFareSpan.innerHTML = `₹${price}`;
+        }
+      } else if (estimatedFareSpan) {
+        estimatedFareSpan.innerHTML = '—';
+      }
+    }
+
+    function updateSelectedDisplay() {
+      if (selectedVehicleData && selectedDisplay) {
+        const price = getPriceForTourType(selectedVehicleData);
+        selectedDisplay.innerHTML = `<i class="fas fa-car"></i> Selected: ${selectedVehicleData.name} (${selectedVehicleData.capacity}) — ${price}`;
+      } else if (selectedDisplay) {
+        selectedDisplay.innerHTML = `<i class="fas fa-car"></i> No vehicle selected`;
+      }
+      updateFareDisplay();
+    }
+
+    function selectVehicle(vehicle) {
+      selectedVehicleData = vehicle;
+      updateSelectedDisplay();
+      renderVehicles(); // Re-render to show selected state
+    }
+
+    function renderVehicles() {
+      const vehicles = cityData[currentCity][selectedCategory];
+      if (!vehicles || vehicles.length === 0) {
+        vehiclesGrid.innerHTML = '<div style="text-align:center;padding:2rem;">No vehicles available in this category</div>';
+        return;
+      }
+
+      let html = '';
+      vehicles.forEach(vehicle => {
+        const isSelected = selectedVehicleData && selectedVehicleData.id === vehicle.id;
+        const cardClass = isSelected ? 'vehicle-card selected' : 'vehicle-card';
+        
+        html += `
+          <div class="${cardClass}" data-id="${vehicle.id}">
+            <div class="vehicle-icon">
+              <i class="fas ${selectedCategory === 'sedan' ? 'fa-car-side' : (selectedCategory === 'suv' ? 'fa-car' : 'fa-truck')}"></i>
+            </div>
+            <h3>${vehicle.name}</h3>
+            <div class="vehicle-capacity"><i class="fas fa-users"></i> ${vehicle.capacity}</div>
+            <div class="vehicle-prices">
+              <div class="price-item"><span class="price-label">Airport Transfer:</span><span class="price-value">₹${vehicle.airport}</span></div>
+              <div class="price-item"><span class="price-label">8H/80km:</span><span class="price-value">₹${vehicle.hr8}</span></div>
+              <div class="price-item"><span class="price-label">12H/120km:</span><span class="price-value">₹${vehicle.hr12}</span></div>
+              <div class="price-item"><span class="price-label">Outstation:</span><span class="price-value">₹${vehicle.outstation}/km</span></div>
+            </div>
+            <button class="select-btn" data-id="${vehicle.id}">${isSelected ? '✓ Selected' : 'Select Vehicle'}</button>
+          </div>
+        `;
+      });
+      
+      vehiclesGrid.innerHTML = html;
+      
+      // Attach click events to select buttons
+      const selectBtns = document.querySelectorAll('.select-btn');
+      selectBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const vehicleId = btn.getAttribute('data-id');
+          const vehicle = vehicles.find(v => v.id === vehicleId);
+          if (vehicle) selectVehicle(vehicle);
+        });
+      });
+      
+      // Attach click events to vehicle cards
+      const vehicleCards = document.querySelectorAll('.vehicle-card');
+      vehicleCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.classList && e.target.classList.contains('select-btn')) return;
+          const vehicleId = card.getAttribute('data-id');
+          const vehicle = vehicles.find(v => v.id === vehicleId);
+          if (vehicle) selectVehicle(vehicle);
+        });
+      });
+    }
+
+    // Set min date for date picker
+    const dateInput = document.getElementById('journeyDate');
+    if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.setAttribute('min', today);
+    }
+
+    // Form submission
+    const form = document.getElementById('bookingFormElement');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const fullName = document.getElementById('fullName')?.value.trim();
+        const phone = document.getElementById('phone')?.value.trim();
+        const pickup = document.getElementById('pickup')?.value.trim();
+        const drop = document.getElementById('drop')?.value.trim();
+        const journeyDate = document.getElementById('journeyDate')?.value;
+        const passengers = document.getElementById('passengers')?.value;
+        
+        if (!fullName) { alert('Please enter full name'); return; }
+        if (!phone) { alert('Please enter phone number'); return; }
+        if (!pickup) { alert('Please enter pickup location'); return; }
+        if (!drop) { alert('Please enter drop location'); return; }
+        if (!journeyDate) { alert('Please select journey date'); return; }
+        if (!passengers) { alert('Please select number of passengers'); return; }
+        if (!selectedVehicleData) { alert('Please select a vehicle'); return; }
+        
+        const cityNames = { prayag: 'Prayagraj', varanasi: 'Varanasi', ayodhya: 'Ayodhya' };
+        const tourType = document.getElementById('tourType')?.value;
+        const priceValue = getPriceForTourType(selectedVehicleData);
+        const isOutstation = tourType === 'Outstation';
+        
+        const message = `🚕 *CAB BOOKING REQUEST - Prayag Tourist Guide* 🚕
+━━━━━━━━━━━━━━━━━━━━━━
+📍 *City:* ${cityNames[currentCity]}
+🚗 *Vehicle:* ${selectedVehicleData.name} (${selectedVehicleData.capacity})
+👤 *Name:* ${fullName}
+📞 *Phone:* ${phone}
+📅 *Date:* ${journeyDate}
+📍 *Pickup:* ${pickup}
+🏁 *Drop:* ${drop}
+👥 *Passengers:* ${passengers}
+⏱️ *Tour Type:* ${tourType}
+💰 *Fare:* ${isOutstation ? `${priceValue}` : `${priceValue}`}
+💬 *Notes:* ${document.getElementById('message')?.value || 'None'}
+━━━━━━━━━━━━━━━━━━━━━━
+🙏 Please confirm availability.`;
+        
+        const encodedMsg = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/8896473121?text=${encodedMsg}`;
+        
+        const modal = document.getElementById('successModal');
+        if (modal) modal.style.display = 'flex';
+        window.open(whatsappUrl, '_blank');
+      });
+    }
+
+    // Modal close functions
+    window.closeModal = function() {
+      const modal = document.getElementById('successModal');
+      if (modal) modal.style.display = 'none';
+    };
+    
+    window.onclick = function(e) {
+      const modal = document.getElementById('successModal');
+      if (e.target === modal && modal) modal.style.display = 'none';
+    };
+
+    // Initialize
+    renderVehicles();
+    updateSelectedDisplay();
+  });

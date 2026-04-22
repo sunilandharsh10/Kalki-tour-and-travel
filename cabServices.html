@@ -3,33 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Vehicle Booking | SUV · Sedan · Tempo Traveller | Prayag Tourist Guide</title>
+<title>Cab Booking | Prayag · Varanasi · Ayodhya | City Taxi Services</title>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- External CSS -->
-<link rel="stylesheet" href="../assets/css/cabServices.css">
-<link rel="stylesheet" href="/assets/css/index.css">
+<link rel="stylesheet" href="../assets/css/index.css">
 <link rel="stylesheet" href="../assets/css/footer.css">
+<link rel="stylesheet" href="../assets/css/cabServices.css">
 <script src="../assets/js/layout.js"></script>
-
-<!-- External JS -->
 <script src="../assets/js/cabBooking.js"></script>
-
 </head>
 <body>
+
 <div id="header"></div>
+
 <section class="booking-header">
   <div class="booking-badge"><i class="fas fa-route"></i> Prayag Tourist Guide</div>
-  <h1>🚐 <span>Book Your Ride</span> ✨</h1>
+  <h1>🚐 <span>Book Your Cab</span> ✨</h1>
   <div class="booking-sub">Sedan · SUV · Tempo Traveller — Pilgrimage & outstation tours with comfort & trust</div>
 </section>
 
 <div class="booking-container">
+  <!-- City Selection -->
+  <div class="city-selector">
+    <div class="city-title"><i class="fas fa-map-marker-alt"></i> Select Your City</div>
+    <div class="city-buttons">
+      <button class="city-btn" data-city="prayag"><i class="fas fa-holy-place"></i> Prayagraj</button>
+      <button class="city-btn active" data-city="varanasi"><i class="fas fa-temple"></i> Varanasi</button>
+      <!-- <button class="city-btn" data-city="ayodhya"><i class="fas fa-landmark"></i> Ayodhya</button> -->
+    </div>
+  </div>
+
   <!-- Vehicle Tabs -->
   <div class="vehicle-tabs">
     <button class="tab-btn active" data-category="sedan"><i class="fas fa-car-side"></i> Sedan</button>
@@ -40,8 +47,8 @@
   <!-- Vehicles Grid -->
   <div class="vehicles-grid" id="vehiclesGrid"></div>
 
-  <!-- Booking Form Section -->
-  <div class="booking-form-section" id="bookingForm">
+  <!-- Booking Form -->
+  <div class="booking-form-section">
     <div class="form-header">
       <i class="fas fa-clipboard-list"></i>
       <h2>Request Booking</h2>
@@ -53,11 +60,11 @@
     <form id="bookingFormElement">
       <div class="form-grid">
         <div class="input-group">
-          <label><i class="fas fa-user"></i> Full Name *</label>
+          <label><i class="fas fa-user"></i> <span class="required">Full Name</span></label>
           <input type="text" id="fullName" required placeholder="Enter your full name">
         </div>
         <div class="input-group">
-          <label><i class="fas fa-phone-alt"></i> Phone Number *</label>
+          <label><i class="fas fa-phone-alt"></i> <span class="required">Phone Number</span></label>
           <input type="tel" id="phone" required placeholder="+91 XXXXX XXXXX">
         </div>
         <div class="input-group">
@@ -65,37 +72,39 @@
           <input type="email" id="email" placeholder="your@email.com">
         </div>
         <div class="input-group">
-          <label><i class="fas fa-calendar-alt"></i> Journey Date *</label>
+          <label><i class="fas fa-calendar-alt"></i> <span class="required">Journey Date</span></label>
           <input type="date" id="journeyDate" required>
         </div>
         <div class="input-group">
-          <label><i class="fas fa-map-marker-alt"></i> Pickup Location *</label>
-          <input type="text" id="pickup" required placeholder="Prayagraj / Varanasi / Ayodhya">
+          <label><i class="fas fa-map-marker-alt"></i> <span class="required">Pickup Location</span></label>
+          <input type="text" id="pickup" required placeholder="Pickup address">
         </div>
         <div class="input-group">
-          <label><i class="fas fa-flag-checkered"></i> Drop Location *</label>
+          <label><i class="fas fa-flag-checkered"></i> <span class="required">Drop Location</span></label>
           <input type="text" id="drop" required placeholder="Destination">
         </div>
         <div class="input-group">
-          <label><i class="fas fa-users"></i> Number of Passengers *</label>
+          <label><i class="fas fa-users"></i> <span class="required">Number of Passengers</span></label>
           <select id="passengers" required>
             <option value="">Select</option>
             <option>1</option><option>2</option><option>3</option><option>4</option>
             <option>5</option><option>6</option><option>7</option><option>8</option>
             <option>9</option><option>10</option><option>11</option><option>12</option>
+            <option>13</option><option>14</option><option>15</option><option>16</option><option>17</option>
           </select>
         </div>
         <div class="input-group">
           <label><i class="fas fa-road"></i> Tour Type</label>
           <select id="tourType">
-            <option value="One Way">One Way</option>
-            <option value="Round Trip">Round Trip (Return)</option>
-            <option value="Multi Day">Multi Day Package</option>
+            <option value="Airport Transfer">Airport Transfer</option>
+            <option value="8 Hours / 80km">8 Hours / 80km</option>
+            <option value="12 Hours / 120km">12 Hours / 120km</option>
+            <option value="Outstation">Outstation (per km)</option>
           </select>
         </div>
         <div class="input-group full-width">
-          <label><i class="fas fa-comment"></i> Special Requests / Itinerary</label>
-          <textarea id="message" placeholder="Any specific requirements, temples, or stops..."></textarea>
+          <label><i class="fas fa-comment"></i> Special Requests</label>
+          <textarea id="message" rows="2" placeholder="Any specific requirements..."></textarea>
         </div>
       </div>
       
@@ -114,10 +123,6 @@
   </div>
 </div>
 
-<!-- <div class="booking-footer">
-  <i class="fas fa-om"></i> Reliable vehicle service for spiritual circuits | 24/7 support | Clean & sanitized cabs
-</div> -->
-
 <!-- Modal -->
 <div id="successModal" class="modal">
   <div class="modal-content">
@@ -127,6 +132,9 @@
     <button onclick="closeModal()">OK, Got it</button>
   </div>
 </div>
+
 <div id="footer"></div>
+
+
 </body>
 </html>
