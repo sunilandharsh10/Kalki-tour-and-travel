@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Traveler Declaration & Consent | Register Your Tour | Get My Guide</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/bookGuide.css">
+     <script src="../assets/js/layout.js"></script>
+     <script src="../assets/js/bookguide.js"></script>
+
+</head>
+<body>
+
+<div id="header"></div>
+
+<section class="booking-header">
+  <!-- <div class="booking-badge"><i class="fas fa-passport"></i> IATO & TGFI Agreement</div> -->
+  <h1>📋 <span>Book Guide</span> <span class="booking-badge">Certified by Govt of India</span></h1>
+  <div class="booking-sub">Complete booking with instant fee calculation</div>
+  <div class="agreement-badge"><i class="fas fa-calendar-alt"></i> Valid Oct 2025 – Sep 2027</div>
+</section>
+
+<div class="booking-container">
+  <form id="touristForm">
+    <!-- Personal Information -->
+    <div class="form-section">
+      <div class="section-header">
+        <i class="fas fa-user-circle"></i>
+        <h2>Personal Information</h2>
+      </div>
+      <div class="form-grid">
+        <div class="input-group">
+          <label><i class="fas fa-user"></i> <span class="required">Full Name</span></label>
+          <input type="text" id="fullName" required>
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-venus-mars"></i> <span class="required">Gender</span></label>
+          <div class="radio-group" id="genderGroup">
+            <label class="radio-option"><input type="radio" name="gender" value="Male"> Male</label>
+            <label class="radio-option"><input type="radio" name="gender" value="Female"> Female</label>
+            <label class="radio-option"><input type="radio" name="gender" value="Other"> Other</label>
+          </div>
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-phone-alt"></i> <span class="required">Phone Number</span></label>
+          <input type="tel" id="phone" required>
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-envelope"></i> Email</label>
+          <input type="email" id="email">
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-id-card"></i> <span class="required">Nationality</span></label>
+          <input type="text" id="nationality" value="Indian" required>
+        </div>
+      </div>
+    </div>
+
+    <!-- Travel Details -->
+    <div class="form-section">
+      <div class="section-header">
+        <i class="fas fa-map-marked-alt"></i>
+        <h2>Travel Details</h2>
+      </div>
+      <div class="form-grid">
+        <div class="input-group">
+          <label><i class="fas fa-city"></i> <span class="required">City of Visit</span></label>
+          <input type="text" id="city" required placeholder="Prayagraj / Varanasi / Delhi">
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-calendar-alt"></i> <span class="required">Tour Date</span></label>
+          <input type="date" id="tourDate" required>
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-users"></i> <span class="required">Number of Travelers</span></label>
+          <select id="travelers" required><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select>
+        </div>
+        <div class="input-group full-width">
+          <label><i class="fas fa-landmark"></i> <span class="required">Places / Interests</span></label>
+          <textarea id="interests" rows="2" placeholder="Temples, Ganga Aarti, Heritage sites..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guide Preferences -->
+    <div class="form-section">
+      <div class="section-header">
+        <i class="fas fa-language"></i>
+        <h2>Guide Preferences</h2>
+      </div>
+      <div class="form-grid">
+        <div class="input-group">
+          <label><i class="fas fa-comment-dots"></i> Preferred Languages (Ctrl+Click for multiple)</label>
+          <select id="languages" multiple size="4">
+            <option>Hindi</option><option>English</option><option>Spanish</option>
+            <option>French</option><option>German</option><option>Russian</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-venus-mars"></i> Preferred Guide Gender</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="guideGender" value="No Preference"> No Preference</label>
+            <label class="radio-option"><input type="radio" name="guideGender" value="Male"> Male</label>
+            <label class="radio-option"><input type="radio" name="guideGender" value="Female"> Female</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Details - Custom Styled (No Tailwind) -->
+    <div class="form-section">
+      <div class="section-header">
+        <i class="fas fa-clock"></i>
+        <h2>Service Details</h2>
+      </div>
+      <div style="padding: 1.5rem;">
+        <div class="service-card-wrapper">
+          <div class="service-card-inner">
+            <div class="service-card-title">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              Service Details
+            </div>
+            
+            <div>
+              <!-- Service Duration -->
+              <div>
+                <label class="service-duration-label">Service Duration</label>
+                <div class="duration-grid">
+                  <button type="button" id="halfDayBtn" class="duration-btn duration-half">
+                    Half Day
+                    <span>Up to 4 hours</span>
+                    <span class="price">₹2,500</span>
+                  </button>
+                  <button type="button" id="fullDayBtn" class="duration-btn duration-full">
+                    Full Day
+                    <span>4 to 8 hours</span>
+                    <span class="price">₹3,250</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Foreign Language Required - Dynamic Price based on duration -->
+              <div class="option-card-amber">
+                <label class="option-flex">
+                  <input type="checkbox" id="foreignLangCheckbox" class="option-checkbox">
+                  <div class="option-content">
+                    <div class="option-header">
+                      <span class="option-title">Foreign Language Required</span>
+                      <span class="option-price" id="foreignPriceDisplay">+₹1,000</span>
+                    </div>
+                    <p class="option-desc">Additional allowance for non-English languages (Half Day: ₹850 | Full Day: ₹1,000)</p>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Outstation Service -->
+              <!-- <div class="option-card-blue"> -->
+                <!-- <label class="option-flex">
+                  <input type="checkbox" id="outstationCheckbox" class="option-checkbox">
+                  <div class="option-content">
+                    <div class="option-header">
+                      <span class="option-title">Outstation Service</span>
+                      <span class="option-price">₹2,200 - ₹5,500+</span>
+                    </div>
+                    <p class="option-desc">For trips beyond 100km or overnight stays</p>
+                  </div>
+                </label> -->
+                <!-- <div id="outstationRangeContainer" class="range-container hidden">
+                  <input type="range" id="outstationRange" min="2200" max="5500" step="100" value="2200" class="range-slider">
+                  <div class="range-labels">
+                    <span>Basic (100km)</span>
+                    <span>Long Distance / Overnight</span>
+                  </div>
+                  <div class="range-value">Selected: ₹<span id="outstationValue">2,200</span></div>
+                </div> -->
+              <!-- </div> -->
+
+              <!-- Additional Options Grid -->
+              <!-- <div class="options-grid"> -->
+                <!-- <div class="option-row option-row-purple">
+                  <label class="option-row-flex">
+                    <input type="checkbox" id="earlyLateCheckbox" class="option-row-checkbox">
+                    <div class="option-row-content">
+                      <div class="option-row-header">
+                        <span class="option-row-title">Early/Late Hours</span>
+                        <span class="option-row-price">+₹850</span>
+                      </div>
+                      <p class="option-row-desc">Before 7:30 AM or after 8:30 PM</p>
+                    </div>
+                  </label>
+                </div> -->
+                <!-- <div class="option-row option-row-green">
+                  <label class="option-row-flex">
+                    <input type="checkbox" id="extraCityCheckbox" class="option-row-checkbox">
+                    <div class="option-row-content">
+                      <div class="option-row-header">
+                        <span class="option-row-title">Extra City Allowance</span>
+                        <span class="option-row-price">+₹500</span>
+                      </div>
+                      <p class="option-row-desc">Report at hotel (applicable for select cities)</p>
+                    </div>
+                  </label>
+                </div> -->
+                <!-- <div class="option-row option-row-pink">
+                  <label class="option-row-flex">
+                    <input type="checkbox" id="specialEventCheckbox" class="option-row-checkbox">
+                    <div class="option-row-content">
+                      <div class="option-row-header">
+                        <span class="option-row-title">Special Event Allowance</span>
+                        <span class="option-row-price">+₹400 - ₹500</span>
+                      </div>
+                      <p class="option-row-desc">Special tours and attractions</p>
+                    </div>
+                  </label>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fee Breakdown -->
+    <div class="fee-card" id="feeCard">
+      <div class="fee-row"><span>Base Guide Fee</span><span id="baseFee">₹3,250</span></div>
+      <div class="fee-row" id="foreignRow" style="display: none;"><span>Foreign Language Allowance</span><span id="foreignFee">+₹0</span></div>
+      <div class="fee-row" id="outstationRow" style="display: none;"><span>Outstation Service</span><span id="outstationFee">+₹0</span></div>
+      <div class="fee-row" id="earlyRow" style="display: none;"><span>Early/Late Hours</span><span id="earlyFee">+₹0</span></div>
+      <div class="fee-row" id="extraCityRow" style="display: none;"><span>Extra City Allowance</span><span id="extraCityFee">+₹0</span></div>
+      <div class="fee-row" id="specialEventRow" style="display: none;"><span>Special Event Allowance</span><span id="specialEventFee">+₹450</span></div>
+      <div class="fee-row total"><span>Total Fee</span><span id="totalFee">₹3,250</span></div>
+    </div>
+
+    <!-- Declaration & Consent -->
+    <div class="form-section">
+      <div class="section-header">
+        <i class="fas fa-file-signature"></i>
+        <h2>Traveler Declaration and Consent</h2>
+      </div>
+      <div class="declaration-box">
+        <p>I hereby agree to upload my documents and register my profile to obtain tailor-made tour services designed by www.getmyguide.in. I confirm that I have fully understood the applicable payment terms and conditions. I acknowledge that the selection of tour options within India is entirely my own decision, and www.getmyguide.in is engaged solely in designing my inbound travel itinerary and has no involvement beyond providing travel planning services according to my personal preferences.</p>
+        <p>I undertake to comply with all applicable laws of India, respect local customs, and follow required protocols while visiting religious or sensitive locations. I further confirm that I shall be solely responsible for my conduct during the tour and for any legal or unlawful act committed by me, if any. I accept full responsibility for my personal health, medications, and medical requirements as advised by my doctor or family, and for the safety of my personal belongings. Neither www.getmyguide.in, nor the assigned tour guide, tour escort, or associated driver shall be responsible for any loss, theft, or damage to my belongings.</p>
+        <p><strong>Important Notes:</strong> Fees are non-negotiable per IATO & TGFI agreement. No half-day sightseeing in Delhi (all full-day). Use Ministry of Tourism recognized guides. Agreement valid Oct 2025 - Sep 2027.</p>
+      </div>
+      <div class="consent-check">
+        <input type="checkbox" id="consentCheckbox" required>
+        <label for="consentCheckbox">I have read and agree to the Traveler Declaration and Consent terms above.</label>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn"><i class="fab fa-whatsapp"></i> Submit Registration & Get Quote</button>
+    <div class="note-text">Based on the agreement between Indian Association of Tour Operators (IATO) & Tourist Guides Federation of India (TGFI)</div>
+  </form>
+</div>
+
+<div id="successModal" class="modal">
+  <div class="modal-content">
+    <i class="fab fa-whatsapp"></i>
+    <h3>Request Submitted</h3>
+    <p>Your traveler declaration has been received. Our team will contact you shortly via WhatsApp to confirm your tour guide booking.</p>
+    <button onclick="closeModal()">OK, Got it</button>
+  </div>
+</div>
+
+<div id="footer"></div>
+
+<script>
+  
+</script>
+</body>
+</html>
