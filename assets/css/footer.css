@@ -96,3 +96,46 @@ text-decoration: none;
 color:white;
 font-weight: bold;
 }
+
+
+ 
+
+    /* Centered card – simple, no glass effects */
+    .follow-box {
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .follow-box h3 {
+      color: #c67a3a;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    /* Icon row – flex to center items */
+    .icon-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    /* Simple link styling */
+    .icon-link {
+      color: #b28b6a;          /* warm, readable */
+      font-size: 2rem;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+
+    .icon-link:hover {
+      color: #c67a3a;           /* matches heading on hover */
+    }
+
+    /* Optional: keep a subtle border for touch targets */
+    .icon-link i {
+      display: block;
+    }
+ 

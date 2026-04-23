@@ -1,3 +1,4 @@
+
 fetch("../layout/header.html")
   .then(res => res.text())
   .then(data => {
@@ -10,15 +11,20 @@ fetch("../layout/footer.html")
     document.getElementById("footer").innerHTML = data;
   });
 
-  fetch("../layout/cabServicesbook.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("cab-section").innerHTML = data;
-  });
+ 
 
 
-fetch("../layout/ulta_about.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("ultra-about").innerHTML = data;
-  });
+
+  function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    document.querySelectorAll(".dropdown > a").forEach(item => {
+      item.addEventListener("click", function (e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          this.parentElement.classList.toggle("active");
+        }
+      });
+    });
+

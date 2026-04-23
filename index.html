@@ -64,7 +64,7 @@
   <!-- top header end -->
   <!-- Navbar -->
   <div class="navbar">
-    <div class="logo"><a id="text-decor" href="index.html">Varanasi Tour </a></div>
+    <div class="logo"><a id="text-decor" href="index.html">Kalki Tour and Travel</a></div>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
 
     <div class="nav-links" id="navLinks">
@@ -81,22 +81,15 @@
                     <a href="prayagrajTour.html">Sangam Tour</a>
                 </div>
             </div>
-            <a href="ayodhyaTour.html">Ayodhya Tour</a><a href="chitrakotTour.html">Chitrakoot Tour</a><a href="lucknowTour.html">Lucknow Tour</a>
+          <a href="lucknowTour.html">Lucknow Tour</a>
           <a href="chitrakotTour.html">Chitrakoot Tour</a>
-          <a href="ayodhyaToPrayagRaj.html">Prayag To Ayodhya</a>
-          <a href="chitrakootToPrayaraj.html">Prayag To ChitraKoot</a>
-          <a href="prayagrajtovaransi.html">Prayag To Varansi To Prayag</a>
+          <a href="ayodhyaToPrayagRaj.html">Prayagraj to Ayodhya</a>
+          <a href="chitrakootToPrayaraj.html">Prayagraj to Chitrakoot</a>
+          <a href="prayagrajtovaransi.html">Prayagraj to Varanasi </a>
         </div>
     </div>
       <a href="spritualTringle.html">Spiritual Triangle</a>
-      <div class="dropdown">
-        <a href="cabServices.html">Cab Booking</a>
-        <!-- <div class="dropdown-content">
-          <a href="#">SUV</a>
-          <a href="#">Tempo Traveller</a>
-          <a href="#">Sedan</a>
-        </div> -->
-      </div>
+      <a href="cabServices.html">Cab Booking</a> 
       <div class="dropdown">
         <a href="#">Other Services ▾</a>
         <div class="dropdown-content">
@@ -219,19 +212,7 @@
   
 
   <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
-
-    document.querySelectorAll(".dropdown > a").forEach(item => {
-      item.addEventListener("click", function (e) {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          this.parentElement.classList.toggle("active");
-        }
-      });
-    });
-
+    
     function openLightbox(el) {
       document.getElementById("lightbox").style.display = "flex";
       document.getElementById("lightbox-img").src = el.querySelector("img").src;
@@ -241,6 +222,18 @@
       document.getElementById("lightbox").style.display = "none";
     }
 
+  fetch("../layout/cabServicesbook.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("cab-section").innerHTML = data;
+    });
+
+
+  fetch("../layout/ulta_about.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("ultra-about").innerHTML = data;
+    });
 
   </script>
 
