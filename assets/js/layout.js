@@ -15,16 +15,26 @@ fetch("../layout/footer.html")
 
 
 
-  function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
+  document.addEventListener("DOMContentLoaded", function () {
+    // Toggle main mobile menu
+    window.toggleMenu = function () {
+        document.getElementById("navLinks").classList.toggle("active");
+    };
 
-    document.querySelectorAll(".dropdown > a").forEach(item => {
+    // Handle dropdown click (mobile)
+    window.dropDown = function (event) {
+      document.querySelectorAll(".dropdown > a").forEach(item => {
       item.addEventListener("click", function (e) {
         if (window.innerWidth <= 768) {
           e.preventDefault();
           this.parentElement.classList.toggle("active");
+          item.querySelector(".dropdown-content").style.display = "block";
         }
       });
     });
+    };
+
+      
+     
+});
 

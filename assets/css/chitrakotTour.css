@@ -281,13 +281,13 @@
 
 /* LINE */
 .chitrkotTour-acc-list-integrity::before {
-  content: "";
-  position: absolute;
-  left: 15px;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: #e0e0e0;
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    width: 3px;
+    height: 97%;
+    background: #e0e0e0;
 }
 
 /* ITEM */
@@ -342,9 +342,9 @@
 }
 
 /* ROTATE ICON */
-.chitrkotTour-acc-item-integrity.active .acc-icon {
+/* .chitrkotTour-acc-item-integrity.active .acc-icon {
   transform: rotate(45deg);
-}
+} */
 
 /* CONTENT */
 .chitrkotTour-acc-content-integrity {

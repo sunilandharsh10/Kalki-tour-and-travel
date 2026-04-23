@@ -22,13 +22,7 @@
       --lucknowTour-radius-sm:  8px;
     }
  
-    /* body {
-      font-family: var(--lucknowTour-font-body);
-      background: var(--lucknowTour-cream);
-      color: var(--lucknowTour-text);
-      line-height: 1.6;
-      min-height: 100vh;
-    } */
+   
  
     /* ─── LAYOUT WRAPPER ─── */
     .lucknowTour-wrap {
@@ -410,8 +404,7 @@
     }
    /* CARD */
 .lucknowTour-card-integrity {
-  max-width: 800px;
-  margin: auto;
+  max-width: 100%;
   background: #fff;
   border-radius: 12px;
   padding: 25px;
@@ -461,10 +454,10 @@
 .lucknowTour-acc-list-integrity::before {
   content: "";
   position: absolute;
-  left: 15px;
-  top: 0;
-  width: 2px;
-  height: 100%;
+  left: 5px;
+  top: 5px;
+  width: 3px;
+  height: 98%;
   background: #e0e0e0;
 }
 
@@ -520,9 +513,9 @@
 }
 
 /* ROTATE ICON */
-.lucknowTour-acc-item-integrity.active .acc-icon {
+/* .lucknowTour-acc-item-integrity.active .acc-icon {
   transform: rotate(45deg);
-}
+} */
 
 /* CONTENT */
 .lucknowTour-acc-content-integrity {
