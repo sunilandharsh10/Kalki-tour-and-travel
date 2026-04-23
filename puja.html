@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Online Puja Booking | Prayag · Varanasi · Ayodhya | Sacred Rituals</title>
+    <meta name="description" content="Book authentic pujas online from sacred cities - Prayagraj, Varanasi & Ayodhya. Pandit-led rituals, live updates, and divine blessings.">
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/puja.css">
+    <script src="../assets/js/layout.js"></script>
+    <script src="../assets/js/puja.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+<div class="puja-page-wrapper">
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-badge">🙏 Sacred Rituals • Three Holy Cities</div>
+        <h1>Book Puja Online <br> Prayag · Varanasi · Ayodhya</h1>
+        <p>Perform powerful Vedic rituals with experienced pandits at the most sacred locations. Receive prasad & live video proofs.</p>
+        <div class="search-card">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchPujaInput" placeholder="Search puja by name, deity or remedy...">
+            <button id="searchPujaBtn">Search <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Holy City Selector -->
+    <div class="city-selector">
+        <div class="city-title"><i class="fas fa-map-marker-alt"></i> Select Holy City for Puja</div>
+        <div class="city-buttons">
+            <button class="city-btn active" data-city="prayag"><i class="fas fa-holy-place"></i> 🙏 Prayagraj (Triveni Sangam)</button>
+            <button class="city-btn" data-city="varanasi"><i class="fas fa-temple"></i> 🔱 Varanasi (Kashi)</button>
+            <button class="city-btn" data-city="ayodhya"><i class="fas fa-landmark"></i> 🚩 Ayodhya (Ram Janmabhoomi)</button>
+        </div>
+    </div>
+
+    <!-- Filter Chips -->
+    <div class="filter-bar" id="filterChips">
+        <div class="filter-chip active" data-filter="all">All Pujas</div>
+        <div class="filter-chip" data-filter="Dosha">Dosha Nivaran</div>
+        <div class="filter-chip" data-filter="Abhishek">Abhishek & Havan</div>
+        <div class="filter-chip" data-filter="Pitru">Pitru / Ancestral</div>
+        <div class="filter-chip" data-filter="Popular">Popular Pujas</div>
+    </div>
+
+    <div class="section-title">
+        <h2>Sacred Ceremonies by City</h2>
+        <div class="city-badge" id="activeCityDisplay">📍 Currently in: Prayagraj (Triveni Sangam)</div>
+    </div>
+
+    <!-- Puja Grid -->
+    <div id="pujaGridContainer" class="puja-grid"></div>
+
+    <!-- Load More -->
+    <div class="load-more-wrap">
+        <button class="load-more-btn" id="loadMoreBtn">Load More Pujas <i class="fas fa-chevron-down"></i></button>
+    </div>
+
+    <!-- Footer
+    <div class="simple-footer">
+        <p>🕉️ Your spiritual journey — authentic rituals, transparent pricing, pandit-led ceremonies at holy cities.</p>
+        <p>© 2025 SacredPuja Seva | Prayag · Varanasi · Ayodhya</p>
+    </div> -->
+</div>
+
+<!-- Modal -->
+<div id="bookingModal" class="modal-overlay">
+    <div class="modal-container">
+        <div class="close-modal">&times;</div>
+        <i class="fas fa-hands-praying" style="font-size: 2.5rem; color: #2c5a6e;"></i>
+        <h3>Book Puja</h3>
+        <p id="modalPujaName" style="font-weight: 600; margin-bottom: 0.5rem;"></p>
+        <p id="modalCityName" style="font-size: 0.8rem; color: #2c5a6e; margin-bottom: 1rem;"></p>
+        <input type="text" id="userName" placeholder="Full Name *" required>
+        <input type="tel" id="userPhone" placeholder="Mobile Number *">
+        <input type="email" id="userEmail" placeholder="Email (optional)">
+        <button class="primary" id="confirmBookingBtn">Request Callback / Book Now</button>
+        <p style="font-size: 12px; margin-top: 12px;">We'll send puja date & payment link on WhatsApp</p>
+    </div>
+</div>
+
+<div id="footer"></div>
+</body>
+</html>
