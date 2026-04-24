@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Elysian Gallery | Cards + Slideshow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/gallery.css">
     <link rel="stylesheet" href="../assets/css/index.css">
@@ -48,20 +49,25 @@
 <script>
     // ---------- MEDIA DATASETS with titles & descriptions (rich cards) ----------
     const PHOTOS_CARDS = [
-        { type: "photo", url: "https://picsum.photos/id/104/900/700", title: "Crystal Lake", description: "Serene alpine waters at dawn, perfect reflection." },
-        { type: "photo", url: "https://picsum.photos/id/15/900/700", title: "Mystic Forest", description: "Ancient woods wrapped in morning fog." },
-        { type: "photo", url: "https://picsum.photos/id/169/900/700", title: "Golden Horizon", description: "Sunset paints the sky in molten gold." },
-        { type: "photo", url: "https://picsum.photos/id/155/900/700", title: "Grand Canyon Majesty", description: "Vast layered rock formations under blue sky." },
-        { type: "photo", url: "https://picsum.photos/id/29/900/700", title: "Coastal Serenity", description: "Waves gently kissing the tropical shore." },
-        { type: "photo", url: "https://picsum.photos/id/96/900/700", title: "Alpine Peaks", description: "Snow-capped mountains, wildflower meadows." }
+        { type: "photo", url: "../assets/photos/img1.jpeg",  title: "Kumbh Mela", description: "Kumbh Mela in Prayagraj" },
+        { type: "photo", url: "../assets/photos/img2.jpeg",  title: "Temple",     description: "Ancient Vaisno Devi Temple" },
+        { type: "photo", url: "../assets/photos/img3.jpeg",  title: "Tourist",    description: "Tourist came to vist Sangam." },
+        { type: "photo", url: "../assets/photos/img4.jpeg",  title: "Tourist",    description: "Tourist came to vist Temple." },
+        { type: "photo", url: "../assets/photos/img5.jpeg",  title: "Sant Mararaj",description: "Sant Maharaj" },
+        { type: "photo", url: "../assets/photos/img6.jpeg",  title: "Prayagraj",   description: "Prayagraj Sangam." },
+        { type: "photo", url: "../assets/photos/img7.jpeg",  title: "Ganga River", description: "Ganga River." },
+        { type: "photo", url: "../assets/photos/img8.jpeg",  title: "Boat Riding", description: "Boat Riding." },
+        { type: "photo", url: "../assets/photos/img9.jpeg",  title: "Tourist",     description: "Tourist with our guide." },
+        { type: "photo", url: "../assets/photos/img10.jpeg", title: "Tourist",     description: "Tourist with our guide." },
+        { type: "photo", url: "../assets/photos/img11.jpeg", title: "Tourist",     description: "Tourist with our guide." },
+        { type: "photo", url: "../assets/photos/img12.jpeg", title: "Tourist",     description: "Foreigner Tourist." },
+        { type: "photo", url: "../assets/photos/img13.jpeg", title: "Tourist",     description: "Family Tourist." }
     ];
 
     const VIDEOS_CARDS = [
-        { type: "video", url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4", poster: "https://picsum.photos/id/20/400/300", title: "Blazing Adventure", description: "Dynamic action sequence, fire and motion." },
-        { type: "video", url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4", poster: "https://picsum.photos/id/22/400/300", title: "Epic Escape", description: "Fast-paced chase through futuristic city." },
-        { type: "video", url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFunflies.mp4", poster: "https://picsum.photos/id/26/400/300", title: "Fun Flies", description: "Playful aerial adventure with vibrant energy." },
-        { type: "video", url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4", poster: "https://picsum.photos/id/36/400/300", title: "Meltdown Madness", description: "Explosive visual effects and rhythm." },
-        { type: "video", url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4", poster: "https://picsum.photos/id/47/400/300", title: "Sintel's Journey", description: "Fantasy short film, dragon & destiny." }
+        { type: "video", url: "../assets/videos/video1.mp4", poster: "../assets/videos/video1.mp4", title: "Boat Riding", description: "Prayagraj Sangam." },
+        { type: "video", url: "../assets/videos/video2.mp4", poster: "../assets/videos/video2.mp4", title: "Streamer Riding", description: "Prayagraj Sangam." }
+       
     ];
 
     // DOM elements
@@ -104,7 +110,7 @@
                         <div class="card-info">
                             <div class="card-title">
                                 ${item.title} 
-                                <span class="type-badge">📷 PHOTO</span>
+                                
                             </div>
                             <div class="card-desc">${item.description}</div>
                             <button class="slide-btn" data-slideidx="${idx}">🎬 VIEW SLIDESHOW →</button>
@@ -113,7 +119,7 @@
                 `;
             } else {
                 // video card with poster as background thumb
-                const posterUrl = item.poster || "https://picsum.photos/id/100/400/250";
+                const posterUrl = item.poster || "../assets/videos/video2.mp4";
                 cardsHTML += `
                     <div class="media-card" data-index="${idx}" data-type="video">
                         <div class="card-media" data-index="${idx}">
@@ -122,7 +128,6 @@
                         <div class="card-info">
                             <div class="card-title">
                                 ${item.title} 
-                                <span class="type-badge">🎬 VIDEO</span>
                             </div>
                             <div class="card-desc">${item.description}</div>
                             <button class="slide-btn" data-slideidx="${idx}">🎬 VIEW SLIDESHOW →</button>
