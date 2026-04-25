@@ -42,7 +42,7 @@
             if (selectedDuration === 'half') {
                 foreignFeeAmount = 850;
             } else {
-                foreignFeeAmount = 1000;
+                foreignFeeAmount = 850;
             }
             
             // Update display

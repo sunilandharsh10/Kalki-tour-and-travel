@@ -106,7 +106,7 @@
       border-left: 2px solid var(--lucknowTour-saffron);
       padding-left: 1rem;
       font-family: var(--lucknowTour-font-display);
-      font-style: italic;
+      /* font-style: italic; */
       font-size: 14px;
       color: rgba(255,255,255,0.7);
       line-height: 1.7;
