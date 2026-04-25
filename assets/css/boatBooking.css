@@ -1,9 +1,5 @@
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  
 
   /* body {
     font-family: 'Inter', sans-serif;
@@ -14,13 +10,37 @@
 
   .booking-header {
     text-align: center;
-    padding: 2.5rem 1.5rem;
-    background: linear-gradient(135deg, #0a3e5c 0%, #0d5a7a 100%);
-    color: white;
-    margin-bottom: 2rem;
-    border-radius: 0 0 40px 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  padding: 2.5rem 1.5rem;
+  background: linear-gradient(135deg, rgba(15, 43, 61, 0.8), rgba(26, 74, 111, 0.85)), url('../image/boat_wallpaper.webp');
+  background-size: cover;
+  background-position: center 50%;
+  background-repeat: no-repeat;
+  color: white;
+  margin-bottom: 2rem;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  
+  backdrop-filter: blur(2px);
   }
+  
+
+/* Optional: Add overlay for better text readability */
+.booking-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 0 0 30px 30px;
+  pointer-events: none;
+}
+
+.booking-header > * {
+  position: relative;
+  z-index: 1;
+}
 
   .booking-badge {
     display: inline-flex;
