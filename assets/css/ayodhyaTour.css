@@ -1,5 +1,5 @@
 /* ─── RESET & BASE ─── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
  
     :root {
       --ayodhyaTour-saffron:    #C85A00;
@@ -22,14 +22,7 @@
       --ayodhyaTour-radius-sm:  8px;
     }
  
-    /* body {
-      font-family: var(--ayodhyaTour-font-body);
-      background: var(--ayodhyaTour-cream);
-      color: var(--ayodhyaTour-text);
-      line-height: 1.6;
-      min-height: 100vh;
-    } */
- 
+  
     /* ─── LAYOUT WRAPPER ─── */
     .ayodhyaTour-wrap {
       max-width: 100%;
@@ -374,7 +367,7 @@
  
     /* ─── CONTACT ─── */
     .ayodhyaTour-contact {
-      background: var(--ayodhyaTour-saffron);
+      background: #ce864a;
       border-radius: var(--ayodhyaTour-radius);
       padding: 1.5rem;
       color: #fff;
@@ -586,3 +579,14 @@
       .ayodhyaTour-header h1 { font-size: 32px; }
       .ayodhyaTour-festivals-grid { grid-template-columns: 1fr; }
     }
+
+.ayodhya-dashboard{
+    background: rgb(126 153 153 / 49%);
+}
+  #email_contact{
+  text-decoration: none;
+}
+.contact-data{
+  height:24px
+
+}

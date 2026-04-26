@@ -113,8 +113,18 @@
       align-items: start;
 }
 
-.prayagrajTour-main { display:flex; flex-direction:column; gap:20px; }
-.prayagrajTour-sidebar { display:flex; flex-direction:column; gap:20px; }
+.prayagrajTour-main { 
+  display:flex; 
+  flex-direction:column; 
+  gap:20px; 
+}
+.prayagrajTour-sidebar { 
+  display:flex; 
+  flex-direction:column; 
+  gap:20px;
+  position:sticky;
+  top: 1.5rem;
+ }
 
 /* CARD */
 .prayagrajTour-card {
@@ -437,7 +447,7 @@
 
 .prayaraj-dashboard{
     background: rgb(126 153 153 / 49%);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
   #email_contact{
   text-decoration: none;

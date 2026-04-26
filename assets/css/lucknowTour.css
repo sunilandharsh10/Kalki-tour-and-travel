@@ -1,5 +1,5 @@
 /* ─── RESET & BASE ─── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
  
     :root {
       --lucknowTour-saffron:    #C85A00;
@@ -368,7 +368,7 @@
  
     /* ─── CONTACT ─── */
     .lucknowTour-contact {
-      background: var(--lucknowTour-saffron);
+      background: #e58d46cc;
       border-radius: var(--lucknowTour-radius);
       padding: 1.5rem;
       color: #fff;
@@ -581,3 +581,15 @@
       .lucknowTour-header h1 { font-size: 32px; }
       .lucknowTour-festivals-grid { grid-template-columns: 1fr; }
     }
+
+.lucknow-dashboard{
+  background: rgb(126 153 153 / 49%);
+    /* overflow-x: hidden; */
+}
+#email_contact{
+  text-decoration: none;
+}
+.contact-data{
+  height:24px
+
+}

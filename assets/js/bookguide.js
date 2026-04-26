@@ -3,7 +3,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         // Service selection state
         let selectedDuration = 'full';
-        let selectedDurationPrice = 3250;
+        let selectedDurationPrice = 2500;
         let foreignSelected = false;
         let foreignFeeAmount = 1000; // Default for Full Day
         let outstationSelected = false;
@@ -111,8 +111,8 @@
         }
         
         // Add event listeners
-        if (halfDayBtn) halfDayBtn.addEventListener('click', () => setDuration('half', 2500));
-        if (fullDayBtn) fullDayBtn.addEventListener('click', () => setDuration('full', 3250));
+        if (halfDayBtn) halfDayBtn.addEventListener('click', () => setDuration('half', 2000));
+        if (fullDayBtn) fullDayBtn.addEventListener('click', () => setDuration('full', 2500));
         
         if (foreignCheckbox) {
             foreignCheckbox.addEventListener('change', function() {
@@ -211,7 +211,7 @@
                 const languagesSelect = document.getElementById('languages');
                 const selectedLanguages = languagesSelect ? Array.from(languagesSelect.selectedOptions).map(opt => opt.value).join(', ') : 'Not specified';
                 const guideGenderPref = document.querySelector('input[name="guideGender"]:checked')?.value || 'No Preference';
-                const durationName = selectedDuration === 'half' ? 'Half Day (Up to 4 hours) - ₹2500' : 'Full Day (4-8 hours) - ₹3250';
+                const durationName = selectedDuration === 'half' ? 'Half Day (Up to 4 hours) - ₹2000' : 'Full Day (4-8 hours) - ₹2500';
                 
                 let extras = [];
                 if(foreignSelected) extras.push(`Foreign Language Allowance (+₹${foreignFeeAmount})`);
@@ -271,6 +271,6 @@ IATO & TGFI Agreement (Oct 2025 - Sep 2027)`;
         };
         
         // Initialize with default values
-        setDuration('full', 3250);
+        setDuration('full', 2500);
     });
 })();

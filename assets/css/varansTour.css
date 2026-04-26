@@ -1,5 +1,7 @@
 /* ─── RESET & BASE ─── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .varanasi-dashboard{
+      background: rgb(126 153 153 / 49%);
+    }
  
     :root {
       --varansiTour-saffron:    #C85A00;
