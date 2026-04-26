@@ -30,7 +30,9 @@
 } */
 
 /* WRAPPER */
-.chitrkotTour-wrap { padding-bottom:40px; }
+.chitrkotTour-wrap { max-width: 100%;
+  margin: 0 auto;
+  padding: 0 0 4rem; }
 
 /* HEADER */
 .chitrkotTour-header {
@@ -120,7 +122,7 @@
 }
 
 .chitrkotTour-main { display:flex; flex-direction:column; gap:20px; }
-.chitrkotTour-sidebar { display:flex; flex-direction:column; gap:20px; }
+.chitrkotTour-sidebar { display:flex; flex-direction:column; gap:20px;position: sticky; }
 
 /* CARD */
 .chitrkotTour-card {
