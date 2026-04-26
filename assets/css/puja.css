@@ -1,4 +1,8 @@
-
+.puja-dashboard{
+    background: rgb(126 153 153 / 49%);
+    margin-bottom: 2rem; 
+    overflow-x: hidden;
+  }
 
 
 /* Optional: Add overlay for better text readability */
@@ -10,14 +14,10 @@
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.3);
-    border-radius: 0 0 30px 30px;
     pointer-events: none;
 }
 
-.hero-section>* {
-    position: relative;
-    z-index: 1;
-}
+
 
 .puja-page-wrapper {
     max-width: 100%;
@@ -29,12 +29,6 @@
 .hero-section {
     text-align: center;
     padding: 3rem 1rem 4rem;
-
-    /* color: white; */
-    /* border-radius: 0 0 60px 60px; */
-    /* margin-bottom: 2rem;
-            position: relative;
-            overflow: hidden; */
     text-align: center;
 
     background: linear-gradient(135deg, rgba(15, 43, 61, 0.8), rgba(26, 74, 111, 0.85)), url('../image/sprits.webp');
@@ -42,8 +36,6 @@
     background-position: center 30%;
     background-repeat: no-repeat;
     color: white;
-    margin-bottom: 2rem;
-    border-radius: 0 0 30px 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
     backdrop-filter: blur(2px);
@@ -90,7 +82,7 @@
 /* City Selector */
 .city-selector {
     background: white;
-    border-radius: 20px;
+    border-radius: 0 0 30px 30px;
     padding: 1.2rem;
     margin-bottom: 2rem;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
@@ -244,6 +236,7 @@
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+    margin: 40px;
 }
 
 .puja-card {

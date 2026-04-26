@@ -3,18 +3,10 @@
      TOUR GUIDE BOOKING STYLESHEET (No Tailwind)
      ============================================ */
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  
+  .guid-dashboard{
+    background: rgb(126 153 153 / 49%);
   }
-
-  /* body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e9edf2 100%);
-    color: #1e2a3e;
-    line-height: 1.5;
-  } */
 
   /* Header */
   .booking-header {

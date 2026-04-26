@@ -26,8 +26,8 @@
 
 <div id="header"></div>
 
+<div class="prayagrajCity-dashboard">
 <div class="booking-header">
-  <div class="booking-badge"><i class="fas fa-map-marked-alt"></i> Prayag Tourist Guide</div>
   <h1>🙏 <span>Prayagraj City Tour</span> 🚩</h1>
   <div class="booking-sub">Explore the sacred city of Triveni Sangam · Kumbh Mela · Heritage & Spirituality</div>
   <div class="duration-badge"><i class="far fa-clock"></i> Duration: 1 Day (8-10 Hours)</div>
@@ -121,44 +121,11 @@
       <div class="pricing-section">
         <div class="section-header">
           <i class="fas fa-tags"></i>
-          <h2>Tour Packages</h2>
+          <h2>Book Cab</h2>
         </div>
         <div class="pricing-card">
           <!-- Sedan Option -->
-          <div class="price-option" data-vehicle="sedan" data-price="5000">
-            <div class="price-header">
-              <div>
-                <i class="fas fa-car-side vehicle-icon"></i>
-                <span class="vehicle-name">Sedan (Swift Dzire / Similar)</span>
-              </div>
-              <div class="price-amount">₹5,000<small>/Day</small></div>
-            </div>
-            <div class="price-desc"><i class="fas fa-users"></i> Up to 4 Passengers | AC Cab | Professional Driver</div>
-          </div>
-
-          <!-- SUV Option -->
-          <div class="price-option" data-vehicle="suv" data-price="6000">
-            <div class="price-header">
-              <div>
-                <i class="fas fa-car vehicle-icon"></i>
-                <span class="vehicle-name">SUV (Ertiga / Innova)</span>
-              </div>
-              <div class="price-amount">₹6,000<small>/Day</small></div>
-            </div>
-            <div class="price-desc"><i class="fas fa-users"></i> Up to 6-7 Passengers | AC Cab | Comfortable for Family</div>
-          </div>
-
-          <!-- Tempo Traveller Option -->
-          <div class="price-option" data-vehicle="tempo" data-price="8000">
-            <div class="price-header">
-              <div>
-                <i class="fas fa-truck vehicle-icon"></i>
-                <span class="vehicle-name">Tempo Traveller</span>
-              </div>
-              <div class="price-amount">₹8,000<small>/Day</small></div>
-            </div>
-            <div class="price-desc"><i class="fas fa-users"></i> Up to 10-17 Passengers | AC | Perfect for Groups</div>
-          </div>
+            <button class="cta-btn"><a href="cabServices.html" id="bookId">Book Now</a></button>
 
           <!-- Included -->
           <div class="included-box">
@@ -186,69 +153,8 @@
       </div>
     </div>
   </div>
-
-  <!-- Booking Form -->
-  <div class="booking-form-section">
-    <div class="section-header">
-      <i class="fas fa-clipboard-list"></i>
-      <h2>Request Booking</h2>
-    </div>
-    <div class="selected-vehicle-display">
-      <i class="fas fa-car"></i> <span id="selectedVehicleDisplay">No vehicle selected</span>
-    </div>
-    
-    <form id="bookingForm">
-      <div class="form-grid">
-        <div class="input-group">
-          <label><i class="fas fa-user"></i> <span class="required">Full Name</span></label>
-          <input type="text" id="fullName" required placeholder="Enter your full name">
-        </div>
-        <div class="input-group">
-          <label><i class="fas fa-phone-alt"></i> <span class="required">Phone Number</span></label>
-          <input type="tel" id="phone" required placeholder="+91 XXXXX XXXXX">
-        </div>
-        <div class="input-group">
-          <label><i class="fas fa-envelope"></i> Email</label>
-          <input type="email" id="email" placeholder="your@email.com">
-        </div>
-        <div class="input-group">
-          <label><i class="fas fa-calendar-alt"></i> <span class="required">Tour Date</span></label>
-          <input type="date" id="tourDate" required>
-        </div>
-        <div class="input-group">
-          <label><i class="fas fa-map-marker-alt"></i> <span class="required">Pickup Location</span></label>
-          <input type="text" id="pickup" required placeholder="Hotel / Railway Station / Airport">
-        </div>
-        <div class="input-group">
-          <label><i class="fas fa-users"></i> <span class="required">Number of Passengers</span></label>
-          <select id="passengers" required>
-            <option value="">Select</option>
-            <option>1</option><option>2</option><option>3</option><option>4</option>
-            <option>5</option><option>6</option><option>7</option><option>8</option>
-            <option>9</option><option>10</option><option>11</option><option>12</option>
-            <option>13</option><option>14</option><option>15</option><option>16</option><option>17</option>
-          </select>
-        </div>
-        <div class="input-group full-width">
-          <label><i class="fas fa-comment"></i> Special Requests</label>
-          <textarea id="message" rows="2" placeholder="Any specific requirements..."></textarea>
-        </div>
-      </div>
-      
-      <div class="summary-card">
-        <div>
-          <i class="fas fa-rupee-sign"></i> Total Amount: 
-          <strong id="totalAmount">₹0</strong>
-        </div>
-        <div>
-          <i class="fas fa-clock"></i> Confirmation via WhatsApp / Call
-        </div>
-      </div>
-      
-      <button type="submit" class="submit-btn"><i class="fab fa-whatsapp"></i> Book Prayagraj City Tour</button>
-    </form>
-  </div>
 </div>
+ </div>
 
 <!-- Modal -->
 <div id="successModal" class="modal-overlay">

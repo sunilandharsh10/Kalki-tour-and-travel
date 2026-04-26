@@ -1,25 +1,20 @@
 
-  
-
-  /* body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #f0f9ff 0%, #e6f3fa 100%);
-    color: #1a2c3e;
-    line-height: 1.5;
-  } */
+  .boat-dashboard{
+    background: rgb(126 153 153 / 49%);
+  }
+    
+ 
 
   .booking-header {
-    text-align: center;
+  text-align: center;
   padding: 2.5rem 1.5rem;
-  background: linear-gradient(135deg, rgba(15, 43, 61, 0.8), rgba(26, 74, 111, 0.85)), url('../image/boat_wallpaper.webp');
+  background: url('../image/boat_wallpaper.webp');
   background-size: cover;
   background-position: center 50%;
   background-repeat: no-repeat;
   color: white;
-  margin-bottom: 2rem;
-  border-radius: 0 0 30px 30px;
+
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  
   backdrop-filter: blur(2px);
   }
   
@@ -33,7 +28,6 @@
   right: 0;
   bottom: 0;
   background: rgba(0,0,0,0.3);
-  border-radius: 0 0 30px 30px;
   pointer-events: none;
 }
 
@@ -75,7 +69,7 @@
 
   .city-selector {
     background: white;
-    border-radius: 20px;
+    border-radius: 0 0 30px 30px;
     padding: 1.2rem;
     margin-bottom: 2rem;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);

@@ -1,27 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-/* body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e6f3fa 100%);
-  color: #1a2c3e;
-  line-height: 1.5;
-} */
-
-/* Header */
-/* .booking-header {
-    text-align: center;
-    padding: 2.5rem 1.5rem;
-    background: linear-gradient(135deg, #0f2b3d 0%, #1a4a6f 100%);
-    color: white;
-    margin-bottom: 2rem;
-    border-radius: 0 0 30px 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  } */
-
+ .cab-dashboard{
+    background: rgb(126 153 153 / 49%);
+  }
 .booking-header {
   text-align: center;
   padding: 2.5rem 1.5rem;
@@ -30,7 +10,6 @@
   background-position: center 50%;
   background-repeat: no-repeat;
   color: white;
-  margin-bottom: 2rem;
   border-radius: 0 0 30px 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -75,7 +54,7 @@
 /* City Selector */
 .city-selector {
   background: white;
-  border-radius: 20px;
+  border-radius: 0 0 30px 30px;
   padding: 1.5rem;
   margin-bottom: 2rem;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
@@ -102,7 +81,7 @@
   padding: 0.8rem 2rem;
   border-radius: 50px;
   border: 2px solid #dceef5;
-  background: white;
+  background: #312d2d38;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;

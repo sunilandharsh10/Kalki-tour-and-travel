@@ -1,6 +1,6 @@
 let index = 0;
 var slider;
-const totalSlides = 3;
+const totalSlides = 5;
 
 function showSlide() {
   slider = document.getElementById("slider");

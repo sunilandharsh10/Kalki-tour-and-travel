@@ -1,15 +1,7 @@
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #f0f9ff 0%, #e6f3fa 100%);
-    color: #1a2c3e;
-    line-height: 1.5;
+  .prayagrajCity-dashboard{
+    background: rgb(126 153 153 / 49%);
+    overflow-x: hidden;
   }
 
   .booking-header {

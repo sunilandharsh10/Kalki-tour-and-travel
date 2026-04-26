@@ -1,5 +1,4 @@
-/* RESET */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 
 :root {
    --prayagrajTour-saffron:    #C85A00;
@@ -22,12 +21,7 @@
       --prayagrajTour-radius-sm:  8px;
 }
 
-/* BODY */
-/* body {
-  font-family: 'DM Sans', sans-serif;
-  background:#FDF8F0;
-  color:#2D1B4E;
-} */
+
 
 /* WRAPPER */
 .prayagrajTour-wrap { padding-bottom:40px; }
@@ -114,7 +108,7 @@
 .prayagrajTour-body {
       padding: 0 1.5rem;
       display: grid;
-      grid-template-columns: 1fr 310px;
+      grid-template-columns: 1fr 350px;
       gap: 1.75rem;
       align-items: start;
 }
@@ -216,9 +210,9 @@
 
 /* CONTACT */
 .prayagrajTour-contact {
-  background:#C85A00;
+  background:#e58d46cc;
   color:#fff;
-  padding:20px;
+  padding:32px;
   border-radius:10px;
 }
 
@@ -439,4 +433,16 @@
 /* MOBILE */
 @media(max-width:720px){
   .prayagrajTour-body{ grid-template-columns:1fr; }
+}
+
+.prayaraj-dashboard{
+    background: rgb(126 153 153 / 49%);
+    overflow-x: hidden;
+  }
+  #email_contact{
+  text-decoration: none;
+}
+.contact-data{
+  height:24px
+
 }
