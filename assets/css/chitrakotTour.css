@@ -114,7 +114,7 @@
 .chitrkotTour-body {
       padding: 0 1.5rem;
       display: grid;
-      grid-template-columns: 1fr 310px;
+      grid-template-columns: 1fr 350px;
       gap: 1.75rem;
       align-items: start;
 }
@@ -172,6 +172,8 @@
   gap:10px;
 }
 
+
+
 .chitrkotTour-festival-item {
   background: var(--chitrkotTour-parchment);
   border-radius: var(--chitrkotTour-radius-sm);
@@ -216,7 +218,7 @@
 
 /* CONTACT */
 .chitrkotTour-contact {
-  background:#C85A00;
+  background:#DA8D4FD1;
   color:#fff;
   padding:20px;
   border-radius:10px;
@@ -409,6 +411,12 @@
 /* ACTIVE CLICK */
 .chitrkotTour-pay-btn:active {
   transform: scale(0.97);
+}
+#email_contact{
+  text-decoration: none;
+}
+.contact-data{
+  height:24px
 }
 
 /* MOBILE */

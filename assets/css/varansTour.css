@@ -374,7 +374,7 @@
  
     /* ─── CONTACT ─── */
     .varansiTour-contact {
-      background: var(--varansiTour-saffron);
+      background: #DA8D4FD1;
       border-radius: var(--varansiTour-radius);
       padding: 1.5rem;
       color: #fff;
@@ -398,8 +398,8 @@
     .varansiTour-contact .btn {
       display: block;
       margin-top: 16px;
-      background: #fff;
-      color: var(--varansiTour-saffron);
+      background: #0d1030;
+      color: #F99B0A;
       text-align: center;
       padding: 10px;
       border-radius: var(--varansiTour-radius-sm);
@@ -549,6 +549,9 @@
 .varansiTour-acc-content-integrity li {
   margin-bottom: 6px;
 }
+#email_contact{
+  text-decoration: none;
+}
 .whatsapp-float-varansi {
   position: fixed;
   bottom: 20px;
@@ -567,6 +570,10 @@
   gap: 8px;
   transition: all 0.3s ease;
   font-family: 'Inter', sans-serif;
+}
+
+.contact-data{
+  height:24px
 }
 
 .whatsapp-float-varansi:hover {
