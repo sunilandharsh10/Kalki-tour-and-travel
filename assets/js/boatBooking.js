@@ -2,28 +2,28 @@ document.addEventListener('DOMContentLoaded', function() {
     // Boat Data for Prayagraj (Sangam) - No Cruise Boat, Only Hand Boat & Speed Boat
     const prayagBoatData = {
       handBoat: [
-        { id: "prayag_hand_boat_10seat_2hr", name: "Private Hand Boat (10 Seater)", capacity: "Up to 10 seats", duration: "1 to 2 hours", price: 1000, priceLabel: "Starting ₹1,000 (1-2 hours)", desc: "Perfect for families. Enjoy peaceful private boat ride at Sangam.", icon: "fa-ship", img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=220&fit=crop" },
-        { id: "prayag_hand_boat_10seat_30min", name: "Private Pontoon Boat (10 Seater)", capacity: "Up to 10 seats", duration: "30 min to 1 hour", price: 2500, priceLabel: "Starting ₹2,500 (30 min - 1 hour)", desc: "Luxury pontoon boat with comfortable seating.", icon: "fa-ship", img: "https://images.unsplash.com/photo-1566159396892-2c40a0e6c6d0?w=400&h=220&fit=crop" },
-        { id: "prayag_sharing_boat", name: "Shared / Public Boat", capacity: "Shared seating", duration: "30 min to 1 hour", price: 200, priceLabel: "Starting ₹200 per person", desc: "Economical option for solo travelers and couples.", icon: "fa-users", img: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=400&h=220&fit=crop" },
-        { id: "prayag_large_boat", name: "Large / Group Boat", capacity: "15-20 seats", duration: "30 min to 1 hour", price: 500, priceLabel: "Starting ₹500 per person", desc: "Spacious boat ideal for large groups and families.", icon: "fa-sailboat", img: "https://images.unsplash.com/photo-1566159396892-2c40a0e6c6d0?w=400&h=220&fit=crop" }
+        { id: "prayag_hand_boat_10seat_2hr", name: "Private Hand Boat (10 Seater)", capacity: "Up to 10 seats", duration: "1 to 2 hours", price: 1500, priceLabel: "Starting ₹1,500 (1-2 hours)", desc: "Perfect for families. Enjoy peaceful private boat ride at Sangam.", icon: "fa-ship", img: "../assets/image/handBoat.webp" },
+        { id: "prayag_hand_boat_10seat_30min", name: "Private Pontoon Boat (10 Seater)", capacity: "Up to 10 seats", duration: "30 min to 1 hour", price: 2500, priceLabel: "Starting ₹2,500 (30 min - 1 hour)", desc: "Luxury pontoon boat with comfortable seating.", icon: "fa-ship", img: "../assets/image/pantoon_boat.webp" },
+        { id: "prayag_sharing_boat", name: "Shared / Public Boat", capacity: "Shared seating", duration: "30 min to 1 hour", price: 200, priceLabel: "Starting ₹200 per person", desc: "Economical option for solo travelers and couples.", icon: "fa-users", img: "../assets/image/speed_boat.webp" },
+        { id: "prayag_large_boat", name: "Large / Group Boat", capacity: "15-20 seats", duration: "30 min to 1 hour", price: 500, priceLabel: "Starting ₹500 per person", desc: "Spacious boat ideal for large groups and families.", icon: "fa-sailboat", img: "../assets/image/large_boat.webp" }
       ],
       speedBoat: [
-        { id: "prayag_speed_boat_large", name: "Premium Speed Boat", capacity: "Up to 8 seats", duration: "45 min", price: 2500, priceLabel: "Starting ₹2,500 per boat", desc: "High-speed luxury speed boat with music system.", icon: "fa-rocket", img: "https://images.unsplash.com/photo-1590247813693-5541d1c609fd?w=400&h=220&fit=crop" }
+        { id: "prayag_speed_boat_large", name: "Premium Speed Boat", capacity: "Up to 8 seats", duration: "30 min to 1 hour", price: 2500, priceLabel: "Starting ₹2,500 per boat", desc: "High-speed luxury speed boat with music system.", icon: "fa-rocket", img: "../assets/image/Speed-Boat-Ride-3.webp" }
       ],
       cruise: []  // No cruise boats for Prayagraj
-    };
+    }
 
     // Boat Data for Varanasi (Kashi) - Has all options including Cruise
     const varanasiBoatData = {
       handBoat: [
-        { id: "varanasi_hand_boat", name: "Hand Boat (8 Person Max)", capacity: "Up to 8 seats", duration: "1 hour", price: 1200, priceLabel: "Starting ₹1,200 per boat", desc: "Traditional wooden boat for Ganga Aarti view.", icon: "fa-ship", img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=220&fit=crop" },
-        { id: "varanasi_sharing_boat", name: "Shared Boat", capacity: "Shared seating", duration: "45 min", price: 150, priceLabel: "Starting ₹150 per person", desc: "Economical shared boat for Ganga Aarti.", icon: "fa-users", img: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=400&h=220&fit=crop" }
+        { id: "varanasi_hand_boat", name: "Hand Boat (8 Person Max)", capacity: "Up to 8 seats", duration: "1 hour", price: 1500, priceLabel: "Starting ₹1,500 per boat", desc: "Traditional wooden boat for Ganga Aarti view.", icon: "fa-ship", img: "../assets/image/handBoat.webp" },
+        { id: "varanasi_sharing_boat", name: "Shared Boat", capacity: "Shared seating", duration: "45 min", price: 200, priceLabel: "Starting ₹200 per person", desc: "Economical shared boat for Ganga Aarti.", icon: "fa-users", img: "../assets/image/shared_boat.webp" }
       ],
       speedBoat: [
-        { id: "varanasi_speed_boat", name: "Speed Boat", capacity: "Up to 6 seats", duration: "30 min", price: 1800, priceLabel: "Starting ₹1,800 per boat", desc: "Fast boat ride covering longer distances.", icon: "fa-rocket", img: "https://images.unsplash.com/photo-1590247813693-5541d1c609fd?w=400&h=220&fit=crop" }
+        { id: "varanasi_speed_boat", name: "Speed Boat", capacity: "Up to 6 seats", duration: "45 min", price: 2000, priceLabel: "Starting ₹2000 per boat", desc: "Fast boat ride covering longer distances.", icon: "fa-rocket", img: "../assets/image/speed_boat.webp" }
       ],
       cruise: [
-        { id: "varanasi_cruise", name: "Luxury Ganga Cruise", capacity: "Up to 30 seats", duration: "1.5 hours", price: 3500, priceLabel: "Starting ₹3,500 per person", desc: "Luxury cruise with dinner and live music.", icon: "fa-sailboat", img: "https://images.unsplash.com/photo-1551808522-1a6a523f96d3?w=400&h=220&fit=crop" }
+        { id: "varanasi_cruise", name: "Luxury Ganga Cruise", capacity: "Up to 30 seats", duration: "1 hours", price: 3500, priceLabel: "Starting ₹3,500 per person", desc: "Luxury cruise with dinner and live music.", icon: "fa-sailboat", img: "../assets/image/cruise.webp" }
       ]
     };
 
