@@ -6,14 +6,14 @@
 <meta http-equiv="Expires" content="0"> 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spiritual Triangle</title>
+<title>Contact US</title>
 <link rel="stylesheet" href="/assets/css/index.css">
-<link rel="stylesheet" href="../assets/css/spiritualTriangle.css">
  <link rel="stylesheet" href="../assets/css/footer.css">
  <link rel="stylesheet" href="../assets/css/contactForm.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="../assets/js/layout.js"></script>
+<script src="../assets/js/contact.js"></script>
 
 
 </head>
@@ -23,36 +23,96 @@
 <div id="header"></div>
 
 <!-- Contact Section start -->
-<section class="contact-section">
-
-  <div class="contact-container">
-
-    <!-- LEFT INFO -->
-    <div class="contact-detail-info">
-      <h2>Get in Touch</h2>
-      <p>Have questions or want to book a cab? </p>
-        <p>Contact us anytime.</p>
-
-      <p><i class="fa fa-map-marker "></i> Varanasi, India</p>
-      <p><i class="fa fa-phone " aria-hidden="true"></i> +91 98765 43210</p>
-      <p><i class="fa-solid fa-envelope "></i> info@kashisangam.com</p>
+<div class="contact-dashboard"> 
+<div class="contact-card">
+    <div class="brand-bar">
+        
+        <div class="quick-contact">
+            <h1>Contact Us</h1>
+        </div>
     </div>
 
-    <!-- FORM -->
-    <div class="contact-form">
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="tel" placeholder="Mobile Number" required>
-        <textarea placeholder="Your Message" rows="4"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+    <div class="address-strip">
+        <span><i class="fas fa-map-marker-alt"></i> Zone 3, Beli Colony, AMA Blood Bank Brayagenj, Uttar Pradush-211002</span>
+        <span><i class="fas fa-envelope"></i> mishrarohit@kalkitourandtravels.com</span>
     </div>
 
-  </div>
+    <div class="grid-2col">
+        <!-- LEFT COLUMN: Now featuring the PERSON IMAGE CARD + contact details -->
+        <div class="info-side">
+            <!-- ✨ NEW: Image Card of Travel Expert ✨ -->
+            <div class="agent-card">
+                <div class="agent-image">
+                    <!-- Modern avatar illustration (professional travel consultant) - using a high quality free avatar image from ui faces / placeholder but with SVG safe -->
+                    <img src="../assets/image/Rohit.jpeg" alt="Travel Consultant - Rohit Mishra" 
+                         onerror="this.src='https://ui-avatars.com/api/?background=2c7a47&color=fff&rounded=true&size=120&name=Rohit+M';">
+                </div>
+                <div class="agent-info">
+                    <h3>Rohit Mishra</h3>
+                    <div class="agent-title">✈️ Senior Travel Consultant</div>
+                    <div class="agent-bio">
+                        🌏 5+ years crafting dream journeys | Expert in curated tours & custom itineraries. 
+                        Your personal travel guide for unforgettable experiences.
+                    </div>
+                    <div class="agent-contact-badge">
+                        <span><i class="fas fa-headset"></i> 24/7 Support</span>
+                        <span><i class="fas fa-globe"></i> 35+ Destinations</span>
+                    </div>
+                </div>
+            </div>
 
-</section>
-<!-- Contact Section start -->
+            <div class="info-title"> Get in touch</div>
+            <div class="contact-detail-item">
+                <i class="fas fa-phone"></i>
+                <div><strong>Call / SMS</strong><span> +91 9682701873 </span></div>
+            </div>
+            <div class="contact-detail-item">
+                <i class="fab fa-whatsapp"></i>
+                <div><strong>WhatsApp (Quick Response)</strong><span> <a style="text-decoration:none;color:black;" href="https://wa.me/9682701873?text=Hi%2C%20I%20need%20details%20for%Enquiry%20Dtails" target="_blank">9682701873</a></span></div>
+            </div>
+            <div class="contact-detail-item">
+                <i class="fas fa-envelope"></i>
+                <div><strong>Email Us</strong><span> mishrarohit@kalkitourandtravels.com</span></div>
+            </div>
+            
+            <!-- Trust badges -->
+            <button class="whatsapp-btn" id="directWhatsappBtn">
+                <i class="fab fa-whatsapp fa-lg"></i> <a style="text-decoration:none;color:white;" href="https://wa.me/9682701873?text=Hi%2C%20I%20need%20details%20for%Enquiry%20Dtails" target="_blank">Chat with Rohit on WhatsApp</a>
+            </button>
+        </div>
+
+        <!-- RIGHT COLUMN: Contact Form -->
+        <div class="form-side">
+            <h3>✍️ Send your travel query</h3>
+            <p>Fill the details & we'll respond on WhatsApp within minutes</p><br>
+            <form id="contactForm">
+                <div class="input-group">
+                    <label><i class="far fa-user"></i> Full Name *</label>
+                    <input type="text" id="fullName" placeholder="e.g. Rohan Sharma" required>
+                </div>
+                <div class="input-group">
+                    <label><i class="fas fa-phone-alt"></i> Phone Number *</label>
+                    <input type="tel" id="phoneNumber" placeholder="Your active WhatsApp number" required>
+                </div>
+                <div class="input-group">
+                    <label><i class="far fa-envelope"></i> Email (optional)</label>
+                    <input type="email" id="emailAddress" placeholder="you@example.com">
+                </div>
+                <div class="input-group">
+                    <label><i class="far fa-comment-dots"></i> Your Message / Travel Plan *</label>
+                    <textarea id="userMessage" placeholder="Tell us about your dream destination, budget, travel dates or any special request..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn" onclick="sendData()"><i class="fab fa-whatsapp"></i> Send via WhatsApp →</button>
+            </form>
+            <p style="font-size: 12px; margin-top: 1rem; color:#6e8b6e;"><i class="fas fa-info-circle"></i> Your message will be sent directly to our expert team on WhatsApp (+919682701873). We reply fast!</p>
+        </div>
+    </div>
+
+    
+</div>
+
+<div id="toastMsg" class="toast-msg">✨ Redirecting to WhatsApp with your details ✨</div>
+</div>
 <!-- FOOTER -->
 <div id="footer"></div>
 
