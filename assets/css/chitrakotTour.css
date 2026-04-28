@@ -1,5 +1,4 @@
 /* RESET */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
    --chitrkotTour-saffron:    #C85A00;
@@ -22,15 +21,12 @@
       --chitrkotTour-radius-sm:  8px;
 }
 
-/* BODY */
-/* body {
-  font-family: 'DM Sans', sans-serif;
-  background:#FDF8F0;
-  color:#2D1B4E;
-} */
+
 
 /* WRAPPER */
-.chitrkotTour-wrap { padding-bottom:40px; }
+.chitrkotTour-wrap { max-width: 100%;
+  margin: 0 auto;
+  padding: 0 0 4rem; }
 
 /* HEADER */
 .chitrkotTour-header {
@@ -62,7 +58,7 @@
       border-left: 2px solid var(--chitrkotTour-saffron);
       padding-left: 1rem;
       font-family: var(--chitrkotTour-font-display);
-      font-style: italic;
+      /* font-style: italic; */
       font-size: 14px;
       color: rgba(255,255,255,0.7);
       line-height: 1.7;
@@ -114,13 +110,23 @@
 .chitrkotTour-body {
       padding: 0 1.5rem;
       display: grid;
-      grid-template-columns: 1fr 310px;
+      grid-template-columns: 1fr 350px;
       gap: 1.75rem;
       align-items: start;
 }
 
 .chitrkotTour-main { display:flex; flex-direction:column; gap:20px; }
-.chitrkotTour-sidebar { display:flex; flex-direction:column; gap:20px; }
+.chitrkotTour-sidebar { 
+  display:flex; 
+  flex-direction:column; 
+  gap:20px;
+  position: sticky; 
+  display:flex; 
+  flex-direction:column; 
+  gap:20px;
+  position:sticky;
+  top: 1.5rem;
+}
 
 /* CARD */
 .chitrkotTour-card {
@@ -172,6 +178,8 @@
   gap:10px;
 }
 
+
+
 .chitrkotTour-festival-item {
   background: var(--chitrkotTour-parchment);
   border-radius: var(--chitrkotTour-radius-sm);
@@ -216,7 +224,7 @@
 
 /* CONTACT */
 .chitrkotTour-contact {
-  background:#C85A00;
+  background:#DA8D4FD1;
   color:#fff;
   padding:20px;
   border-radius:10px;
@@ -341,10 +349,7 @@
   transition: 0.3s;
 }
 
-/* ROTATE ICON */
-/* .chitrkotTour-acc-item-integrity.active .acc-icon {
-  transform: rotate(45deg);
-} */
+
 
 /* CONTENT */
 .chitrkotTour-acc-content-integrity {
@@ -414,4 +419,14 @@
 /* MOBILE */
 @media(max-width:720px){
   .chitrkotTour-body{ grid-template-columns:1fr; }
+}
+
+#email_contact{
+  text-decoration: none;
+}
+.contact-data{
+  height:24px
+}
+.chitrakoot-dashboard{
+  background: rgb(126 153 153 / 49%);
 }

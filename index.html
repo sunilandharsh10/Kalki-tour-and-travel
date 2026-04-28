@@ -7,7 +7,7 @@
   <meta http-equiv="Expires" content="0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kashi Sangam</title>
+  <title>Kalki Tour and Travel</title>
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
    <link rel="stylesheet" href="../assets/css/cabServicesbook.css">
@@ -27,9 +27,11 @@
 
     <!-- Logo -->
     <div class="logo-section">
-      <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="logo">
+     <!-- <img src="../assets/logos/kalki_logo.jpeg" />  -->
+     <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="logo"> 
       <div class="logo-text">
-        <a id="text-decor" href="index.html"><span>Kashi</span> <span>Sangam</span></a>
+        <!-- <a id="text-decor" href="index.html"><img src="../assets/logos/kalki_logo.jpeg" /></a>  -->
+        <a id="text-decor" href="index.html"><span>Kalki</span> <span>Tour and Travels</span></a>
       </div>
     </div>
 
@@ -38,7 +40,7 @@
       <i class="fa-solid fa-envelope"></i>
       <div class="contact-text">
         <b>FOR BOOKING MAIL US :</b>
-        mishrarohit1857@gmail.com
+        <a href="mailto:mishrarohit@kalkitourandtravels.com">mishrarohit@kalkitourandtravels.com</a>
       </div>
     </div>
 
@@ -46,7 +48,7 @@
     <div class="actions">
 
       <div class="action-box">
-        <i class="fa-brands fa-whatsapp whatsapp"></i>
+        <a href="https://wa.me/9682701873?text=Hi%2C%20I%20need%20details%20for%Tour%20Plan"><i class="fa-brands fa-whatsapp whatsapp"></i></a>
         <div class="action-text">
           <b>WHATSAPP US</b>
           +91 9682701873
@@ -54,7 +56,7 @@
       </div>
 
       <div class="action-box">
-        <i class="fa-solid fa-phone call"></i>
+        <a href="tel:+919682701873" ><i class="fa-solid fa-phone call"></i></a>
         <div class="action-text">
           <b>CALL US</b>
           +91 9682701873
@@ -67,7 +69,7 @@
   <!-- top header end -->
   <!-- Navbar -->
   <div class="navbar">
-    <div class="logo"><a id="text-decor" href="index.html">Kalki Tour and Travel</a></div>
+    <div class="logo"><a id="text-decor" href="index.html">Kalki Tour and Travels</a></div>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
 
     <div class="nav-links" id="navLinks">
@@ -80,40 +82,43 @@
               <div class="submenu">
                 <a href="#">Prayagraj Tour ▸</a>
                 <div class="submenu-content">
-                    <a href="prayagrajCity.html">Prayagraj City Tour</a>
+                    <a href="prayagCity.html">Prayagraj City Tour</a>
                     <a href="prayagrajTour.html">Sangam Tour</a>
                 </div>
             </div>
-          <a href="lucknowTour.html">Lucknow Tour</a>
+          <a href="ayodhyaTour.html">Ayodhya Tour</a>  
           <a href="chitrakotTour.html">Chitrakoot Tour</a>
-          <a href="ayodhyaToPrayagRaj.html">Prayagraj to Ayodhya</a>
-          <a href="chitrakootToPrayaraj.html">Prayagraj to Chitrakoot</a>
-          <a href="prayagrajtovaransi.html">Prayagraj to Varanasi </a>
+          <a href="lucknowTour.html">Lucknow Tour</a>
+          <a href="ayodhyaToPrayagRaj.html">Prayagraj To Ayodhya</a>
+          <a href="prayagrajtovaransi.html">Prayagraj To Varanasi</a>
+          <a href="chitrakootToPrayaraj.html">Prayagraj To Chitrakoot</a>
+          <a href="upTour.html">Uttar Pradesh Tour</a>
         </div>
     </div>
       <a href="spritualTringle.html">Spiritual Triangle</a>
       <a href="cabServices.html">Cab Booking</a> 
       <div class="dropdown">
-        <a href="#">Other Services ▾</a>
+        <a href="#">Our Services ▾</a>
         <div class="dropdown-content">
           <a href="boatBooking.html">Boat Booking</a>
           <a href="bookTourGuide.html">Personal Guide</a>
-          <a href="#">Tent Booking (During Kubh Mela)</a>
-          <a href="puja.html">Puja Booking (During Kubh Mela)</a>
+          <a href="#" disabled="true">Tent Booking (During Kubh Mela)</a>
+          <a href="puja.html">Puja Booking</a>
         </div>
       </div>
       <a href="aboutUs.html">About Us</a>
-      <a href="contactUs.html">Contact Us</a>
+      <a href="contact.html">Contact Us</a>
     </div>
   </div>
 
   <!-- Hero -->
-  <div class="hero">
-    <div>
-      <h1>Explore Divine Kashi</h1>
-      <button class="btn">Book Now</button>
-    </div>
+  <section class="hero" id="hero">
+  <div class="hero-content">
+    <!-- <h1>Welcome to Varanasi</h1> -->
+    <p>The Spiritual Heart of India</p>
+    <button class="explore-btn">Explore Tour</button>
   </div>
+</section>
 
   <!-- Ultra About  start-->
    <div id="ultra-about"></div>
@@ -152,7 +157,7 @@
         <h3>Chitrakoot Tour</h3>
       </div>
       <div class="card"><img src="../assets/image/prayagraj.webp">
-        <h3>Prayagraj Sanam</h3>
+        <h3>Prayagraj Sangam</h3>
       </div>
     </div>
   </section>
@@ -219,36 +224,241 @@
   
 
   <script>
-      document.querySelectorAll(".dropdown > a").forEach(item => {
-      item.addEventListener("click", function (e) {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          this.parentElement.classList.toggle("active");
-        }
-      });
+    // Array of images for Varanasi tour
+const heroImages = [
+  '../assets/image/Varanasi-Prayagraj-Ayodhya_Banner.jpg',
+  '../assets/image/ramsita.png',
+  '../assets/image/sangam_triveni.webp',
+  '../assets/image/varans_tour.webp',
+  '../assets/image/prayagraj.webp',
+  '../assets/image/magha_mela.webp'
+];
+
+class HeroSlideshow {
+  constructor(images, intervalTime = 5000) {
+    this.images = images;
+    this.currentIndex = 0;
+    this.intervalTime = intervalTime;
+    this.interval = null;
+    this.init();
+  }
+
+  init() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return; // ✅ FIX 1: Check if hero exists
+    
+    // Clear existing slides
+    const existingSlides = hero.querySelectorAll('.hero-slide');
+    existingSlides.forEach(slide => slide.remove());
+    
+    // Create slide elements
+    this.images.forEach((img, index) => {
+      const slide = document.createElement('div');
+      slide.className = 'hero-slide';
+      if (index === 0) slide.classList.add('active');
+      slide.style.backgroundImage = `url('${img}')`;
+      hero.appendChild(slide);
     });
-    function openLightbox(el) {
-      document.getElementById("lightbox").style.display = "flex";
-      document.getElementById("lightbox-img").src = el.querySelector("img").src;
+    
+    // Add navigation dots
+    this.addDots();
+    
+    // Add prev/next buttons
+    this.addButtons();
+    
+    // Start auto-slideshow
+    this.startAutoSlide();
+  }
+
+  addDots() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    
+    const existingDots = hero.querySelector('.slider-dots');
+    if (existingDots) existingDots.remove();
+    
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'slider-dots';
+    
+    this.images.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      if (index === this.currentIndex) dot.classList.add('active');
+      dot.addEventListener('click', () => this.goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+    
+    hero.appendChild(dotsContainer);
+  }
+
+  addButtons() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    
+    // Remove existing buttons
+    const existingPrev = hero.querySelector('.prev-btn');
+    const existingNext = hero.querySelector('.next-btn');
+    if (existingPrev) existingPrev.remove();
+    if (existingNext) existingNext.remove();
+    
+    // Prev button
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'slider-btn prev-btn';
+    prevBtn.innerHTML = '❮';
+    prevBtn.addEventListener('click', () => this.prevSlide());
+    
+    // Next button
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'slider-btn next-btn';
+    nextBtn.innerHTML = '❯';
+    nextBtn.addEventListener('click', () => this.nextSlide());
+    
+    hero.appendChild(prevBtn);
+    hero.appendChild(nextBtn);
+  }
+
+  goToSlide(index) {
+    const allSlides = document.querySelectorAll('.hero-slide');
+    if (allSlides.length === 0) return;
+    
+    // Reset zoom on current slide
+    const currentSlide = document.querySelector('.hero-slide.active');
+    if (currentSlide) {
+      currentSlide.classList.remove('active');
+      currentSlide.style.transform = 'scale(1)';
     }
-
-    function closeLightbox() {
-      document.getElementById("lightbox").style.display = "none";
+    
+    this.currentIndex = (index + this.images.length) % this.images.length;
+    
+    // Activate new slide with zoom
+    const newSlide = allSlides[this.currentIndex];
+    if (newSlide) {
+      newSlide.classList.add('active');
+      // Force reflow to restart transition
+      void newSlide.offsetWidth;
+      newSlide.style.transform = 'scale(1.04)';
     }
+    
+    // Update dots
+    this.updateDots();
+    
+    // Reset timer
+    this.resetAutoSlide();
+  }
 
-  fetch("../layout/cabServicesbook.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("cab-section").innerHTML = data;
+  nextSlide() {
+    this.goToSlide(this.currentIndex + 1);
+  }
+
+  prevSlide() {
+    this.goToSlide(this.currentIndex - 1);
+  }
+
+  updateDots() {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+      if (index === this.currentIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
     });
+  }
 
+  startAutoSlide() {
+    this.interval = setInterval(() => {
+      this.nextSlide();
+    }, this.intervalTime);
+  }
 
-  fetch("../layout/ulta_about.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("ultra-about").innerHTML = data;
-    });
+  resetAutoSlide() {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+    this.startAutoSlide();
+  }
+}
 
+//  FIX 2: Check if element exists before slideshow initialization
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('.hero')) {
+    const slideshow = new HeroSlideshow(heroImages, 5000);
+  }
+});
+
+//  FIX 3: Dropdown toggle for mobile
+document.querySelectorAll(".dropdown > a").forEach(item => {
+  item.addEventListener("click", function (e) {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      this.parentElement.classList.toggle("active");
+    }
+  });
+});
+
+//  FIX 4: Lightbox functions - handles both image and container clicks
+function openLightbox(el) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  
+  if (!lightbox || !lightboxImg) return;
+  
+  // Find the image element
+  let imgElement = el;
+  if (el.tagName !== 'IMG') {
+    imgElement = el.querySelector("img");
+  }
+  
+  if (imgElement && imgElement.src) {
+    lightboxImg.src = imgElement.src;
+    lightbox.style.display = "flex";
+  }
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) {
+    lightbox.style.display = "none";
+  }
+}
+
+//  FIX 5: Close lightbox when pressing Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeLightbox();
+  }
+});
+
+// FIX 6: Fetch with error handling
+fetch("../layout/cabServicesbook.html")
+  .then(res => {
+    if (!res.ok) throw new Error('Cab services not found');
+    return res.text();
+  })
+  .then(data => {
+    const cabSection = document.getElementById("cab-section");
+    if (cabSection) cabSection.innerHTML = data;
+  })
+  .catch(error => {
+    console.error("Error loading cab services:", error);
+    const cabSection = document.getElementById("cab-section");
+    if (cabSection) cabSection.innerHTML = '<p>⚠️ Cab services temporarily unavailable</p>';
+  });
+
+fetch("../layout/ulta_about.html")
+  .then(res => {
+    if (!res.ok) throw new Error('About section not found');
+    return res.text();
+  })
+  .then(data => {
+    const ultraAbout = document.getElementById("ultra-about");
+    if (ultraAbout) ultraAbout.innerHTML = data;
+  })
+  .catch(error => {
+    console.error("Error loading about section:", error);
+    const ultraAbout = document.getElementById("ultra-about");
+    if (ultraAbout) ultraAbout.innerHTML = '<p>⚠️ About section temporarily unavailable</p>';
+  });
   </script>
 
 </body>

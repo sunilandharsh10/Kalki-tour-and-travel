@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>सनातन यात्रा | Sacred Journeys Through Uttar Pradesh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Tiro:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/upTour.css">
+  <link rel="stylesheet" href="../assets/css/index.css">
+  
+  <link rel="stylesheet" href="../assets/css/footer.css">
+  <script src="../assets/js/layout.js"></script>
+</head>
+<body>
+<div id="header"></div>
+<div class="bg-ornament"></div>
+<div class="mandala"></div>
+<div class="mandala mandala-2"></div>
+
+<!-- Floating diyas generated randomly -->
+<script>
+  for(let i=0;i<24;i++) {
+    let diya = document.createElement('div');
+    diya.className = 'floating-diya';
+    diya.innerHTML = '🪔';
+    diya.style.left = Math.random() * 100 + '%';
+    diya.style.animationDuration = 12 + Math.random() * 15 + 's';
+    diya.style.animationDelay = Math.random() * 10 + 's';
+    diya.style.fontSize = 18 + Math.random() * 30 + 'px';
+    document.body.appendChild(diya);
+  }
+</script>
+
+<!-- <nav class="navbar">
+  <div class="logo">YĀTRĀ <span>by Sacred Routes</span></div>
+  <div class="nav-links">
+    <a href="#">Explore</a>
+    <a href="#">Pilgrimage</a>
+    <a href="#">Experiences</a>
+    <a href="#">Journal</a>
+  </div>
+</nav> -->
+
+<section class="hero-modern">
+  <div class="hero-content">
+    <div class="hero-badge">✦ 16 NIGHTS OF AWAKENING ✦</div>
+    <h1>Where the <span class="hero-gradient-text">Ganges hums</span><br>and temples breathe</h1>
+    <p class="hero-desc">A handcrafted spiritual odyssey across Uttar Pradesh's most hallowed grounds — from the ghats of Varanasi to the silence of Sarnath.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-number">9+</div><div>Sacred Cities</div></div>
+      <div class="stat"><div class="stat-number">1000+</div><div>Miles of Soul</div></div>
+      <div class="stat"><div class="stat-number">Since 2025</div><div>Guiding Pilgrims</div></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="floating-card card-1"><i class="fas fa-om"></i> Ganga Aarti</div>
+    <div class="floating-card card-2"><i class="fas fa-buddha"></i> Bodhi Tree</div>
+    <div class="floating-card card-3"><i class="fas fa-temple"></i> Kashi</div>
+  </div>
+</section>
+
+<div class="journey-section">
+  <div class="section-header">
+    <div class="section-sub">the sacred thread</div>
+    <h2>Your 16-day spiritual <br>trajectory</h2>
+  </div>
+  <div class="timeline" id="timeline">
+    <!-- itinerary data from original tour but with unique presentation -->
+  </div>
+</div>
+
+<div class="sacred-grid" id="sacredGrid"></div>
+
+<!-- <div class="cta-wave">
+  <h3>Walk the path of the ancients</h3>
+  <p style="max-width: 600px; margin: 0 auto 20px;">Limited to small groups • Personal spiritual guides • Authentic rituals</p>
+  <button class="btn-glow" id="ctaBtn"><i class="fas fa-envelope"></i> Request Sacred Itinerary</button>
+</div> -->
+
+<!-- <footer>
+  <p>© 2025 Sanātana Yātrā — Designed with reverence for the eternal.</p>
+</footer> -->
+
+<script>
+  // 16 day itinerary data - original journey but modern design
+  const daysData = [
+    { day: 1, title: "Arrival in Lucknow – The city of Nawabs", places: "Bada Imambara, Rumi Darwaza, Hazratganj Market. Overnight in Lucknow." },
+    { day: 2, title: "Naimisharanya – forest of sages", places: "Chakratirth, Sita Kund, Lalita Devi Temple, Vyas Gaddi. Return to Lucknow overnight." },
+    { day: 3, title: "Ayodhya – Birthplace of Lord Ram", places: "Shri Ram Janmabhoomi, Hanuman Garhi, Saryu Aarti at Ram Ki Paidi." },
+    { day: 4, title: "Ayodhya’s hidden gems", places: "Kanak Bhawan, Treta Ke Thakur, Nageshwarnath, Guptar Ghat, Sugriv Parvat." },
+    { day: 5, title: "Chappiya – Swaminarayan Janmbhoomi", places: "Swaminarayan Temple, village tranquility, return to Ayodhya/Gonda." },
+    { day: 6, title: "Prayagraj – Triveni Sangam", places: "Holy dip at Sangam, Bade Hanuman Mandir, Alopi Devi Temple." },
+    { day: 7, title: "Prayagraj heritage walk", places: "Anand Bhawan Museum, Khusro Bagh, Akshay Vat Tree." },
+    { day: 8, title: "Chitrakoot – Ram's exile", places: "Ram Ghat, Kamadgiri Parikrama, Bharat Milap Mandir." },
+    { day: 9, title: "Chitrakoot caves & ashrams", places: "Gupt Godavari, Hanuman Dhara, Sati Anusuya Ashram, Spatik Shila." },
+    { day: 10, title: "Varanasi arrival", places: "Drive to Varanasi, evening at Assi Ghat. Overnight in Varanasi." },
+    { day: 11, title: "Kashi Vishwanath & Ganga Aarti", places: "Kashi Vishwanath, Annapurna, Tulsi Manas, Sankat Mochan. Sunset boat ride + Ganga Aarti at Dashashwamedh." },
+    { day: 12, title: "Sarnath – The Buddha's first sermon", places: "Dhamek Stupa, Sarnath Museum, Mulagandha Kuti Vihar." },
+    { day: 13, title: "Bodh Gaya – Enlightenment", places: "Mahabodhi Temple Complex, evening prayers." },
+    { day: 14, title: "Buddhist trail", places: "Bodhi Tree, Great Buddha Statue, Thai/Japanese/Bhutanese monasteries, Sujata Garh." },
+    { day: 15, title: "Optional Rajgir/Nalanda", places: "Excursion to ancient universities & Griddhakuta Hill." },
+    { day: 16, title: "Departure with blessings", places: "Drop at Gaya/Varanasi/Patna airport." }
+  ];
+
+  const timelineDiv = document.getElementById('timeline');
+  daysData.forEach((item, idx) => {
+    const timelineItem = document.createElement('div');
+    timelineItem.className = 'timeline-item';
+    timelineItem.innerHTML = `
+      <div class="timeline-marker">${item.day}</div>
+      <div class="timeline-content">
+        <div class="day-number">DAY ${item.day}</div>
+        <h3>${item.title}</h3>
+        <div class="day-details"><ul><li>${item.places.split(',').map(p => `<li>${p.trim()}</li>`).join('')}</li></ul></div>
+      </div>
+    `;
+    timelineItem.addEventListener('click', () => {
+      timelineItem.classList.toggle('active');
+    });
+    // open first as default
+    if(idx === 0) timelineItem.classList.add('active');
+    timelineDiv.appendChild(timelineItem);
+  });
+
+  // Sacred Places Grid - unique regions
+  const sacredPlaces = [
+    { name: "Varanasi", desc: "The city of light where death is liberation.", img: "https://placehold.co/600x400/DFB88C/2d2418?text=Ganga+ghats" },
+    { name: "Ayodhya", desc: "Ram's birthplace, resonating with divine vibrations.", img: "https://placehold.co/600x400/E6C99E/2d2418?text=Ram+Mandir" },
+    { name: "Sarnath", desc: "Where Buddha turned the wheel of dharma.", img: "https://placehold.co/600x400/DFB88C/2d2418?text=Dhamek+Stupa" },
+    { name: "Chitrakoot", desc: "Nature's cathedral where Ram walked.", img: "https://placehold.co/600x400/E6C99E/2d2418?text=Kamadgiri" },
+    { name: "Prayagraj", desc: "Confluence of three sacred rivers.", img: "https://placehold.co/600x400/DFB88C/2d2418?text=Sangam" },
+    { name: "Bodh Gaya", desc: "The bodhi tree of awakening.", img: "https://placehold.co/600x400/E6C99E/2d2418?text=Mahabodhi" }
+  ];
+
+  const grid = document.getElementById('sacredGrid');
+  sacredPlaces.forEach(place => {
+    const card = document.createElement('div');
+    card.className = 'sacred-card';
+    card.innerHTML = `
+      <div class="card-bg" style="background-image: url('${place.img}');"></div>
+      <h3>${place.name}</h3>
+      <p>${place.desc}</p>
+    `;
+    grid.appendChild(card);
+  });
+
+  // CTA interaction
+  document.getElementById('ctaBtn').addEventListener('click', () => {
+    alert("🙏 Send 'Namaste' on WhatsApp +91 9935353482 to receive the complete spiritual e-brochure.");
+  });
+</script>
+
+<!-- custom cursor effect -->
+<script>
+  const cursor = document.createElement('div'); cursor.className = 'cursor'; 
+  const follower = document.createElement('div'); follower.className = 'cursor-follower';
+  document.body.appendChild(cursor); document.body.appendChild(follower);
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.transform = `translate(${e.clientX - 6}px, ${e.clientY - 6}px)`;
+    follower.style.transform = `translate(${e.clientX - 15}px, ${e.clientY - 15}px)`;
+  });
+</script>
+<div id="footer"></div>
+</body>
+</html>

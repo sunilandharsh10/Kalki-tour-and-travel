@@ -1,16 +1,6 @@
 /* ===== SPIRITUAL TRIANGLE - MAIN STYLESHEET ===== */
 
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
 
-/* body {
-  background: #fefaf2;
-  font-family: 'Inter', sans-serif;
-  color: #2c2418;
-} */
 
 /* custom glow & spiritual aura */
 .spiritual-triangle-unique {
@@ -437,4 +427,8 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+.spritual-dashboard{
+  background: rgb(126 153 153 / 49%);
+    /* overflow-x: hidden; */
 }

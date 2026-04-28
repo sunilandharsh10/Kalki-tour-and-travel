@@ -24,14 +24,15 @@
 
 <div id="header"></div>
 
-<section class="booking-header">
-  <!-- <div class="booking-badge"><i class="fas fa-passport"></i> IATO & TGFI Agreement</div> -->
-  <h1>📋 <span>Book Guide</span> <span class="booking-badge">Certified by Govt of India</span></h1>
+<div class="guid-dashboard">
+<div class="booking-header">
+  <h1>📋 <span>Book Guide</span> <span class="booking-badge">Certified by Govt. of Uttar Pradesh Tourism Department</span></h1>
   <div class="booking-sub">Complete booking with instant fee calculation</div>
   <div class="agreement-badge"><i class="fas fa-calendar-alt"></i> Valid Oct 2025 – Sep 2027</div>
-</section>
+</div>
 
 <div class="booking-container">
+  
   <form id="touristForm">
     <!-- Personal Information -->
     <div class="form-section">
@@ -104,7 +105,7 @@
           <label><i class="fas fa-comment-dots"></i> Preferred Languages (Ctrl+Click for multiple)</label>
           <select id="languages" multiple size="4">
             <option>Hindi</option><option>English</option><option>Spanish</option>
-            <option>French</option><option>German</option><option>Russian</option>
+            <option>French</option><option>German</option><option>Russian</option><option>Others</option>
           </select>
         </div>
         <div class="input-group">
@@ -142,12 +143,12 @@
                   <button type="button" id="halfDayBtn" class="duration-btn duration-half">
                     Half Day
                     <span>Up to 4 hours</span>
-                    <span class="price">₹2,500</span>
+                    <span class="price">₹2,000</span>
                   </button>
                   <button type="button" id="fullDayBtn" class="duration-btn duration-full">
                     Full Day
                     <span>4 to 8 hours</span>
-                    <span class="price">₹3,250</span>
+                    <span class="price">₹2,500</span>
                   </button>
                 </div>
               </div>
@@ -159,73 +160,12 @@
                   <div class="option-content">
                     <div class="option-header">
                       <span class="option-title">Foreign Language Required</span>
-                      <span class="option-price" id="foreignPriceDisplay">+₹1,000</span>
+                      <span class="option-price" id="foreignPriceDisplay">+₹850</span>
                     </div>
                     <p class="option-desc">Additional allowance for non-English languages (Half Day: ₹850 | Full Day: ₹1,000)</p>
                   </div>
                 </label>
               </div>
-
-              <!-- Outstation Service -->
-              <!-- <div class="option-card-blue"> -->
-                <!-- <label class="option-flex">
-                  <input type="checkbox" id="outstationCheckbox" class="option-checkbox">
-                  <div class="option-content">
-                    <div class="option-header">
-                      <span class="option-title">Outstation Service</span>
-                      <span class="option-price">₹2,200 - ₹5,500+</span>
-                    </div>
-                    <p class="option-desc">For trips beyond 100km or overnight stays</p>
-                  </div>
-                </label> -->
-                <!-- <div id="outstationRangeContainer" class="range-container hidden">
-                  <input type="range" id="outstationRange" min="2200" max="5500" step="100" value="2200" class="range-slider">
-                  <div class="range-labels">
-                    <span>Basic (100km)</span>
-                    <span>Long Distance / Overnight</span>
-                  </div>
-                  <div class="range-value">Selected: ₹<span id="outstationValue">2,200</span></div>
-                </div> -->
-              <!-- </div> -->
-
-              <!-- Additional Options Grid -->
-              <!-- <div class="options-grid"> -->
-                <!-- <div class="option-row option-row-purple">
-                  <label class="option-row-flex">
-                    <input type="checkbox" id="earlyLateCheckbox" class="option-row-checkbox">
-                    <div class="option-row-content">
-                      <div class="option-row-header">
-                        <span class="option-row-title">Early/Late Hours</span>
-                        <span class="option-row-price">+₹850</span>
-                      </div>
-                      <p class="option-row-desc">Before 7:30 AM or after 8:30 PM</p>
-                    </div>
-                  </label>
-                </div> -->
-                <!-- <div class="option-row option-row-green">
-                  <label class="option-row-flex">
-                    <input type="checkbox" id="extraCityCheckbox" class="option-row-checkbox">
-                    <div class="option-row-content">
-                      <div class="option-row-header">
-                        <span class="option-row-title">Extra City Allowance</span>
-                        <span class="option-row-price">+₹500</span>
-                      </div>
-                      <p class="option-row-desc">Report at hotel (applicable for select cities)</p>
-                    </div>
-                  </label>
-                </div> -->
-                <!-- <div class="option-row option-row-pink">
-                  <label class="option-row-flex">
-                    <input type="checkbox" id="specialEventCheckbox" class="option-row-checkbox">
-                    <div class="option-row-content">
-                      <div class="option-row-header">
-                        <span class="option-row-title">Special Event Allowance</span>
-                        <span class="option-row-price">+₹400 - ₹500</span>
-                      </div>
-                      <p class="option-row-desc">Special tours and attractions</p>
-                    </div>
-                  </label>
-                </div> -->
               </div>
             </div>
           </div>
@@ -274,11 +214,12 @@
     <button onclick="closeModal()">OK, Got it</button>
   </div>
 </div>
+<a href="https://wa.me/919682701873?text=I'm%20interested%20in%20Book%20Guide" class="whatsapp-float-guide" target="_blank">
+  <i class="fab fa-whatsapp"></i> Book Guide
+</a>
 
 <div id="footer"></div>
 
-<script>
-  
-</script>
+ 
 </body>
 </html>

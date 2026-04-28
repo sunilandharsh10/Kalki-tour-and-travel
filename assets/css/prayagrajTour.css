@@ -1,5 +1,4 @@
-/* RESET */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 
 :root {
    --prayagrajTour-saffron:    #C85A00;
@@ -22,12 +21,7 @@
       --prayagrajTour-radius-sm:  8px;
 }
 
-/* BODY */
-/* body {
-  font-family: 'DM Sans', sans-serif;
-  background:#FDF8F0;
-  color:#2D1B4E;
-} */
+
 
 /* WRAPPER */
 .prayagrajTour-wrap { padding-bottom:40px; }
@@ -62,7 +56,7 @@
       border-left: 2px solid var(--prayagrajTour-saffron);
       padding-left: 1rem;
       font-family: var(--prayagrajTour-font-display);
-      font-style: italic;
+      /* font-style: italic; */
       font-size: 14px;
       color: rgba(255,255,255,0.7);
       line-height: 1.7;
@@ -114,13 +108,23 @@
 .prayagrajTour-body {
       padding: 0 1.5rem;
       display: grid;
-      grid-template-columns: 1fr 310px;
+      grid-template-columns: 1fr 350px;
       gap: 1.75rem;
       align-items: start;
 }
 
-.prayagrajTour-main { display:flex; flex-direction:column; gap:20px; }
-.prayagrajTour-sidebar { display:flex; flex-direction:column; gap:20px; }
+.prayagrajTour-main { 
+  display:flex; 
+  flex-direction:column; 
+  gap:20px; 
+}
+.prayagrajTour-sidebar { 
+  display:flex; 
+  flex-direction:column; 
+  gap:20px;
+  position:sticky;
+  top: 1.5rem;
+ }
 
 /* CARD */
 .prayagrajTour-card {
@@ -216,9 +220,9 @@
 
 /* CONTACT */
 .prayagrajTour-contact {
-  background:#C85A00;
+  background:#e58d46cc;
   color:#fff;
-  padding:20px;
+  padding:32px;
   border-radius:10px;
 }
 
@@ -410,8 +414,45 @@
 .prayagrajTour-pay-btn:active {
   transform: scale(0.97);
 }
+.whatsapp-float-prayag {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  border-radius: 50px;
+  padding: 10px 18px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 99;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.whatsapp-float-prayag:hover {
+  background: #128C7E;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
 
 /* MOBILE */
 @media(max-width:720px){
   .prayagrajTour-body{ grid-template-columns:1fr; }
+}
+
+.prayaraj-dashboard{
+    background: rgb(126 153 153 / 49%);
+    /* overflow-x: hidden; */
+  }
+  #email_contact{
+  text-decoration: none;
+}
+.contact-data{
+  height:24px
+
 }

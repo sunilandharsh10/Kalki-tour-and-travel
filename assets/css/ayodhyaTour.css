@@ -1,5 +1,5 @@
 /* ─── RESET & BASE ─── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
  
     :root {
       --ayodhyaTour-saffron:    #C85A00;
@@ -22,14 +22,7 @@
       --ayodhyaTour-radius-sm:  8px;
     }
  
-    /* body {
-      font-family: var(--ayodhyaTour-font-body);
-      background: var(--ayodhyaTour-cream);
-      color: var(--ayodhyaTour-text);
-      line-height: 1.6;
-      min-height: 100vh;
-    } */
- 
+  
     /* ─── LAYOUT WRAPPER ─── */
     .ayodhyaTour-wrap {
       max-width: 100%;
@@ -374,7 +367,7 @@
  
     /* ─── CONTACT ─── */
     .ayodhyaTour-contact {
-      background: var(--ayodhyaTour-saffron);
+      background: #ce864a;
       border-radius: var(--ayodhyaTour-radius);
       padding: 1.5rem;
       color: #fff;
@@ -547,6 +540,32 @@
   margin-bottom: 6px;
 }
 
+.whatsapp-float-ayodhya {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  border-radius: 50px;
+  padding: 10px 18px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 99;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.whatsapp-float-ayodhya:hover {
+  background: #128C7E;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
 /* HOVER */
 .ayodhyaTour-acc-btn-integrity:hover {
   color: #ff7a00;
@@ -560,3 +579,14 @@
       .ayodhyaTour-header h1 { font-size: 32px; }
       .ayodhyaTour-festivals-grid { grid-template-columns: 1fr; }
     }
+
+.ayodhya-dashboard{
+    background: rgb(126 153 153 / 49%);
+}
+  #email_contact{
+  text-decoration: none;
+}
+.contact-data{
+  height:24px
+
+}

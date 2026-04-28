@@ -15,49 +15,42 @@
     <link rel="stylesheet" href="assets/css/actionWhats.css">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
-    <link rel="stylesheet" href="assets/css/lucknowTour.css">
+    <link rel="stylesheet" href="assets/css/lucknowTour.css"> 
     <link rel="stylesheet" href="../assets/css/bookingButton.css">
     <script src="../assets/js/layout.js"></script>
 
+    
 </head>
 
 <body>
     <div id="header"></div>
-    <div class="lucknowTour-wrap">
+    <div class="lucknow-dashboard">
+        <div class="lucknowTour-wrap">
 
-        <div class="whatsapp-action-box">
-            <a href="https://wa.me/919682701873?text=I%20am%20interested%20in%20this%20tour" target="_blank">
-                <i class="fa-brands fa-whatsapp whatsapp-v"></i>
-            </a>
-        </div>
-        <!-- HEADER -->
-        <div class="lucknowTour-header">
-            <div class="lucknowTour-header-bg"></div>
-        
-            <div class="lucknowTour-header-inner">
-                <div class="lucknowTour-header-badge">1 Day Tour · Prayag Tourist Guide</div>
-
-                <h1>Heritage Journey<br>to <em>Lucknow</em></h1>
-                <blockquote>
-                    "Lucknow is not just a city, it's an emotion — where elegance meets history, and every corner tells a story of Nawabi grandeur."<br><br>
-                    Embark on a mesmerizing journey to Lucknow, the City of Nawabs, where Urdu poetry, classical music, and exquisite architecture blend seamlessly with modern charm. Known for its Tehzeeb (etiquette) and rich cultural legacy, Lucknow flourished under the Nawabs of Awadh, who patronized art, literature, and cuisine. From the majestic Bara Imambara to the intricate Chikankari embroidery, this city offers a unique glimpse into India's royal past while embracing the warmth of its legendary hospitality.
-                </blockquote>
+            <!-- HEADER -->
+            <div class="lucknowTour-header">
+                <div class="lucknowTour-header-bg"></div>
+                <div class="lucknowTour-header-inner">
+                    <div class="lucknowTour-header-badge">1 Day Tour · Prayag Tourist Guide</div>
+                    <h1>Heritage Journey<br>to <em>Lucknow</em></h1>
+                    <blockquote>
+                        <strong>"Lucknow is not just a city, it's an emotion — where elegance meets history, and every corner tells a story of Nawabi grandeur."<br><br>
+                        Embark on a mesmerizing journey to Lucknow, the City of Nawabs, where Urdu poetry, classical music, and exquisite architecture blend seamlessly with modern charm. Known for its Tehzeeb (etiquette) and rich cultural legacy, Lucknow flourished under the Nawabs of Awadh, who patronized art, literature, and cuisine. From the majestic Bara Imambara to the intricate Chikankari embroidery, this city offers a unique glimpse into India's royal past while embracing the warmth of its legendary hospitality.</strong>
+                    </blockquote>
+                </div>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn-book" id="bookNowBtn"><i class="fas fa-calendar-check"></i> Book Now</a>
+                    <a href="tel:+919682701873" class="btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
+                    <a href="https://wa.me/919682701873?text=I'm%20interested%20in%20Lucknow%20heritage%20tour%20from%20Prayagraj" class="btn-price" target="_blank"><i class="fab fa-whatsapp"></i> Get Best Price</a>
+                </div>
             </div>
 
-        <div class="hero-buttons">
-            <a href="#" class="btn-book" id="bookNowBtn"><i class="fas fa-calendar-check"></i> Book Now</a>
-            <a href="tel:+919682701873" class="btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
-            <a href="https://wa.me/919682701873?text=I'm%20interested%20in%20Lucknow%20heritage%20tour%20from%20Prayagraj" class="btn-price" target="_blank"><i class="fab fa-whatsapp"></i> Get Best Price</a>
-        </div>
-        </div>
+            <div class="lucknowTour-body">
 
-        <div class="lucknowTour-body">
-
-            <!-- MAIN COLUMN -->
-            <div class="lucknowTour-main">
-
-                <!-- LUCKNOW SECTION -->
-                <div class="lucknowTour-card lucknowTour-shiva">
+                <!-- LEFT COLUMN: MAIN CONTENT -->
+                <div class="lucknowTour-main">
+                    <!-- Existing content cards -->
+                    <div class="lucknowTour-card lucknowTour-shiva">
                     <div class="lucknowTour-section-label">Nawabi heritage</div>
                     <div class="lucknowTour-section-title">The city of Nawabs & Ganga-Jamuni Tehzeeb</div>
                     <p>Lucknow is deeply rooted in the glorious era of the Nawabs of Awadh, who ruled from the 18th to 19th centuries. Under their patronage, the city became a center for Urdu poetry, classical music (Khayal and Thumri), Kathak dance, and the famous Lucknow Gharana. The unique Ganga-Jamuni Tehzeeb represents the beautiful syncretic culture where Hindu and Muslim traditions flourished together in harmony.</p>
@@ -127,261 +120,373 @@
                     </div>
                 </div>
 
-                <!-- ITINERARY -->
-                <div class="lucknowTour-card-integrity">
-
-                    <div class="top-bar">
-                        <div>
-                            <div class="lucknowTour-section-label-integrity">Day plan</div>
-                            <div class="lucknowTour-section-title-integrity">Lucknow: The City of Nawabs</div>
-                        </div>
-                        <button class="toggle-btn" onclick="toggleAllItems()">Expand All</button>
+                    <!-- Column Toggle Buttons -->
+                    <div class="column-toggle-buttons">
+                        <button class="column-toggle-btn active" onclick="showColumn('historic')">
+                            <i class="fas fa-landmark"></i> Historic Monuments
+                        </button>
+                        <button class="column-toggle-btn" onclick="showColumn('modern')">
+                            <i class="fas fa-city"></i> Modern & Cultural
+                        </button>
                     </div>
 
-                    <div class="lucknowTour-acc-list-integrity">
+                    <!-- TWO COLUMN ACCORDIONS -->
+                    <div class="lucknowTour-two-columns">
+                        
+                        <!-- LEFT ACCORDION COLUMN - Historic Monuments -->
+                        <div class="lucknowTour-card-integrity visible-column" id="historicColumn">
+                            <div class="top-bar">
+                                <div>
+                                    <div class="lucknowTour-section-label-integrity">Heritage Walk</div>
+                                    <div class="lucknowTour-section-title-integrity">Historic Monuments</div>
+                                </div>
+                                <button class="toggle-btn" onclick="toggleLeftAll()">Expand All</button>
+                            </div>
+                            <div class="lucknowTour-acc-list-integrity" id="leftAccordion">
+                                <div class="lucknowTour-acc-item-integrity active">
+                                    <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
+                                        <span class="step-num">1</span>
+                                        <span>Bara Imambara</span>
+                                        <span class="acc-icon">−</span>
+                                    </button>
+                                    <div class="lucknowTour-acc-content-integrity">
+                                        <p>The magnificent Bara Imambara, built by Nawab Asaf-ud-Daula in 1784.</p>
+                                        <p><strong>Notable features:</strong></p>
+                                        <ul>
+                                            <li>World-famous Bhool Bhulaiya (labyrinth) with 1024 passages</li>
+                                            <li>Asia's largest vaulted hall (50m long, 15m high without pillars)</li>
+                                            <li>Stunning Mughal and Persian architecture</li>
+                                            <li>View of Lucknow city from the rooftop</li>
+                                        </ul>
+                                    </div>
+                                </div>
 
-                        <div class="lucknowTour-acc-item-integrity active">
-                            <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
-                                <span class="step-num">1</span>
-                                <span>Bara Imambara</span>
-                                <span class="acc-icon">−</span>
-                            </button>
-                            <div class="lucknowTour-acc-content-integrity">
-                                <p>The magnificent Bara Imambara, built by Nawab Asaf-ud-Daula in 1784.</p>                                  
-                                <p><strong>Notable features:</strong></p>
-                                <ul>
-                                    <li>World-famous Bhool Bhulaiya (labyrinth) with 1024 passages</li>
-                                    <li>Asia's largest vaulted hall (50m long, 15m high without pillars)</li>
-                                    <li>Stunning Mughal and Persian architecture</li>
-                                    <li>View of Lucknow city from the rooftop</li>
-                                </ul>
+                                <div class="lucknowTour-acc-item-integrity">
+                                    <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
+                                        <span class="step-num">2</span>
+                                        <span>Chota Imambara</span>
+                                        <span class="acc-icon">+</span>
+                                    </button>
+                                    <div class="lucknowTour-acc-content-integrity">
+                                        <p>Also known as Hussainabad Imambara, built by Muhammad Ali Shah in 1838. Special features:</p>
+                                        <ul>
+                                            <li>Exquisite chandeliers from Belgium (called "Chandelier Palace")</li>
+                                            <li>Golden-domed mosque with silver furnishings</li>
+                                            <li>Royal tombs of Nawabs and their family members</li>
+                                            <li>Beautiful reflecting pool and gardens</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="lucknowTour-acc-item-integrity">
+                                    <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
+                                        <span class="step-num">3</span>
+                                        <span>Rumi Darwaza</span>
+                                        <span class="acc-icon">+</span>
+                                    </button>
+                                    <div class="lucknowTour-acc-content-integrity">
+                                        <p>The iconic 60-foot gateway, often called the "Turkish Gateway" of Lucknow.</p>
+                                        <p><strong>Historical significance:</strong></p>
+                                        <ul>
+                                            <li>Built in 1784 by Nawab Asaf-ud-Daula</li>
+                                            <li>Modeled after the Sublime Porte in Istanbul</li>
+                                            <li>Magnificent example of Awadhi architecture</li>
+                                            <li>Often called the "Arc de Triomphe of Lucknow"</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="lucknowTour-acc-item-integrity">
+                                    <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
+                                        <span class="step-num">4</span>
+                                        <span>Lucknow Residency</span>
+                                        <span class="acc-icon">+</span>
+                                    </button>
+                                    <div class="lucknowTour-acc-content-integrity">
+                                        <p>The historic British Residency, witness to the 1857 First War of Independence. Main features:</p>
+                                        <ul>
+                                            <li>Ruins preserved as a memorial of the Siege of Lucknow</li>
+                                            <li>British Cemetery with over 2,000 graves</li>
+                                            <li>Museum displaying weapons and artifacts from 1857</li>
+                                            <li>Sound and light show every evening</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="lucknowTour-acc-item-integrity">
+                                    <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
+                                        <span class="step-num">5</span>
+                                        <span>Hussainabad Clock Tower</span>
+                                        <span class="acc-icon">+</span>
+                                    </button>
+                                    <div class="lucknowTour-acc-content-integrity">
+                                        <p>The tallest clock tower in India, built in 1881. Features:</p>
+                                        <ul>
+                                            <li>67-meter tall Gothic-style structure</li>
+                                            <li>Victorian and Awadhi architectural fusion</li>
+                                            <li>Gigantic pendulum clock imported from London</li>
+                                            <li>Located near Chota Imambara</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="lucknowTour-acc-item-integrity">
+                                    <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
+                                        <span class="step-num">6</span>
+                                        <span>La Martinière College</span>
+                                        <span class="acc-icon">+</span>
+                                    </button>
+                                    <div class="lucknowTour-acc-content-integrity">
+                                        <p>One of the most beautiful educational institutions in India. Special features:</p>
+                                        <ul>
+                                            <li>Built by French adventurer Claude Martin in 1800</li>
+                                            <li>Only school in the world to be awarded royal battle honors</li>
+                                            <li>Stunning Gothic and Italianate architecture</li>
+                                            <li>Featured in the novel "Kim" by Rudyard Kipling</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="lucknowTour-acc-item-integrity">
-                            <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
-                                <span class="step-num">2</span>
-                                <span>Chota Imambara</span>
-                                <span class="acc-icon">+</span>
-                            </button>
-                            <div class="lucknowTour-acc-content-integrity">
-                                <p>Also known as Hussainabad Imambara, built by Muhammad Ali Shah in 1838. Special features:</p>
-                                <ul>
-                                    <li>Exquisite chandeliers from Belgium (called "Chandelier Palace")</li>
-                                    <li>Golden-domed mosque with silver furnishings</li>
-                                    <li>Royal tombs of Nawabs and their family members</li>
-                                    <li>Beautiful reflecting pool and gardens</li>
-                                </ul>  
+                        <!-- RIGHT ACCORDION COLUMN - Modern & Cultural Attractions -->
+                        <div class="lucknowTour-card-integrity hidden-column" id="modernColumn">
+                            <div class="top-bar">
+                                <div>
+                                    <div class="lucknowTour-section-label-integrity">Modern & Cultural</div>
+                                    <div class="lucknowTour-section-title-integrity">Contemporary Attractions</div>
+                                </div>
+                                <button class="toggle-btn" onclick="toggleRightAll()">Expand All</button>
+                            </div>
+                            <div class="lucknowTour-acc-list-integrity" id="rightAccordion">
+                                <!-- Ambedkar Park -->
+                                <div class="lucknowTour-acc-item-integrity">
+                                    <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
+                                        <span class="step-num">1</span>
+                                        <span>Ambedkar Memorial Park</span>
+                                        <span class="acc-icon">+</span>
+                                    </button>
+                                    <div class="lucknowTour-acc-content-integrity">
+                                        <p>A massive 108-acre memorial park in Gomti Nagar, dedicated to Dr. B.R. Ambedkar and social reformers like Jyotirao Phule, Narayana Guru, Birsa Munda, and Kanshi Ram. Built with red sandstone from Rajasthan, the park features the magnificent Ambedkar Stupa inspired by Buddhist architecture, a 12-foot bronze statue of Ambedkar modeled on Lincoln Memorial, and 62 monumental elephant sculptures at the entrance. The complex also includes a museum, art gallery, and an 80-foot viewing pyramid with cascading water features. The park was opened in 2008 by then Chief Minister Mayawati at an estimated cost of ₹7 billion.</p>
+                                        <ul>
+                                            <li>Ambedkar Stupa with 4 lotus-shaped petals and bronze statue</li>
+                                            <li>Pratibimb Sthal entrance guarded by 62 elephants</li>
+                                            <li>Drashya Sthal pyramid offering panoramic views</li>
+                                            <li>Social Transformation Museum with marble statues</li>
+                                            <li>Evening light and sound show</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Nawab Wajid Ali Shah Zoological Garden -->
+                                <div class="lucknowTour-acc-item-integrity">
+                                    <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
+                                        <span class="step-num">2</span>
+                                        <span>Nawab Wajid Ali Shah Zoological Garden</span>
+                                        <span class="acc-icon">+</span>
+                                    </button>
+                                    <div class="lucknowTour-acc-content-integrity">
+                                        <p>Formerly known as Prince of Wales Zoological Gardens, this 71.6-acre zoo was established in 1921 to commemorate the visit of the Prince of Wales to Lucknow. Now named after the last Nawab of Awadh, it is one of only two zoos in India housing orangutans. The zoo is home to over 97 species including 463 mammals, 298 birds, and 72 reptiles. Major attractions include royal Bengal tigers, white tigers, Asiatic lions, Himalayan black bears, Indian rhinoceros, giraffes, hippos, and the rare Hoolock gibbon. The zoo features a toy train, vintage locomotive display, nocturnal house, aquarium, and the State Museum. It receives 11-12 lakh visitors annually.</p>
+                                        <ul>
+                                            <li>Rare orangutan exhibit (only 2 zoos in India)</li>
+                                            <li>1.5 km toy train ride through the zoo</li>
+                                            <li>Nocturnal house with owls and porcupines</li>
+                                            <li>Vintage British-era locomotive display</li>
+                                            <li>Boat paddling and aquarium</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Dilkusha Kothi -->
+                                <div class="lucknowTour-acc-item-integrity">
+                                    <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
+                                        <span class="step-num">3</span>
+                                        <span>Dilkusha Kothi</span>
+                                        <span class="acc-icon">+</span>
+                                    </button>
+                                    <div class="lucknowTour-acc-content-integrity">
+                                        <p>Built around 1800 by British resident Major Gore Ouseley for Nawab Saadat Ali Khan, Dilkusha Kothi is a stunning example of English Baroque architecture in India. Originally designed as a hunting lodge and summer resort for the Nawabs of Awadh, its architecture bears a startling resemblance to Seaton Delaval Hall in Northumberland, England. The building features patterned walls and no inner courtyard, making it taller and more compact than traditional Indian architecture. During the 1857 Siege of Lucknow, the house was heavily shelled and recaptured by British forces under Sir Colin Campbell. General Henry Havelock died here from dysentery on November 24, 1857. Today, the ruins stand preserved by the Archaeological Society of India in peaceful gardens along the Gomti River.</p>
+                                        <ul>
+                                            <li>English Baroque style with Gothic elements</li>
+                                            <li>1857 First War of Independence memorial site</li>
+                                            <li>Peaceful gardens perfect for picnics</li>
+                                            <li>Less crowded, serene atmosphere</li>
+                                            <li>Located near La Martinière College</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Janeshwar Mishra Park -->
+                                <div class="lucknowTour-acc-item-integrity">
+                                    <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
+                                        <span class="step-num">4</span>
+                                        <span>Janeshwar Mishra Park</span>
+                                        <span class="acc-icon">+</span>
+                                    </button>
+                                    <div class="lucknowTour-acc-content-integrity">
+                                        <p>One of Asia's largest parks, sprawling across 376 acres (1.52 sq km) in Gomti Nagar, opened to the public in 2014. Named after Samajwadi Party politician Janeshwar Mishra, the park features a 25-foot tall statue at its central location. Designed by the prestigious New Delhi-based School of Planning and Architecture, the park offers dedicated cycling tracks (including a 10.5 km track), jogging paths, two large water bodies (14 acres and 18 acres) attracting migratory birds, boating and gondola facilities, a sports complex, gymnasium, and a children's play area. The park is entirely solar-powered and features MIG aircraft and tanks at the entrance. The park has 5.28 km, 8.85 km, and 10.5 km walking/jogging tracks.</p>
+                                        <ul>
+                                            <li>Dedicated cycling tracks and jogging paths (up to 10.5 km)</li>
+                                            <li>Boating, gondola, and children's play area</li>
+                                            <li>Migratory bird watching at the lakes</li>
+                                            <li>MIG aircraft and tank display at entrance</li>
+                                            <li>Fully solar-powered with meditation spaces</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Chowk Bazaar -->
+                                <div class="lucknowTour-acc-item-integrity">
+                                    <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
+                                        <span class="step-num">5</span>
+                                        <span>Chowk Bazaar</span>
+                                        <span class="acc-icon">+</span>
+                                    </button>
+                                    <div class="lucknowTour-acc-content-integrity">
+                                        <p>A labyrinth of narrow lanes in the heart of old Lucknow, Chowk is a haven for traditional handicrafts dating back to the Nawabi era. This ancient market is famous for Chikankari embroidery, Zardozi and Kamdani work, silver jewelry, ittar (traditional perfumes), and the legendary Tunday Kebabs at the century-old shop. The market is known for preserving Lucknow's artistic heritage through its narrow galis (lanes) like Chikankari Gali and Ittar Gali. The evening bazaar comes alive with local food stalls serving chaat, kulfi, and the famous Makkhan Malai.</p>
+                                        <ul>
+                                            <li>Authentic Chikankari and Zardozi embroidery shopping</li>
+                                            <li>100-year-old Tunday Kebab shop</li>
+                                            <li>Traditional ittar (perfume) and silver jewelry</li>
+                                            <li>Narrow heritage lanes with old-world charm</li>
+                                            <li>Best visited in evening for food and atmosphere</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Hazratganj Market -->
+                                <div class="lucknowTour-acc-item-integrity">
+                                    <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
+                                        <span class="step-num">6</span>
+                                        <span>Hazratganj Market</span>
+                                        <span class="acc-icon">+</span>
+                                    </button>
+                                    <div class="lucknowTour-acc-content-integrity">
+                                        <p>The heart of modern Lucknow, Hazratganj was built by Amjad Ali Shah in 1810 as the Queen's Way where the British paraded their carriages. Today, it is the city's most prominent shopping and entertainment district, often called the "Harrods of Lucknow." In 2010-2011, the market was beautified with Victorian-style lamps, fountains, benches, and uniform shop colors. The area features multiple shopping malls including a 425,000 sq. ft. five-story complex, Big Bazaar, Superstore, Gurjari Handloom Emporium, and Gandhi Ashram handicrafts. Visitors can find everything from luxury cars to traditional Chikan kurtas, antiques, handicrafts, and modern fashion. The market also houses PVR cinema, restaurants, food courts, and famous offices. It remains closed on Sundays.</p>
+                                        <ul>
+                                            <li>Victorian-style heritage market with evening lights</li>
+                                            <li>Chikan embroidery and traditional handicrafts</li>
+                                            <li>Branded showrooms and luxury shopping</li>
+                                            <li>Theatres, cafes, and fine dining restaurants</li>
+                                            <li>Best visited in evening for colonial-era charm</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="lucknowTour-acc-item-integrity">
-                            <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
-                                <span class="step-num">3</span>
-                                <span>Rumi Darwaza</span>
-                                <span class="acc-icon">+</span>
-                            </button>
-                            <div class="lucknowTour-acc-content-integrity">
-                                <p>The iconic 60-foot gateway, often called the "Turkish Gateway" of Lucknow.</p>
-                                <p><strong>Historical significance:</strong></p>
-                                <ul>
-                                    <li>Built in 1784 by Nawab Asaf-ud-Daula</li>
-                                    <li>Modeled after the Sublime Porte in Istanbul</li>
-                                    <li>Magnificent example of Awadhi architecture</li>
-                                    <li>Often called the "Arc de Triomphe of Lucknow"</li>
-                                </ul>
-                                <strong>Tips:</strong>
-                                <ul>
-                                    <li>Best photographed during sunset for golden lighting</li>
-                                    <li>Take time to admire the intricate flower carvings</li>
-                                    <li>Part of the heritage walk circuit</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="lucknowTour-acc-item-integrity">
-                            <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
-                                <span class="step-num">4</span>
-                                <span>Lucknow Residency</span>
-                                <span class="acc-icon">+</span>
-                            </button>
-                            <div class="lucknowTour-acc-content-integrity">
-                                <p>The historic British Residency, witness to the 1857 First War of Independence. Main features:</p>
-                                <ul>
-                                    <li>Ruins preserved as a memorial of the Siege of Lucknow</li>
-                                    <li>British Cemetery with over 2,000 graves</li>
-                                    <li>Museum displaying weapons and artifacts from 1857</li>
-                                    <li>Sound and light show every evening</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="lucknowTour-acc-item-integrity">
-                            <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
-                                <span class="step-num">5</span>
-                                <span>Hussainabad Clock Tower</span>
-                                <span class="acc-icon">+</span>
-                            </button>
-                            <div class="lucknowTour-acc-content-integrity">
-                                <p>The tallest clock tower in India, built in 1881. Features:</p>
-                                <ul>
-                                    <li>67-meter tall Gothic-style structure</li>
-                                    <li>Victorian and Awadhi architectural fusion</li>
-                                    <li>Gigantic pendulum clock imported from London</li>
-                                    <li>Located near Chota Imambara</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="lucknowTour-acc-item-integrity">
-                            <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
-                                <span class="step-num">6</span>
-                                <span>La Martinière College</span>
-                                <span class="acc-icon">+</span>
-                            </button>
-                            <div class="lucknowTour-acc-content-integrity">
-                                <p>One of the most beautiful educational institutions in India. Special features:</p>
-                                <ul>
-                                    <li>Built by French adventurer Claude Martin in 1800</li>
-                                    <li>Only school in the world to be awarded royal battle honors</li>
-                                    <li>Stunning Gothic and Italianate architecture</li>
-                                    <li>Featured in the novel "Kim" by Rudyard Kipling</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="lucknowTour-acc-item-integrity">
-                            <button class="lucknowTour-acc-btn-integrity" onclick="toggleAccordion(this)">
-                                <span class="step-num">7</span>
-                                <span>Chowk & Hazratganj</span>
-                                <span class="acc-icon">+</span>
-                            </button>
-                            <div class="lucknowTour-acc-content-integrity">
-                                <p>Famous markets showcasing Lucknow's culture and craftsmanship. Special features:</p>
-                                <ul>
-                                    <li>Chowk: Ancient market for Chikankari, Zardozi, and Ittar</li>
-                                    <li>Tunday Kebabs at 100-year-old shop</li>
-                                    <li>Hazratganj: Colonial-era shopping district (the "Harrods of Lucknow")</li>
-                                    <li>Evening chaat and street food experience</li>
-                                </ul>
-                            </div>
-                        </div>
-
                     </div>
-
                 </div>
 
-            </div>
-
-            <!-- SIDEBAR COLUMN -->
-            <div class="lucknowTour-sidebar">
-
-                <!-- PAYMENT -->
-                <div class="lucknowTour-payment">
-                    <div class="lucknowTour-payment-label">Payment details</div>
-                    <div class="lucknowTour-payment-row"><span class="r-label">Base package</span><span
-                            class="r-val">₹3,999</span></div>
-                    <div class="lucknowTour-payment-row"><span class="r-label">AC transport</span><span
-                            class="r-val">Included</span></div>
-                    <div class="lucknowTour-payment-row"><span class="r-label">Hotel (1 night)</span><span
-                            class="r-val">Included</span></div>
-                    <div class="lucknowTour-payment-row"><span class="r-label">Meals</span><span
-                            class="r-val">Included</span></div>
-                    <div class="lucknowTour-payment-row"><span class="r-label">GST (5%)</span><span
-                            class="r-val">₹200</span></div>
-                    <div class="lucknowTour-payment-total">
-                        <span class="r-label">Total / person</span>
-                        <span class="r-val">₹4,199</span>
-                    </div>
-                    <div class="lucknowTour-payment-methods">
-                        <div class="lucknowTour-payment-method">UPI</div>
-                        <div class="lucknowTour-payment-method">Credit / Debit</div>
-                        <div class="lucknowTour-payment-method">Net Banking</div>
-                        <div class="lucknowTour-payment-method">EMI</div>
+                <!-- SIDEBAR COLUMN (unchanged) -->
+                <div class="lucknowTour-sidebar">
+                    <div class="lucknowTour-contact">
+                        <div class="lucknowTour-contact-label contact-data">Get in touch</div>
+                        <div class="contact-data"><a href="tel:+919682701873"><i class="fa fa-phone-alt"></i> +91 9682701873</a></div>
+                        <div class="contact-data"><p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:mishrarohit@kalkitourandtravels.com"> mishrarohit@kalkitourandtravels.com</a></p></div>
+                        <div class="contact-data"><p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:mishrarohit1857@gmail.com">mishrarohit1857@gmail.com</a></p></div>
+                        <a href="contact.html" class="btn">Book now</a>
                     </div>
                 </div>
-
-                <!-- ADD-ONS -->
-                <div class="lucknowTour-card">
-                    <div class="lucknowTour-section-label">Enhance your trip</div>
-                    <div class="lucknowTour-section-title" style="font-size:17px;">Optional add-ons</div>
-                    <div class="lucknowTour-addons-grid">
-                        <div class="lucknowTour-addon">Chikankari Workshop</div>
-                        <div class="lucknowTour-addon">Nawabi Dining Experience</div>
-                        <div class="lucknowTour-addon">Kathak Dance Performance</div>
-                        <div class="lucknowTour-addon">lucknow–Varanasi Extension</div>
-                    </div>
-                </div>
-
-                <!-- CONTACT -->
-                <div class="lucknowTour-contact">
-                    <div class="lucknowTour-contact-label">Get in touch</div>
-                    <p>📞 +91 7985348413</p>
-                    <p>✉️ info@prayagtouristguide.com</p>
-                    <a href="#" class="btn">Book now</a>
-                </div>
-
             </div>
         </div>
     </div>
 
     <script>
-        // Function to toggle individual accordion item
+        // Toggle individual accordion item (works for both columns)
         function toggleAccordion(button) {
             const accordionItem = button.closest('.lucknowTour-acc-item-integrity');
-            const content = accordionItem.querySelector('.lucknowTour-acc-content-integrity');
             const icon = button.querySelector('.acc-icon');
-            
-            // Toggle the active class on the accordion item
             accordionItem.classList.toggle('active');
-            
-            // Update the icon text
-            if (accordionItem.classList.contains('active')) {
-                icon.textContent = '−';
-            } else {
-                icon.textContent = '+';
-            }
+            icon.textContent = accordionItem.classList.contains('active') ? '−' : '+';
         }
 
-        // Function to expand/collapse all items
-        function toggleAllItems() {
-            const allItems = document.querySelectorAll('.lucknowTour-acc-item-integrity');
-            const expandBtn = document.querySelector('.toggle-btn');
-            const allActive = Array.from(allItems).every(item => item.classList.contains('active'));
+        // Expand/Collapse All for LEFT column
+        function toggleLeftAll() {
+            const container = document.getElementById('leftAccordion');
+            if (!container) return;
+            const items = container.querySelectorAll('.lucknowTour-acc-item-integrity');
+            const btn = document.querySelector('#historicColumn .toggle-btn');
+            const allActive = Array.from(items).every(item => item.classList.contains('active'));
             
-            if (allActive) {
-                // Collapse all
-                allItems.forEach(item => {
+            items.forEach(item => {
+                if (allActive) {
                     item.classList.remove('active');
                     const icon = item.querySelector('.acc-icon');
                     if (icon) icon.textContent = '+';
-                });
-                expandBtn.textContent = 'Expand All';
-            } else {
-                // Expand all
-                allItems.forEach(item => {
+                } else {
                     item.classList.add('active');
                     const icon = item.querySelector('.acc-icon');
                     if (icon) icon.textContent = '−';
-                });
-                expandBtn.textContent = 'Collapse All';
+                }
+            });
+            if (btn) btn.textContent = allActive ? 'Expand All' : 'Collapse All';
+        }
+
+        // Expand/Collapse All for RIGHT column
+        function toggleRightAll() {
+            const container = document.getElementById('rightAccordion');
+            if (!container) return;
+            const items = container.querySelectorAll('.lucknowTour-acc-item-integrity');
+            const btn = document.querySelector('#modernColumn .toggle-btn');
+            const allActive = Array.from(items).every(item => item.classList.contains('active'));
+            
+            items.forEach(item => {
+                if (allActive) {
+                    item.classList.remove('active');
+                    const icon = item.querySelector('.acc-icon');
+                    if (icon) icon.textContent = '+';
+                } else {
+                    item.classList.add('active');
+                    const icon = item.querySelector('.acc-icon');
+                    if (icon) icon.textContent = '−';
+                }
+            });
+            if (btn) btn.textContent = allActive ? 'Expand All' : 'Collapse All';
+        }
+
+        // Show/hide columns functionality
+        function showColumn(columnType) {
+            const historicColumn = document.getElementById('historicColumn');
+            const modernColumn = document.getElementById('modernColumn');
+            const historicBtn = document.querySelector('.column-toggle-btn:first-child');
+            const modernBtn = document.querySelector('.column-toggle-btn:last-child');
+            
+            if (columnType === 'historic') {
+                historicColumn.classList.remove('hidden-column');
+                historicColumn.classList.add('visible-column');
+                modernColumn.classList.remove('visible-column');
+                modernColumn.classList.add('hidden-column');
+                historicBtn.classList.add('active');
+                modernBtn.classList.remove('active');
+            } else {
+                modernColumn.classList.remove('hidden-column');
+                modernColumn.classList.add('visible-column');
+                historicColumn.classList.remove('visible-column');
+                historicColumn.classList.add('hidden-column');
+                modernBtn.classList.add('active');
+                historicBtn.classList.remove('active');
             }
         }
 
-        // Update Expand All button text based on initial state
+        // Initialize first column as visible
         document.addEventListener('DOMContentLoaded', function() {
-            const allItems = document.querySelectorAll('.lucknowTour-acc-item-integrity');
-            const expandBtn = document.querySelector('.toggle-btn');
-            const allActive = Array.from(allItems).every(item => item.classList.contains('active'));
-            
-            if (allActive) {
-                expandBtn.textContent = 'Collapse All';
-            } else {
-                expandBtn.textContent = 'Expand All';
-            }
+            // Ensure right column items are all closed initially
+            const rightItems = document.querySelectorAll('#rightAccordion .lucknowTour-acc-item-integrity');
+            rightItems.forEach(item => {
+                if (item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    const icon = item.querySelector('.acc-icon');
+                    if (icon) icon.textContent = '+';
+                }
+            });
         });
     </script>
+    
     <div id="footer"></div>
+    
+    <a href="https://wa.me/919682701873?text=I'm%20interested%20in%20Lucknow%20Tour" class="whatsapp-float-lucknow" target="_blank">
+        <i class="fab fa-whatsapp"></i> Book Lucknow
+    </a>
 </body>
 
 </html>

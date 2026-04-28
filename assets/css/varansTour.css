@@ -1,5 +1,7 @@
 /* ─── RESET & BASE ─── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .varanasi-dashboard{
+      background: rgb(126 153 153 / 49%);
+    }
  
     :root {
       --varansiTour-saffron:    #C85A00;
@@ -112,7 +114,7 @@
       border-left: 2px solid var(--varansiTour-saffron);
       padding-left: 1rem;
       font-family: var(--varansiTour-font-display);
-      font-style: italic;
+      /* font-style: italic; */
       font-size: 14px;
       color: rgba(255,255,255,0.7);
       line-height: 1.7;
@@ -374,7 +376,7 @@
  
     /* ─── CONTACT ─── */
     .varansiTour-contact {
-      background: var(--varansiTour-saffron);
+      background: #DA8D4FD1;
       border-radius: var(--varansiTour-radius);
       padding: 1.5rem;
       color: #fff;
@@ -398,8 +400,8 @@
     .varansiTour-contact .btn {
       display: block;
       margin-top: 16px;
-      background: #fff;
-      color: var(--varansiTour-saffron);
+      background: #0d1030;
+      color: #F99B0A;
       text-align: center;
       padding: 10px;
       border-radius: var(--varansiTour-radius-sm);
@@ -548,6 +550,38 @@
 
 .varansiTour-acc-content-integrity li {
   margin-bottom: 6px;
+}
+#email_contact{
+  text-decoration: none;
+}
+.whatsapp-float-varansi {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  border-radius: 50px;
+  padding: 10px 18px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 99;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.contact-data{
+  height:24px
+}
+
+.whatsapp-float-varansi:hover {
+  background: #128C7E;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
 /* HOVER */
