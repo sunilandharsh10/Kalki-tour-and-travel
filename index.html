@@ -7,7 +7,7 @@
   <meta http-equiv="Expires" content="0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kalki Tour and Travel</title>
+  <title>Kashi Sangam</title>
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
    <link rel="stylesheet" href="../assets/css/cabServicesbook.css">
@@ -28,7 +28,7 @@
     <!-- Logo -->
     <div class="logo-section">
      <!-- <img src="../assets/logos/kalki_logo.jpeg" />  -->
-     <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="logo"> 
+     <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="logo">
       <div class="logo-text">
         <!-- <a id="text-decor" href="index.html"><img src="../assets/logos/kalki_logo.jpeg" /></a>  -->
         <a id="text-decor" href="index.html"><span>Kalki</span> <span>Tour and Travels</span></a>
@@ -86,7 +86,7 @@
                     <a href="prayagrajTour.html">Sangam Tour</a>
                 </div>
             </div>
-          <a href="ayodhyaTour.html">Ayodhya Tour</a>  
+          <a href="ayodhyaTour.html">Ayodhya Tour</a>
           <a href="chitrakotTour.html">Chitrakoot Tour</a>
           <a href="lucknowTour.html">Lucknow Tour</a>
           <a href="ayodhyaToPrayagRaj.html">Prayagraj To Ayodhya</a>
@@ -246,11 +246,11 @@ class HeroSlideshow {
   init() {
     const hero = document.querySelector('.hero');
     if (!hero) return; // ✅ FIX 1: Check if hero exists
-    
+
     // Clear existing slides
     const existingSlides = hero.querySelectorAll('.hero-slide');
     existingSlides.forEach(slide => slide.remove());
-    
+
     // Create slide elements
     this.images.forEach((img, index) => {
       const slide = document.createElement('div');
@@ -259,13 +259,13 @@ class HeroSlideshow {
       slide.style.backgroundImage = `url('${img}')`;
       hero.appendChild(slide);
     });
-    
+
     // Add navigation dots
     this.addDots();
-    
+
     // Add prev/next buttons
     this.addButtons();
-    
+
     // Start auto-slideshow
     this.startAutoSlide();
   }
@@ -273,13 +273,13 @@ class HeroSlideshow {
   addDots() {
     const hero = document.querySelector('.hero');
     if (!hero) return;
-    
+
     const existingDots = hero.querySelector('.slider-dots');
     if (existingDots) existingDots.remove();
-    
+
     const dotsContainer = document.createElement('div');
     dotsContainer.className = 'slider-dots';
-    
+
     this.images.forEach((_, index) => {
       const dot = document.createElement('div');
       dot.className = 'dot';
@@ -287,32 +287,32 @@ class HeroSlideshow {
       dot.addEventListener('click', () => this.goToSlide(index));
       dotsContainer.appendChild(dot);
     });
-    
+
     hero.appendChild(dotsContainer);
   }
 
   addButtons() {
     const hero = document.querySelector('.hero');
     if (!hero) return;
-    
+
     // Remove existing buttons
     const existingPrev = hero.querySelector('.prev-btn');
     const existingNext = hero.querySelector('.next-btn');
     if (existingPrev) existingPrev.remove();
     if (existingNext) existingNext.remove();
-    
+
     // Prev button
     const prevBtn = document.createElement('button');
     prevBtn.className = 'slider-btn prev-btn';
     prevBtn.innerHTML = '❮';
     prevBtn.addEventListener('click', () => this.prevSlide());
-    
+
     // Next button
     const nextBtn = document.createElement('button');
     nextBtn.className = 'slider-btn next-btn';
     nextBtn.innerHTML = '❯';
     nextBtn.addEventListener('click', () => this.nextSlide());
-    
+
     hero.appendChild(prevBtn);
     hero.appendChild(nextBtn);
   }
@@ -320,16 +320,16 @@ class HeroSlideshow {
   goToSlide(index) {
     const allSlides = document.querySelectorAll('.hero-slide');
     if (allSlides.length === 0) return;
-    
+
     // Reset zoom on current slide
     const currentSlide = document.querySelector('.hero-slide.active');
     if (currentSlide) {
       currentSlide.classList.remove('active');
       currentSlide.style.transform = 'scale(1)';
     }
-    
+
     this.currentIndex = (index + this.images.length) % this.images.length;
-    
+
     // Activate new slide with zoom
     const newSlide = allSlides[this.currentIndex];
     if (newSlide) {
@@ -338,10 +338,10 @@ class HeroSlideshow {
       void newSlide.offsetWidth;
       newSlide.style.transform = 'scale(1.04)';
     }
-    
+
     // Update dots
     this.updateDots();
-    
+
     // Reset timer
     this.resetAutoSlide();
   }
@@ -400,15 +400,15 @@ document.querySelectorAll(".dropdown > a").forEach(item => {
 function openLightbox(el) {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
-  
+
   if (!lightbox || !lightboxImg) return;
-  
+
   // Find the image element
   let imgElement = el;
   if (el.tagName !== 'IMG') {
     imgElement = el.querySelector("img");
   }
-  
+
   if (imgElement && imgElement.src) {
     lightboxImg.src = imgElement.src;
     lightbox.style.display = "flex";
