@@ -18,7 +18,7 @@ function sendData(){
                 details += `✉️ *Email:* ${email}%0A`;
             }
             details += `💬 *Message:* ${messageText || '—'}%0A%0A`;
-            details += `_Sent via website contact form (Agent: Anjali Sharma)_`;
+            details += `_Sent via website contact form (Agent: Rohit mishra)_`;
             return details;
         }
         

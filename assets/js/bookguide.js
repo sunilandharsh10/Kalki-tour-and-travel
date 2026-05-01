@@ -40,9 +40,9 @@
         // Function to update foreign language fee based on duration
         function updateForeignLanguageFee() {
             if (selectedDuration === 'half') {
-                foreignFeeAmount = 850;
+                foreignFeeAmount = 800;
             } else {
-                foreignFeeAmount = 850;
+                foreignFeeAmount = 800;
             }
             
             // Update display
@@ -222,7 +222,7 @@
                 
                 const total = selectedDurationPrice + (foreignSelected ? foreignFeeAmount : 0) + (outstationSelected ? outstationPrice : 0) + (earlyLateSelected ? 850 : 0) + (extraCitySelected ? 500 : 0) + (specialEventSelected ? 450 : 0);
                 
-                const message = `📋 *TRAVELER REGISTRATION - GetMyGuide* 📋
+                const message = `📋 *TRAVELER REGISTRATION - Kalki tour and travels* 📋
 ━━━━━━━━━━━━━━━━━━━━━━
 👤 *Personal Details*
 • Name: ${fullName}
@@ -247,11 +247,10 @@
 
 💰 *Total Fee: ₹${total}*
 ✅ Declaration Accepted
-━━━━━━━━━━━━━━━━━━━━━━
-IATO & TGFI Agreement (Oct 2025 - Sep 2027)`;
+━━━━━━━━━━━━━━━━━━━━━━`;
                 
                 const encodedMsg = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/917905472290?text=${encodedMsg}`;
+                const whatsappUrl = `https://wa.me/919682701873?text=${encodedMsg}`;
                 
                 const modal = document.getElementById('successModal');
                 if (modal) modal.style.display = 'flex';

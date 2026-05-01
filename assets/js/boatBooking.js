@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const cityNames = { prayag: 'Prayagraj (Triveni Sangam)', varanasi: 'Varanasi (Kashi)' };
         const categoryNames = { handBoat: 'Hand Boat', speedBoat: 'Speed Boat', cruise: 'Cruise Boat' };
         
-        const message = `⛵ *BOAT BOOKING REQUEST - Kashi Dham Tours* ⛵
+        const message = `⛵ *BOAT BOOKING REQUEST - Kalki tour and Travels* ⛵
 ━━━━━━━━━━━━━━━━━━━━━━
 📍 *City:* ${cityNames[currentCity]}
 🚤 *Boat Type:* ${categoryNames[currentCategory]}
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
 🙏 Please confirm availability & share boat details.`;
         
         const encodedMsg = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/917905472290?text=${encodedMsg}`;
+        const whatsappUrl = `https://wa.me/919682701873?text=${encodedMsg}`;
         
         const modal = document.getElementById('successModal');
         if (modal) modal.style.display = 'flex';

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const pujaData = {
         prayag: [
             { id: 1, name: "Triveni Sangam Snan Puja", category: "Popular", deity: "Ganga-Yamuna-Saraswati", duration: "1.5 hrs", price: 0, desc: "Sacred bath ritual at the holy confluence of three rivers.", icon: "🌊", popular: true },
-            { id: 2, name: "Dashashwamedh Ganga Aarti Puja", category: "Popular", deity: "Mother Ganga", duration: "1 hr", price: 2100, desc: "Participate in the famous Ganga Aarti at Prayag.", icon: "🪔", popular: true },
+            { id: 2, name: "Asthi Vishrjan", category: "Popular", deity: "Mother Ganga", duration: "1 hr", price: 2100, desc: "Participate in the famous Ganga Aarti at Prayag.", icon: "🪔", popular: true },
             { id: 3, name: "Rudrabhishek", category: "Abhishek", deity: "Lord Shiva", duration: "2.5 hrs", price: 5100, desc: "Powerful ritual for health, prosperity at Sangam.", icon: "🕉️", popular: false },
             { id: 4, name: "Pitru Dosh Nivaran Puja", category: "Pitru", deity: "Ancestors", duration: "2 hrs", price: 4800, desc: "Ancestral rituals at Triveni for peace.", icon: "👴", popular: false },
             // { id: 5, name: "Navgraha Shanti Puja", category: "Dosha", deity: "Nine Planets", duration: "3 hrs", price: 6500, desc: "Pacifies planetary doshas.", icon: "⭐", popular: true },

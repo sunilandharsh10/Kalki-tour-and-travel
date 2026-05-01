@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const priceValue = getPriceForTourType(selectedVehicleData);
         const isOutstation = tourType === 'Outstation';
         
-        const message = `🚕 *CAB BOOKING REQUEST - Prayag Tourist Guide* 🚕
+        const message = `🚕 *CAB BOOKING REQUEST - Kalki tour and travels* 🚕
 ━━━━━━━━━━━━━━━━━━━━━━
 📍 *City:* ${cityNames[currentCity]}
 🚗 *Vehicle:* ${selectedVehicleData.name} (${selectedVehicleData.capacity})
@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
 🙏 Please confirm availability.`;
         
         const encodedMsg = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/8896473121?text=${encodedMsg}`;
+        const whatsappUrl = `https://wa.me/919682701873?text=${encodedMsg}`;
         
         const modal = document.getElementById('successModal');
         if (modal) modal.style.display = 'flex';
