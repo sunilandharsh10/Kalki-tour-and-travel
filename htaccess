@@ -1,5 +1,35 @@
 # ===============================
-# Disable caching for HTML
+# Enable Rewrite Engine
+# ===============================
+RewriteEngine On
+RewriteBase /
+
+# ===============================
+# Remove .html from URLs (Clean URLs)
+# ===============================
+# Redirect /page.html to /page
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# Internally add .html back for clean URLs
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/.]+)$ $1.html [L]
+
+# ===============================
+# EXCLUDE layout folder from URL rewriting
+# ===============================
+# DO NOT rewrite URLs inside /layout/ folder
+RewriteRule ^layout/ - [L,NC]
+
+# ===============================
+# EXCLUDE specific .html files from being rewritten
+# ===============================
+RewriteCond %{REQUEST_URI} !^/layout/.*\.html$
+RewriteCond %{REQUEST_URI} !^/header\.html$
+RewriteCond %{REQUEST_URI} !^/footer\.html$
+
+# ===============================
+# Disable caching for HTML files
 # ===============================
 <FilesMatch "\.(html|htm)$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
@@ -8,22 +38,38 @@
 </FilesMatch>
 
 # ===============================
+# Allow access to all HTML files
+# ===============================
+<FilesMatch "\.(html)$">
+    Require all granted
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# ===============================
 # Enable long cache for CSS & JS
 # ===============================
 <FilesMatch "\.(css|js)$">
-    Header set Cache-Control "public, max-age=31536000"
+    Header set Cache-Control "public, max-age=31536000, immutable"
 </FilesMatch>
 
 # ===============================
-# Cache images (optional)
+# Cache images
 # ===============================
-<FilesMatch "\.(jpg|jpeg|png|gif|svg|webp)$">
-    Header set Cache-Control "public, max-age=31536000"
+<FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
 </FilesMatch>
 
 # ===============================
-# Enable headers module (just in case)
+# Security headers
 # ===============================
 <IfModule mod_headers.c>
-    Header always set X-Content-Type-Options "nosniff"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
 </IfModule>
+
+# ===============================
+# Prevent directory listing
+# ===============================
+Options -Indexes
