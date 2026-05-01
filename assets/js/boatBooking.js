@@ -244,7 +244,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const encodedMsg = encodeURIComponent(message);
         const whatsappUrl = `https://wa.me/919682701873?text=${encodedMsg}`;
-        
+        form.reset();
+        location.reload();
+        selectedDisplay = document.getElementById('selectedVehicleDisplay');
+        console.log(selectedDisplay)
         const modal = document.getElementById('successModal');
         if (modal) modal.style.display = 'flex';
         window.open(whatsappUrl, '_blank');

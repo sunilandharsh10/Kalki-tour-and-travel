@@ -255,6 +255,7 @@
                 const modal = document.getElementById('successModal');
                 if (modal) modal.style.display = 'flex';
                 window.open(whatsappUrl, '_blank');
+                location.reload();
             });
         }
         
