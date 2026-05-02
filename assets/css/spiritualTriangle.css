@@ -406,6 +406,9 @@
     font-size: 0.8rem;
     padding: 0.3rem 1rem;
   }
+  .complete-triangle p{
+   font-size: 14px; 
+  }
 }
 
 /* animations */
