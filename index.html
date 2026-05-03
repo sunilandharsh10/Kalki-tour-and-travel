@@ -435,7 +435,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // FIX 6: Fetch with error handling
-fetch("../layout/cabServicesbook.html")
+fetch("/layout/cabServicesbook.html")
   .then(res => {
     if (!res.ok) throw new Error('Cab services not found');
     return res.text();
@@ -447,10 +447,10 @@ fetch("../layout/cabServicesbook.html")
   .catch(error => {
     console.error("Error loading cab services:", error);
     const cabSection = document.getElementById("cab-section");
-    if (cabSection) cabSection.innerHTML = '<p>⚠️ Cab services temporarily unavailable</p>';
+    if (cabSection) cabSection.innerHTML = '<p> Cab services temporarily unavailable</p>';
   });
 
-fetch("../layout/ulta_about.html")
+fetch("/layout/ulta_about.html")
   .then(res => {
     if (!res.ok) throw new Error('About section not found');
     return res.text();
@@ -462,7 +462,7 @@ fetch("../layout/ulta_about.html")
   .catch(error => {
     console.error("Error loading about section:", error);
     const ultraAbout = document.getElementById("ultra-about");
-    if (ultraAbout) ultraAbout.innerHTML = '<p>⚠️ About section temporarily unavailable</p>';
+    if (ultraAbout) ultraAbout.innerHTML = '<p> About section temporarily unavailable</p>';
   });
   </script>
 
