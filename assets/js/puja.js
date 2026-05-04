@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!userPhone) { alert("Please enter mobile number."); return; }
             if (!selectedPujaForBooking) { alert("Please select a puja first."); return; }
 
-            const message = `🕉️ *PUJA BOOKING REQUEST* 🕉️
+            const message = `🕉️ *WORSHIP BOOKING REQUEST FROM KALKI TOUR AND TRAVELS* 🕉️
 ━━━━━━━━━━━━━━━━━━━━━━
 📍 *Holy City:* ${cityNames[currentCity].name} (${cityNames[currentCity].subtitle})
 🙏 *Puja Name:* ${selectedPujaForBooking.name}
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
 📞 *Mobile:* ${userPhone}
 📧 *Email:* ${userEmail || "Not provided"}
 ━━━━━━━━━━━━━━━━━━━━━━
-Please share puja date, pandit availability & payment link.`;
+Please share worship date, pandit availability & payment link.`;
 
             const encodedMsg = encodeURIComponent(message);
             const whatsappUrl = `https://wa.me/919682701873?text=${encodedMsg}`;
