@@ -1,65 +1,117 @@
+/* HERO BUTTONS */
+.hero-buttons {
+    position: relative;
+    z-index: 2;
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
 
-/* HERO BUTTONS - FIXED */
-        .hero-buttons {
-            position: relative;
-            z-index: 2;
-            margin-top: 2.5rem;
-            display: flex;
-            gap: 1.2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 16px;
-        }
+/* COMMON BUTTON STYLE */
+.btn-book, .btn-call, .btn-price {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    min-width: 140px;
+}
 
-        .btn-book, .btn-call, .btn-price {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-family: 'Inter', sans-serif;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-        }
+/* BUTTON COLORS */
+.btn-book {
+    background: linear-gradient(135deg, #c67a3a, #b5622a);
+    color: white;
+}
 
-        .btn-book {
-            background: linear-gradient(135deg, #c67a3a, #b5622a);
-            color: white;
-        }
+.btn-call {
+    background: linear-gradient(135deg, #2c7a4d, #1f5e3a);
+    color: white;
+}
 
-        .btn-book:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(135deg, #d48946, #c06e30);
-            box-shadow: 0 12px 24px rgba(198,122,58,0.4);
-        }
+.btn-price {
+    background: linear-gradient(135deg, #25d366, #128C7E);
+    color: white;
+}
 
-        .btn-call {
-            background: linear-gradient(135deg, #2c7a4d, #1f5e3a);
-            color: white;
-        }
+/* HOVER EFFECT */
+.btn-book:hover,
+.btn-call:hover,
+.btn-price:hover {
+    transform: translateY(-3px);
+}
 
-        .btn-call:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(135deg, #35965c, #267a48);
-            box-shadow: 0 12px 24px rgba(44,122,77,0.4);
-        }
+/* ACTIVE */
+.btn-book:active,
+.btn-call:active,
+.btn-price:active {
+    transform: translateY(1px);
+}
 
-        .btn-price {
-            background: linear-gradient(135deg, #25d366, #128C7E);
-            color: white;
-        }
+/* =========================
+   📱 MOBILE (<=480px)
+========================= */
+@media (max-width: 480px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
 
-        .btn-price:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(135deg, #30e07a, #1da18f);
-            box-shadow: 0 12px 24px rgba(37,211,102,0.4);
-        }
+    .btn-book, .btn-call, .btn-price {
+        width: 90%;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+}
 
-        .btn-book:active, .btn-call:active, .btn-price:active {
-            transform: translateY(1px);
-        }
+/* =========================
+   📲 SMALL MOBILE (<=360px)
+========================= */
+@media (max-width: 360px) {
+    .btn-book, .btn-call, .btn-price {
+        width: 100%;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* =========================
+   📱 TABLET (481px - 768px)
+========================= */
+@media (max-width: 768px) {
+    .btn-book, .btn-call, .btn-price {
+        font-size: 0.95rem;
+        padding: 12px 24px;
+    }
+}
+
+/* =========================
+   💻 LAPTOP (769px - 1024px)
+========================= */
+@media (max-width: 1024px) {
+    .btn-book, .btn-call, .btn-price {
+        font-size: 1rem;
+        padding: 13px 26px;
+    }
+}
+
+/* =========================
+   🖥️ LARGE SCREENS (>1200px)
+========================= */
+@media (min-width: 1200px) {
+    .btn-book, .btn-call, .btn-price {
+        font-size: 1.1rem;
+        padding: 16px 34px;
+    }
+}

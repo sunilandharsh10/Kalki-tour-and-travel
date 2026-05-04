@@ -177,6 +177,7 @@ body {
   background: #f1f1f1;
   color: black;
   border-radius: 4px;
+  margin: 0px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -228,8 +229,8 @@ body {
    HERO SLIDER
    ============================================================ */
 .hero {
-  height: 100vh !important;
-  min-height: 600px;
+  height: 60vh !important;
+  min-height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -456,3 +456,107 @@
   height:24px
 
 }
+
+/* =========================
+   RESPONSIVE FIX (ADD ONLY)
+========================= */
+
+/* 📱 MOBILE (<=768px) */
+@media (max-width: 768px) {
+
+  .prayagrajTour-body {
+    grid-template-columns: 1fr !important;
+    padding: 0 1rem;
+  }
+
+  .prayagrajTour-sidebar {
+    position: static !important;
+  }
+
+  .prayagrajTour-header {
+    min-height: 220px;
+  }
+
+  .prayagrajTour-header-inner {
+    padding: 1.5rem !important;
+  }
+
+  .prayagrajTour-header h1 {
+    font-size: 28px !important;
+    line-height: 1.3;
+  }
+
+  .prayagrajTour-header blockquote {
+    font-size: 13px;
+  }
+
+  .prayagrajTour-festivals-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .prayagrajTour-card {
+    padding: 1rem !important;
+  }
+
+  .prayagrajTour-contact {
+    padding: 20px !important;
+  }
+}
+
+/* 📲 SMALL MOBILE (<=480px) */
+@media (max-width: 480px) {
+
+  .prayagrajTour-header h1 {
+    font-size: 22px !important;
+  }
+
+  .prayagrajTour-section-title {
+    font-size: 18px !important;
+  }
+
+  .prayagrajTour-header-inner {
+    padding: 1rem !important;
+  }
+
+  .whatsapp-float-prayag {
+    bottom: 15px;
+    right: 15px;
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+}
+
+/* 📱 EXTRA SMALL (<=360px) */
+@media (max-width: 360px) {
+
+  .prayagrajTour-header h1 {
+    font-size: 18px !important;
+  }
+
+  .prayagrajTour-section-title {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 320px) {
+
+  .contact-data {
+    height:45px;
+  }
+
+  
+}
+
+
+/* 💻 TABLET (769px–1024px) */
+@media (max-width: 1024px) {
+
+  .prayagrajTour-body {
+    grid-template-columns: 1fr 280px;
+  }
+
+  .prayagrajTour-header h1 {
+    font-size: 34px;
+  }
+}
+

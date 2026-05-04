@@ -417,16 +417,94 @@
 }
 
 /* MOBILE */
-@media(max-width:720px){
-  .chitrkotTour-body{ grid-template-columns:1fr; }
+/* =========================
+   RESPONSIVE ADD-ON ONLY
+   (DO NOT REMOVE OLD CSS)
+========================= */
+
+/* 📱 MOBILE (<=768px) */
+@media (max-width: 768px) {
+
+  .chitrkotTour-body {
+    grid-template-columns: 1fr !important;
+    padding: 0 1rem;
+  }
+
+  .chitrkotTour-sidebar {
+    position: static !important;
+  }
+
+  .chitrkotTour-header {
+    min-height: 220px;
+  }
+
+  .chitrkotTour-header-inner {
+    padding: 1.5rem !important;
+  }
+
+  .chitrkotTour-header h1 {
+    font-size: 28px !important;
+    line-height: 1.3;
+  }
+
+  .chitrkotTour-header blockquote {
+    font-size: 13px;
+  }
+
+  .chitrkotTour-card {
+    padding: 1rem !important;
+  }
+
+  .chitrkotTour-festivals-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .chitrkotTour-contact {
+    padding: 16px !important;
+  }
 }
 
-#email_contact{
-  text-decoration: none;
+/* 📲 SMALL MOBILE (<=480px) */
+@media (max-width: 480px) {
+
+  .chitrkotTour-header h1 {
+    font-size: 22px !important;
+  }
+
+  .chitrkotTour-section-title {
+    font-size: 18px !important;
+  }
+
+  .chitrkotTour-header-inner {
+    padding: 1rem !important;
+  }
+
+  .chitrkotTour-acc-btn-integrity {
+    font-size: 15px;
+  }
 }
-.contact-data{
-  height:24px
+
+/* 📱 EXTRA SMALL (<=360px) */
+@media (max-width: 360px) {
+
+  .chitrkotTour-header h1 {
+    font-size: 18px !important;
+  }
+
+  .chitrkotTour-section-title {
+    font-size: 16px !important;
+  }
 }
-.chitrakoot-dashboard{
-  background: rgb(126 153 153 / 49%);
+
+/* 💻 TABLET (769px–1024px) */
+@media (max-width: 1024px) {
+
+  .chitrkotTour-body {
+    grid-template-columns: 1fr 280px;
+  }
+
+  .chitrkotTour-header h1 {
+    font-size: 34px;
+  }
 }
+

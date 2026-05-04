@@ -75,7 +75,7 @@
 
 /* IMAGE */
 .cab-img {
-  width: 65%;
+  /* width: 65%; */
   margin-top: 10px;
   border-radius: 50%;
 }
@@ -97,4 +97,12 @@
     cursor: pointer;
     transition: 0.3s;
     margin-top: 10px;
+}
+
+@media (max-width: 320px) {
+  .cab-img {
+   width: 100%; 
+  margin-top: 10px;
+  border-radius: 50%;
+}
 }
