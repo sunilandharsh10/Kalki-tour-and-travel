@@ -396,11 +396,14 @@ section {
 }
 
 .card {
-  background: #fff;
-  width: 280px;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ background: white;
+    width: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba
+#0000001a
+(0, 0, 0, 0.1);
+    border: 1px solid #090b42d9;
 }
 
 .card img {
@@ -410,6 +413,9 @@ section {
   object-position: center;
   border-radius: 10px;
   display: block;
+}
+.card-services{
+  padding-top:5px;
 }
 
 /* ============================================================

@@ -7,7 +7,7 @@
   <meta http-equiv="Expires" content="0">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kashi Sangam</title>
+  <title>Kalki Tour and Travels</title>
   <link rel="stylesheet" href="../assets/css/index.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
    <link rel="stylesheet" href="../assets/css/cabServicesbook.css">
@@ -133,17 +133,17 @@
   <section class="our-services">
     <h2>Our Services</h2>
     <div class="flex">
-      <div class="card"><img src="../assets/image/puja.jpg">
-        <h3>Worship</h3>
+      <div class="card"><a href="puja.html"><img src="../assets/image/puja.jpg"></a>
+        <h3 class="card-services">Worship</h3>
       </div>
-      <div class="card"><img src="../assets/image/hotel.jpg">
-        <h3>Hotel</h3>
+      <div class="card"><a href="bookTourGuide.html"><img src="../assets/image/guidbooking.png"></a>
+        <h3 class="card-services">Guide Booking</h3>
       </div>
-      <div class="card"><img src="../assets/image/tour.jpg">
-        <h3>Tour</h3>
+      <div class="card"><a href="boatBooking.html"><img src="../assets/image/boatBooking.png"></a>
+        <h3 class="card-services">Boat Booking </h3>
       </div>
-      <div class="card"><img src="../assets/image/booking.jpg">
-        <h3>Booking</h3>
+      <div class="card"><a href="cabServices.html"><img src="../assets/image/booking.jpg"></a>
+        <h3 class="card-services">Cab Booking</h3>
       </div>
     </div>
   </section>
@@ -152,17 +152,17 @@
   <section class="tour-packages">
     <h2>Tour Packages</h2>
     <div class="flex">
-      <div class="card"><img src="../assets/image/ram-madir-ayodhya.webp">
-        <h3>Ayodhya Tour</h3>
+      <div class="card"><a href="ayodhyaTour.html"><img src="../assets/image/ram-madir-ayodhya.webp"></a>
+        <h3 class="card-services">Ayodhya Tour</h3>
       </div>
-      <div class="card"><img src="../assets/image/varansi.webp">
-        <h3>Varanasi Tour</h3>
+      <div class="card"><a href="varansiTour.html"><img src="../assets/image/varansi.webp"></a>
+        <h3 class="card-services">Varanasi Tour</h3>
       </div>
-      <div class="card"><img src="../assets/image/chitrakootUP.webp">
-        <h3>Chitrakoot Tour</h3>
+      <div class="card"><a href="chitrakotTour.html"><img src="../assets/image/chitrakootUP.webp"></a>
+        <h3 class="card-services">Chitrakoot Tour</h3>
       </div>
-      <div class="card"><img src="../assets/image/prayagraj.webp">
-        <h3>Prayagraj Sangam</h3>
+      <div class="card"><a href="prayagCity.html"><img src="../assets/image/prayagraj.webp"></a>
+        <h3 class="card-services">Prayagraj Sangam</h3>
       </div>
     </div>
   </section>
@@ -254,7 +254,7 @@ class HeroSlideshow {
 
   init() {
     const hero = document.querySelector('.hero');
-    if (!hero) return; // ✅ FIX 1: Check if hero exists
+    if (!hero) return; //  FIX 1: Check if hero exists
 
     // Clear existing slides
     const existingSlides = hero.querySelectorAll('.hero-slide');
