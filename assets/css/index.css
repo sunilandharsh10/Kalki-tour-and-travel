@@ -122,8 +122,7 @@ body {
 }
 
 .logo {
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 20px;
 }
 
 .nav-links {
@@ -166,11 +165,14 @@ body {
   transition: 0.3s;
 }
 
+
 .dropdown-content a {
   display: block;
   padding: 10px;
   color: #000;
   text-decoration: none;
+  margin:0;
+  text-align: center;
 }
 
 .dropdown-content a:hover {
@@ -191,7 +193,7 @@ body {
 }
 
 .submenu > a {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center;
 }
@@ -452,15 +454,17 @@ section {
 }
 
 .gallery-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
 }
 
 /* Gallery Item */
 .gallery-item {
+   width: 300px;
   position: relative;
   overflow: hidden;
   border-radius: 15px;
@@ -579,10 +583,13 @@ section {
     width: 100%;
     background: #0d1b2a;
     text-align: center;
+    height:100vh;
   }
 
   .nav-links a {
     padding: 10px;
+    margin: 0;
+  
   }
 
   .nav-links.active {
@@ -596,9 +603,13 @@ section {
     display: none;
   }
 
-  .dropdown-content a {
-    text-align: left;
+  .sub-dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    display: none;
   }
+  
 
   .dropdown.active .dropdown-content {
     display: block;
@@ -644,6 +655,16 @@ section {
   .gallery-item img {
     height: 200px;
   }
+  .gallery-container{
+    display:flex;
+  }
+   .sub-dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+  }
+  
 }
 
 /* ============================================================
@@ -681,5 +702,35 @@ section {
 @media (max-width: 320px) {
   .actions {
     display: grid;
+  }
+  .logo {
+    font-size: 16px;
+ }
+}
+@media (max-width: 880px) {
+   .actions {
+      display: grid;
+      margin:5px;
+  } 
+  .logo-text {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .logo {
+    font-size: 15px;
+    font-weight: normal;
+  }
+}
+@media (max-width: 1024px) {
+  /* .actions {
+      display: grid;
+  } */
+  .logo-text {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .logo {
+    font-size: 15px;
+    font-weight: normal;
   }
 }

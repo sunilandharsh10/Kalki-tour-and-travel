@@ -5,12 +5,12 @@
       box-sizing: border-box;
     } */
 
-    body {
+    /* body {
       font-family: 'Inter', sans-serif;
       background: #f7f2ea;
       color: #2d2418;
       overflow-x: hidden;
-    }
+    } */
 
     /* Custom Cursor */
     .cursor {
@@ -159,12 +159,16 @@
       min-height: 90vh;
       display: flex;
       align-items: center;
-      padding: 0 48px;
+      gap: clamp(24px, 4vw, 70px);
+      width: min(100%, 1440px);
+      margin: 0 auto;
+      padding: 0 clamp(18px, 3vw, 56px);
       position: relative;
     }
 
     .hero-content {
       flex: 1;
+      min-width: 0;
       z-index: 2;
     }
 
@@ -227,6 +231,7 @@
 
     .hero-visual {
       flex: 1;
+      min-width: min(420px, 42vw);
       position: relative;
       height: 500px;
     }
@@ -251,9 +256,77 @@
       50% { transform: translateY(-15px); }
     }
 
+    .route-signature {
+      padding: 0 clamp(16px, 3vw, 56px) 72px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .route-signature-card {
+      max-width: 1440px;
+      margin: 42px auto 0;
+      padding: clamp(24px, 4vw, 42px);
+      border: 1px solid rgba(201,119,46,0.22);
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(255, 252, 245, 0.94), rgba(244, 226, 205, 0.88)), radial-gradient(circle at top right, rgba(201, 119, 46, 0.18), transparent 35%);
+      box-shadow: 0 28px 70px rgba(83, 50, 23, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .route-signature-card::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border: 1px dashed rgba(201,119,46,0.22);
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    .route-kicker {
+      color: #8b3a0e;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .route-signature-card p {
+      max-width: 1120px;
+      color: #4f3522;
+      font-size: clamp(1rem, 1.8vw, 1.18rem);
+      line-height: 1.8;
+      margin: 0 0 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .route-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .route-pills span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #fff7ed;
+      color: #7b3d13;
+      border: 1px solid rgba(201,119,46,0.2);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
     /* Journey Timeline - Unique */
     .journey-section {
-      padding: 100px 48px;
+      padding: 90px clamp(16px, 3vw, 56px);
       background: linear-gradient(180deg, #f7f2ea 0%, #efe4d8 100%);
     }
 
@@ -276,7 +349,7 @@
     }
 
     .timeline {
-      max-width: 900px;
+      max-width: 1320px;
       margin: 0 auto;
       position: relative;
     }
@@ -298,55 +371,132 @@
       position: relative;
       cursor: pointer;
       transition: 0.3s;
+      --day-accent: #c9772e;
+      --day-bg: linear-gradient(135deg, #fff7ed 0%, #ead0af 100%);
     }
 
     .timeline-marker {
       width: 60px;
       height: 60px;
-      background: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
       font-size: 1.2rem;
-      color: #c9772e;
-      border: 2px solid #c9772e;
-      background: #fff5ea;
+      color: var(--day-accent);
+      border: 2px solid var(--day-accent);
+      background: #fffaf2;
       z-index: 2;
       transition: 0.3s;
+      box-shadow: 0 12px 28px color-mix(in srgb, var(--day-accent) 28%, transparent);
     }
 
     .timeline-item:hover .timeline-marker {
       transform: scale(1.1);
-      background: #c9772e;
+      background: var(--day-accent);
       color: white;
     }
 
     .timeline-content {
       flex: 1;
-      background: rgba(255,252,245,0.7);
+      background: var(--day-bg);
       backdrop-filter: blur(5px);
-      border-radius: 24px;
-      padding: 20px 28px;
+      border-radius: 26px;
+      padding: clamp(22px, 2.4vw, 36px);
       transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid color-mix(in srgb, var(--day-accent) 30%, transparent);
+      box-shadow: 0 18px 42px rgba(83, 50, 23, 0.08);
+    }
+
+    .timeline-content::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--day-accent) 28%, transparent), transparent 28%),
+        linear-gradient(90deg, color-mix(in srgb, var(--day-accent) 16%, transparent), transparent 38%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .timeline-content::after {
+      content: "";
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 92px;
+      height: 92px;
+      border: 1px dashed color-mix(in srgb, var(--day-accent) 40%, transparent);
+      border-radius: 50%;
+      opacity: 0.5;
+      pointer-events: none;
     }
 
     .timeline-item:hover .timeline-content {
-      background: white;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      box-shadow: 0 24px 50px color-mix(in srgb, var(--day-accent) 22%, transparent);
       transform: translateX(8px);
+    }
+
+    .day-topline,
+    .timeline-content h3,
+    .day-lines,
+    .day-details {
+      position: relative;
+      z-index: 1;
+    }
+
+    .day-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
     }
 
     .day-number {
       font-size: 0.8rem;
-      color: #c9772e;
-      font-weight: 600;
+      color: var(--day-accent);
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .day-mood {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.62);
+      color: #3f2b1e;
+      font-size: 0.82rem;
+      font-weight: 800;
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--day-accent) 20%, transparent);
     }
 
     .timeline-content h3 {
       margin: 8px 0;
-      font-size: 1.3rem;
+      font-size: clamp(1.25rem, 2vw, 1.55rem);
+      color: #2d2418;
+    }
+
+    .day-lines {
+      display: grid;
+      gap: 8px;
+      margin: 14px 0 4px;
+    }
+
+    .day-lines p {
+      margin: 0;
+      color: #493421;
+      line-height: 1.65;
+    }
+
+    .day-lines p:first-child {
+      font-weight: 700;
     }
 
     .day-details {
@@ -359,6 +509,8 @@
     .timeline-item.active .day-details {
       max-height: 400px;
       margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid color-mix(in srgb, var(--day-accent) 28%, transparent);
     }
 
     .day-details ul {
@@ -373,18 +525,24 @@
     }
 
     .day-details li:before {
-      content: '🪔';
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--day-accent);
+      top: 15px;
       position: absolute;
       left: 0;
-      color: #c9772e;
     }
 
     /* Sacred Grid - Places */
     .sacred-grid {
-      padding: 80px 48px;
+      width: min(100%, 1440px);
+      margin: 0 auto;
+      padding: 80px clamp(16px, 3vw, 56px);
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+      gap: clamp(18px, 2vw, 32px);
     }
 
     .sacred-card {
@@ -465,12 +623,26 @@
     }
 
     @media (max-width: 900px) {
-      .hero-modern { flex-direction: column; text-align: center; padding: 40px 24px; }
+      .hero-modern { flex-direction: column; text-align: center; padding: 40px 16px; }
       .hero-content h1 { font-size: 2.5rem; }
-      .hero-stats { justify-content: center; }
+      .hero-stats { justify-content: center; flex-wrap: wrap; gap: 18px; }
+      .hero-visual { min-width: 0; width: 100%; height: 360px; }
       .navbar { padding: 16px 24px; }
       .nav-links { gap: 20px; }
-      .journey-section, .sacred-grid, .cta-wave { padding: 60px 24px; }
+      .route-signature { padding: 0 14px 44px; }
+      .route-signature-card { margin-top: -18px; border-radius: 20px; }
+      .route-signature-card::before { inset: 10px; }
+      .route-pills { justify-content: center; }
+      .journey-section, .sacred-grid, .cta-wave { padding: 60px 14px; }
       .timeline::before { left: 15px; }
       .timeline-marker { width: 40px; height: 40px; font-size: 0.9rem; }
+      .timeline-item { gap: 16px; }
+      .timeline-content { padding: 20px 18px; border-radius: 20px; }
+      .timeline-content::after { width: 62px; height: 62px; }
+    }
+
+    @media (min-width: 1200px) {
+      .timeline-content {
+        min-height: 230px;
+      }
     }

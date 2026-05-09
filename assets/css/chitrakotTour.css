@@ -20,7 +20,9 @@
       --chitrkotTour-radius:     12px;
       --chitrkotTour-radius-sm:  8px;
 }
-
+.chitrakoot-dashboard{
+  background:#0d7a6e8a;
+}
 
 
 /* WRAPPER */
