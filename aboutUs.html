@@ -37,8 +37,8 @@
           <h4>Rohit Mishra (Founder)</h4>
           <h5>Contact No.: +91 9682701873</h5>
           <p>
-            Rohit Mishra (Founder) – Rohit Mishra, the visionary founder of Kalki Tour and Travel, 
-            is a highly experienced multilingual tour guide passionate about showcasing the beauty of India’s culture and heritage.
+            Rohit Mishra (Founder) – The visionary founder of Kalki Tour and Travels, 
+            is a highly experienced multilingual tour guide & Travel consultant passionate about showcasing the beauty of India’s culture and heritage.
              With years of expertise in the tourism industry, he launched the company in November 2024 to deliver memorable, personalized, and enriching travel experiences for every traveler.
           </p>
         </div>
@@ -86,22 +86,26 @@
 
     </section>
 
-    <section class="aboutus-team">
-      <h2>Meet Our Guides ✨</h2>
+   
 
-      <div class="aboutus-team-grid">
+<section class="aboutus-team">
+  <h2>Meet Our Guides ✨</h2>
 
+  <div class="slideshow-container">
+    <div class="slides-wrapper" id="slidesWrapper">
+      <div class="slide">
         <div class="aboutus-member">
           <img src="../assets/image/shubhamRajpoot.jpeg" alt="Shubham Rajpoot">
-          <h4>Shubham Rajpoot(Travel Manager)</h4>
-          <h5>Contact No.: 8840944051</h5>
+          <h4>Shubham Rajpoot (Travel Manager)</h4>
           <p>
             As a Travel Manager, we offer complete travel solutions including tour planning, 
-             transportation, and on-trip support. We focus on comfort, safety, 
+            transportation, and on-trip support. We focus on comfort, safety, 
             and convenience so you can enjoy your journey without any stress.
           </p>
         </div>
+      </div>
 
+      <div class="slide">
         <div class="aboutus-member">
           <img src="../assets/image/abhishek.jpeg" alt="Abhishek">
           <h4>Abhishek Narayan</h4>
@@ -112,7 +116,9 @@
             we ensure you experience the true essence of the City of Nawabs.
           </p>
         </div>
+      </div>
 
+      <div class="slide">
         <div class="aboutus-member">
           <img src="../assets/image/Suraj_traipthi.jpeg" alt="Suraj">
           <h4>Suraj Tripathi</h4>
@@ -123,18 +129,44 @@
             of spirituality, history, and culture. We ensure your journey is smooth, meaningful, and memorable.
           </p>
         </div>
+      </div>
 
+      <div class="slide">
         <div class="aboutus-member">
           <img src="../assets/image/Akhelish_pathak.jpeg" alt="Akhilesh">
           <h4>Akhilesh Pathak</h4>
-          <h5>Tour Guide in Ayodhya.</h5>
-          <p>Explore the sacred city of Ayodhya with our experienced and knowledgeable tour guides.
+          <h5>Tour Guide in Ayodhya</h5>
+          <p>
+            Explore the sacred city of Ayodhya with our experienced and knowledgeable tour guides.
             We help you discover the spiritual essence, historical landmarks, and cultural richness
             of this divine destination.
           </p>
         </div>
-        
-    </section>
+      </div>
+
+      <div class="slide">
+        <div class="aboutus-member">
+          <img src="../assets/image/chandraBhushan.jpeg" alt="Chandra Bhushan">
+          <h4>Chandra Bhushan</h4>
+          <p>
+            Tour Guide in Bodhgaya, we offer complete travel solutions including tour planning, 
+            transportation, and on-trip support. We focus on comfort, safety,
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dots-container" id="dotsContainer"></div>
+  <div class="slide-indicator" id="slideIndicator">
+    Slide 1 of 5
+  </div>
+  <div class="pause-indicator">
+    ⏸ Hover to pause | ▶ Auto-sliding
+  </div>
+</section>
+
+
 
     <footer>
       <div id="footer"></div>
@@ -145,6 +177,112 @@
 </body>
 
 </html>
+<script>
+  const slidesWrapper = document.getElementById('slidesWrapper');
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
+  let currentIndex = 0;
+  let autoSlideInterval = null;
+  let isAutoSliding = true;
+
+  // Create dots
+  function createDots() {
+    const dotsContainer = document.getElementById('dotsContainer');
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === currentIndex) dot.classList.add('active');
+      dot.onclick = () => goToSlide(i);
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  // Update slide position
+  function updateSlide() {
+    slidesWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    
+    // Update dots
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+      if (index === currentIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+    
+    // Update indicator text
+    const indicator = document.getElementById('slideIndicator');
+    indicator.innerHTML = `Slide ${currentIndex + 1} of ${totalSlides}`;
+  }
+
+  // Go to specific slide
+  function goToSlide(index) {
+    currentIndex = index;
+    if (currentIndex < 0) currentIndex = totalSlides - 1;
+    if (currentIndex >= totalSlides) currentIndex = 0;
+    updateSlide();
+  }
+
+  // Next slide
+  function nextSlide() {
+    currentIndex++;
+    if (currentIndex >= totalSlides) currentIndex = 0;
+    updateSlide();
+  }
+
+  // Start auto sliding
+  function startAutoSlide() {
+    if (autoSlideInterval) clearInterval(autoSlideInterval);
+    
+    isAutoSliding = true;
+    autoSlideInterval = setInterval(() => {
+      if (isAutoSliding) {
+        nextSlide();
+      }
+    }, 3000);
+  }
+
+  // Stop auto sliding
+  function stopAutoSlide() {
+    isAutoSliding = false;
+    if (autoSlideInterval) {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = null;
+    }
+  }
+
+  // Resume auto sliding
+  function resumeAutoSlide() {
+    if (!autoSlideInterval && !isAutoSliding) {
+      isAutoSliding = true;
+      autoSlideInterval = setInterval(() => {
+        if (isAutoSliding) {
+          nextSlide();
+        }
+      }, 3000);
+    }
+  }
+
+  // Hover pause functionality
+  const container = document.querySelector('.slideshow-container');
+  
+  container.addEventListener('mouseenter', () => {
+    stopAutoSlide();
+  });
+  
+  container.addEventListener('mouseleave', () => {
+    resumeAutoSlide();
+  });
+
+  // Initialize
+  createDots();
+  updateSlide();
+  
+  // Start auto slide
+  startAutoSlide();
+</script>
 <script>
   document.querySelectorAll(".dropdown > a").forEach(item => {
     item.addEventListener("click", function (e) {
