@@ -8,12 +8,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kalki Tour and Travels</title>
-  <link rel="stylesheet" href="../assets/css/index.css">
-  <link rel="stylesheet" href="../assets/css/footer.css">
-   <link rel="stylesheet" href="../assets/css/cabServicesbook.css">
-   <link rel="stylesheet" href="../assets/css/ultra_about.css">
-  <!-- Font Awesome for Icons -->
+
+  <!-- CSS -->
+  <link rel="preload" href="assets/css/index.css"     as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/css/footer.css"    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/css/cabServicesbook.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/css/ultra_about.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- JS -->
   <script src="../assets/js/layout.js"></script>
   <script src="../assets/js/ultra_about.js"></script>
   
@@ -107,7 +111,7 @@
         <div class="dropdown-content">
           <a href="boatBooking.html">Boat Booking</a>
           <a href="bookTourGuide.html">Professional Guide</a>
-          <a href="#" disabled="true">Tent Booking (During Kubh Mela)</a>
+          <a href="hotel.html">Hotel Booking</a>
           <a href="puja.html">Worship Booking</a>
         </div>
       </div>
@@ -119,9 +123,6 @@
   <!-- Hero -->
   <section class="hero" id="hero">
   <div class="hero-content">
-    <!-- <h1>Welcome to Varanasi</h1> -->
-    <!-- <p>The Spiritual Heart of India</p>
-    <button class="explore-btn">Explore Tour</button> -->
   </div>
 </section>
 
@@ -234,12 +235,6 @@
 <script>
     // Array of images for Varanasi tour
 const heroImages = [
-  // '../assets/image/lucknow.webp',
-  // '../assets/image/ramsita.png',
-  // '../assets/image/trivani_sangam.webp',
-  // '../assets/image/varans_tour.webp',
-  // '../assets/image/Varanasi-scaled.jpg',
-  // '../assets/image/uttakhand_image.webp'
   '../assets/banner/ayodhya.png',
   '../assets/banner/lucknow.png',
   '../assets/banner/prayagraj.png',

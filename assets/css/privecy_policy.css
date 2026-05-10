@@ -1,376 +1,330 @@
-.body_privacy {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
 
-        /* Header Styles */
-        .header {
-            background: linear-gradient(135deg, #ff9800, #ff5722);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
 
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            animation: fadeInDown 0.8s ease;
-        }
 
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            animation: fadeInUp 0.8s ease;
-        }
+/* =========================
+   PRIVACY PAGE
+========================= */
 
-        /* Payment Notice */
-        .payment-notice {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 12px;
-            padding: 15px 25px;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
-            animation: fadeIn 0.8s ease;
-        }
+.body_privacy{
+    font-family:'Poppins',sans-serif;
+    background:#6e85b3;
+    color:#222;
+    line-height:1.7;
+}
 
-        .payment-notice-content {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+/* HEADER */
 
-        .payment-notice-icon {
-            font-size: 2rem;
-        }
+.privacy-header{
+    background:linear-gradient(135deg,#ff9800,#ff5722);
+    padding:90px 20px;
+    text-align:center;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+}
 
-        .payment-notice-text {
-            font-size: 1rem;
-            color: #856404;
-        }
+.privacy-header::before{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    background:rgba(255,255,255,0.08);
+    border-radius:50%;
+    top:-140px;
+    left:-120px;
+}
 
-        .payment-notice-text strong {
-            color: #856404;
-        }
+.privacy-header::after{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
+    background:rgba(255,255,255,0.06);
+    border-radius:50%;
+    bottom:-120px;
+    right:-80px;
+}
 
-        .whatsapp-btn, .email-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s ease;
-        }
+.privacy-header h1{
+    font-size:3.2rem;
+    margin-bottom:15px;
+    position:relative;
+    z-index:2;
+    font-weight:700;
+}
 
-        .whatsapp-btn {
-            background: #25D366;
-            color: white;
-        }
+.privacy-header p{
+    font-size:1.1rem;
+    opacity:.95;
+    position:relative;
+    z-index:2;
+}
 
-        .email-btn {
-            background: #D44638;
-            color: white;
-        }
+/* CONTAINER */
 
-        .whatsapp-btn:hover, .email-btn:hover {
-            transform: scale(1.05);
-        }
+.privacy-container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+    padding:50px 0;
+}
 
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+/* PAYMENT NOTICE */
 
-        /* Policy Content */
-        .policy-content {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-            animation: fadeIn 0.8s ease;
-        }
+.privacy-payment-notice{
+    background:#fff8e7;
+    border-left:6px solid #ff9800;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:35px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:center;
+    flex-wrap:wrap;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
 
-        .last-updated {
-            background: #f5f5f5;
-            padding: 15px 30px;
-            color: #666;
-            border-bottom: 1px solid #e0e0e0;
-            font-style: italic;
-        }
+.privacy-payment-notice-content{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+}
 
-        .policy-section {
-            padding: 30px;
-            border-bottom: 1px solid #e0e0e0;
-            transition: all 0.3s ease;
-        }
+.privacy-payment-notice-icon{
+    font-size:2rem;
+}
 
-        .policy-section:hover {
-            background: #fafafa;
-            transform: translateX(5px);
-        }
+.privacy-payment-notice-text{
+    color:#555;
+    font-size:1rem;
+}
 
-        .policy-section h2 {
-            color: #ff9800;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+/* BUTTONS */
 
-        .policy-section h2::before {
-            content: "•";
-            font-size: 2rem;
-            color: #ff5722;
-        }
+.whatsapp-btn,
+.email-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:50px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:600;
+    transition:.3s;
+}
 
-        .policy-section h3 {
-            color: #555;
-            margin: 15px 0 10px;
-            font-size: 1.2rem;
-        }
+.whatsapp-btn{
+    background:#25D366;
+}
 
-        .policy-section p {
-            margin-bottom: 12px;
-            color: #555;
-            line-height: 1.8;
-        }
+.email-btn{
+    background:#ff5722;
+}
 
-        .policy-section ul, .policy-section ol {
-            margin: 15px 0;
-            padding-left: 30px;
-        }
+.whatsapp-btn:hover,
+.email-btn:hover{
+    transform:translateY(-3px);
+}
 
-        .policy-section li {
-            margin-bottom: 8px;
-            color: #555;
-        }
+/* MAIN CARD */
 
-        .highlight {
-            background: #fff3e0;
-            padding: 15px;
-            border-left: 4px solid #ff9800;
-            border-radius: 8px;
-            margin: 15px 0;
-        }
+.privacy-policy-content{
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 10px 40px rgba(0,0,0,0.08);
+}
 
-        .no-payment-highlight {
-            background: linear-gradient(135deg, #fff3cd, #ffeeba);
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 20px 0;
-        }
+/* SECTION */
 
-        .no-payment-highlight h3 {
-            color: #856404;
-            margin-bottom: 10px;
-        }
+.privacy-policy-section{
+    padding:40px;
+    border-bottom:1px solid #8b4b4b;
+    transition:.3s;
+}
 
-        /* Contact Cards */
-        .contact-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
+.privacy-policy-section:hover{
+    background:#fcfcfc;
+}
 
-        .contact-card {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            border: 1px solid #e0e0e0;
-        }
+.privacy-policy-section h2{
+    color:#ff6b00;
+    font-size:1.7rem;
+    margin-bottom:18px;
+    position:relative;
+    padding-left:22px;
+}
 
-        .contact-card:hover {
-            transform: translateY(-5px);
-        }
+.privacy-policy-section h2::before{
+    content:"";
+    width:8px;
+    height:100%;
+    background:#ff9800;
+    position:absolute;
+    left:0;
+    top:0;
+    border-radius:10px;
+}
 
-        .contact-card .icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
+.privacy-policy-section p{
+    color:#555;
+    margin-bottom:15px;
+}
 
-        .contact-card h4 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
+.privacy-policy-section ul{
+    padding-left:20px;
+}
 
-        .contact-card p {
-            color: #666;
-            margin-bottom: 15px;
-        }
+.privacy-policy-section li{
+    margin-bottom:12px;
+    color:#555;
+}
 
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
+/* HIGHLIGHT */
 
-        .contact-btn.whatsapp {
-            background: #25D366;
-            color: white;
-        }
+.highlight{
+    background:#fff4e5;
+    border-left:5px solid #ff9800;
+    padding:18px;
+    border-radius:12px;
+    margin-top:20px;
+}
 
-        .contact-btn.email {
-            background: #D44638;
-            color: white;
-        }
+/* NO PAYMENT */
 
-        .contact-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
+.no-payment-highlight{
+    background:linear-gradient(135deg,#fff5d6,#ffe8ae);
+    padding:30px;
+    text-align:center;
+    border-radius:18px;
+    margin:25px;
+}
 
-        /* Contact Info */
-        .contact-info-poliecy {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
+.no-payment-highlight h3{
+    color:#d97706;
+    margin-bottom:12px;
+}
 
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
+/* CONTACT CARDS */
 
-        .contact-info p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
+.privacy-contact-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    margin-top:25px;
+}
 
-        .contact-info a {
-            color: #ff9800;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+.privacy-contact-card{
+    background:#fff;
+    border:1px solid #894e4e;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    transition:.35s;
+    box-shadow:0 6px 20px rgba(0,0,0,0.06);
+}
 
-        .contact-info a:hover {
-            color: #ff5722;
-            text-decoration: underline;
-        }
+.privacy-contact-card:hover{
+    transform:translateY(-8px);
+}
 
-        /* Back Button */
-        .back-button {
-            text-align: center;
-            margin-top: 30px;
-        }
+.privacy-contact-card .icon{
+    font-size:3rem;
+    margin-bottom:15px;
+}
 
-        .btn-back {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff9800, #ff5722);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
+.privacy-contact-card h4{
+    font-size:1.4rem;
+    margin-bottom:12px;
+}
 
-        .btn-back:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-        }
+.privacy-contact-card p{
+    color:#666;
+    margin-bottom:20px;
+}
 
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background: #2c2c2c;
-            color: white;
-            margin-top: 40px;
-        }
+/* CONTACT INFO */
 
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.contact-info-poliecy{
+    background:linear-gradient(135deg,#1f2937,#111827);
+    color:#fff;
+    text-align:center;
+    padding:50px 30px;
+}
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.contact-info-poliecy h3{
+    font-size:2rem;
+    margin-bottom:20px;
+}
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.contact-info-poliecy a{
+    color:#ffb347;
+    text-decoration:none;
+}
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.8rem;
-            }
+/* BACK BUTTON */
 
-            .payment-notice {
-                flex-direction: column;
-                text-align: center;
-            }
+.back-button{
+    text-align:center;
+    margin-top:35px;
+}
 
-            .payment-notice-content {
-                justify-content: center;
-            }
+.privacy-btn-back{
+    display:inline-block;
+    background:linear-gradient(135deg,#ff9800,#ff5722);
+    color:#fff;
+    padding:14px 32px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
 
-            .policy-section {
-                padding: 20px;
-            }
+.privacy-btn-back:hover{
+    transform:translateY(-3px);
+}
 
-            .policy-section h2 {
-                font-size: 1.3rem;
-            }
+/* RESPONSIVE */
 
-            .contact-info {
-                padding: 25px;
-            }
+@media(max-width:768px){
 
-            .contact-info h3 {
-                font-size: 1.4rem;
-            }
+    .privacy-header{
+        padding:60px 15px;
+    }
 
-            .contact-cards {
-                grid-template-columns: 1fr;
-            }
-        }
+    .privacy-header h1{
+        font-size:2rem;
+    }
+
+    .privacy-header p{
+        font-size:.95rem;
+    }
+
+    .privacy-policy-section{
+        padding:25px 20px;
+    }
+
+    .privacy-policy-section h2{
+        font-size:1.3rem;
+    }
+
+    .privacy-payment-notice{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .privacy-payment-notice-content{
+        flex-direction:column;
+    }
+
+    .contact-info-poliecy{
+        padding:35px 20px;
+    }
+
+    .contact-info-poliecy h3{
+        font-size:1.5rem;
+    }
+
+}
