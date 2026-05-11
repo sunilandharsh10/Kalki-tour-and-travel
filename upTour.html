@@ -6,21 +6,25 @@
   <title>सनातन यात्रा | Sacred Journeys Through Uttar Pradesh</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Tiro:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- CSS -->
-  <link rel="preload" href="assets/css/index.css"  as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="assets/css/footer.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="assets/css/upTour.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <!-- JS -->
-  <script src="../assets/js/layout.js" defer></script>
+  <link rel="stylesheet" href="assets/css/upTour.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+ <link rel="preload" href="assets/css/footer.css"    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="assets/css/index.css"     as="style" onload="this.onload=null;this.rel='stylesheet'">
+   <!-- JS -->
+    <script src="../assets/js/layout.js"></script> 
 </head>
-<body>
-<span id="header"></span>
+<body style="
+    background-color: #0f0c0a;
+    background-image: radial-gradient(circle at 10% 20%, rgba(210, 150, 75, 0.03) 0%, rgba(15, 12, 10, 1) 90%);
+    font-family: 'Inter', sans-serif;
+    color: #efe6d7;
+    overflow-x: hidden;
+">
+<div id="header"></div>
+<!-- No header span or footer span to avoid conflict with index -->
 <div class="bg-ornament"></div>
 <div class="mandala"></div>
 <div class="mandala mandala-2"></div>
 
-<!-- Floating diyas generated randomly -->
 <script>
   for(let i=0;i<24;i++) {
     let diya = document.createElement('div');
@@ -34,16 +38,6 @@
   }
 </script>
 
-<!-- <nav class="navbar">
-  <div class="logo">YĀTRĀ <span>by Sacred Routes</span></div>
-  <div class="nav-links">
-    <a href="#">Explore</a>
-    <a href="#">Pilgrimage</a>
-    <a href="#">Experiences</a>
-    <a href="#">Journal</a>
-  </div>
-</nav> -->
-
 <section class="hero-modern">
   <div class="hero-content">
     <div class="hero-badge">✦ 16 NIGHTS OF AWAKENING ✦</div>
@@ -54,6 +48,11 @@
       <div class="stat"><div class="stat-number">1000+</div><div>Miles of Soul</div></div>
       <div class="stat"><div class="stat-number">Since 2025</div><div>Guiding Pilgrims</div></div>
     </div>
+     <div class="hero-buttons_up">
+                    <a href="contact.html" class="btn-book" id="bookNowBtn"><i class="fas fa-calendar-check"></i> Book Now</a>
+                    <a href="tel:+919682701873" class="btn-call"><i class="fas fa-phone-alt"></i> Call Now</a>
+                    <a href="https://wa.me/919682701873?text=I%20am%20interested%20in%20UP%20tour.%20Please%20send%20me%20the%20complete%20tour%20package%20details.%20Thank%20you%21" class="btn-price" target="_blank"><i class="fab fa-whatsapp"></i> Get Best Price</a>
+                </div>
   </div>
   <div class="hero-visual">
     <div class="floating-card card-1"><i class="fas fa-om"></i> Ganga Aarti</div>
@@ -80,42 +79,29 @@
     <div class="section-sub">the sacred thread</div>
     <h2>Your 16-day spiritual <br>trajectory</h2>
   </div>
-  <div class="timeline" id="timeline">
-    <!-- itinerary data from original tour but with unique presentation -->
-  </div>
+  <div class="timeline" id="timeline"></div>
 </div>
 
 <div class="sacred-grid" id="sacredGrid"></div>
 
-<!-- <div class="cta-wave">
-  <h3>Walk the path of the ancients</h3>
-  <p style="max-width: 600px; margin: 0 auto 20px;">Limited to small groups • Personal spiritual guides • Authentic rituals</p>
-  <button class="btn-glow" id="ctaBtn"><i class="fas fa-envelope"></i> Request Sacred Itinerary</button>
-</div> -->
-
-<!-- <footer>
-  <p>© 2025 Sanātana Yātrā — Designed with reverence for the eternal.</p>
-</footer> -->
-
 <script>
-  // 16 day itinerary data - original journey but modern design
   const daysData = [
-    { day: 1, title: "Arrival in Lucknow - The city of Nawabs", mood: "Nawabi welcome", icon: "fa-archway", accent: "#b46a2a", bg: "linear-gradient(135deg, #fff7ed 0%, #ead0af 100%)", lines: ["Ease into Uttar Pradesh with old-world courtyards, refined markets, and the warmth of Awadhi hospitality.", "The first evening stays unhurried, giving your journey a graceful beginning before the sacred trail deepens."], places: "Bada Imambara, Rumi Darwaza, Hazratganj Market. Overnight in Lucknow." },
-    { day: 2, title: "Naimisharanya - Forest of sages", mood: "Ancient silence", icon: "fa-tree", accent: "#4f7f52", bg: "linear-gradient(135deg, #f3ffe9 0%, #cfe8c9 100%)", lines: ["This day moves through a legendary forest where sages are believed to have preserved timeless wisdom.", "Soft temple bells and shaded paths make the route feel meditative rather than rushed."], places: "Chakratirth, Sita Kund, Lalita Devi Temple, Vyas Gaddi. Return to Lucknow overnight." },
-    { day: 3, title: "Ayodhya - Birthplace of Lord Ram", mood: "Ram bhakti", icon: "fa-hands-praying", accent: "#d27a21", bg: "linear-gradient(135deg, #fff3d8 0%, #f4bd73 100%)", lines: ["Ayodhya greets you with devotion woven into river ghats, temple lanes, and the sound of evening aarti.", "The day is designed for darshan, reflection, and a gentle walk through the birthplace of faith."], places: "Shri Ram Janmabhoomi, Hanuman Garhi, Saryu Aarti at Ram Ki Paidi." },
-    { day: 4, title: "Ayodhya's hidden gems", mood: "Temple lanes", icon: "fa-gopuram", accent: "#c4573f", bg: "linear-gradient(135deg, #fff0ea 0%, #ebb3a5 100%)", lines: ["Beyond the main shrines, Ayodhya reveals quieter corners where legends sit close to daily life.", "Each stop adds texture to the city, from palace devotion to ancient Shiva worship and river memories."], places: "Kanak Bhawan, Treta Ke Thakur, Nageshwarnath, Guptar Ghat, Sugriv Parvat." },
-    { day: 5, title: "Chappiya - Swaminarayan Janmbhoomi", mood: "Village devotion", icon: "fa-seedling", accent: "#7d8c2f", bg: "linear-gradient(135deg, #fbffd9 0%, #d8e49a 100%)", lines: ["A calmer countryside rhythm shapes this day, connecting pilgrimage with simple village grace.", "The visit offers a devotional pause before the route turns toward the confluence at Prayagraj."], places: "Swaminarayan Temple, village tranquility, return to Ayodhya/Gonda." },
-    { day: 6, title: "Prayagraj - Triveni Sangam", mood: "Sacred waters", icon: "fa-water", accent: "#247b8f", bg: "linear-gradient(135deg, #e8fbff 0%, #a8ddea 100%)", lines: ["At Sangam, three sacred rivers become a single prayer, drawing pilgrims into a ritual of renewal.", "The schedule leaves space for a holy dip, quiet offerings, and the hum of riverside devotion."], places: "Holy dip at Sangam, Bade Hanuman Mandir, Alopi Devi Temple." },
-    { day: 7, title: "Prayagraj heritage walk", mood: "Freedom trail", icon: "fa-landmark", accent: "#6d5aa8", bg: "linear-gradient(135deg, #f2efff 0%, #c8bee8 100%)", lines: ["This day balances sacred geography with modern Indian history, museums, gardens, and memory-filled walks.", "Prayagraj becomes more than a confluence; it becomes a city of ideas, resistance, and legacy."], places: "Anand Bhawan Museum, Khusro Bagh, Akshay Vat Tree." },
-    { day: 8, title: "Chitrakoot - Ram's exile", mood: "Epic landscape", icon: "fa-mountain-sun", accent: "#9a6a2f", bg: "linear-gradient(135deg, #fff6df 0%, #d8b16f 100%)", lines: ["Chitrakoot feels like scripture turned into landscape, with hills, ghats, and stories of exile.", "The day invites a slower devotional pace through places connected with Lord Ram's forest years."], places: "Ram Ghat, Kamadgiri Parikrama, Bharat Milap Mandir." },
-    { day: 9, title: "Chitrakoot caves & ashrams", mood: "Ashram calm", icon: "fa-person-hiking", accent: "#8f5e45", bg: "linear-gradient(135deg, #f9efe8 0%, #cfaa94 100%)", lines: ["Caves, springs, and hillside shrines bring Chitrakoot's natural spirituality into focus.", "It is a day for gentle exploration, where each site feels intimate and rooted in ancient tapasya."], places: "Gupt Godavari, Hanuman Dhara, Sati Anusuya Ashram, Spatik Shila." },
-    { day: 10, title: "Varanasi arrival", mood: "Kashi threshold", icon: "fa-fire-flame-curved", accent: "#b64024", bg: "linear-gradient(135deg, #fff0df 0%, #e29a75 100%)", lines: ["The arrival in Varanasi is intentionally soft, allowing Kashi to unfold through ghats and evening light.", "Assi Ghat offers the first glimpse of a city where ordinary time seems to bend toward eternity."], places: "Drive to Varanasi, evening at Assi Ghat. Overnight in Varanasi." },
-    { day: 11, title: "Kashi Vishwanath & Ganga Aarti", mood: "Eternal flame", icon: "fa-om", accent: "#d18b16", bg: "linear-gradient(135deg, #fff8dc 0%, #efc05b 100%)", lines: ["This is the luminous heart of the route, centered on Jyotirlinga darshan and the river's evening fire ritual.", "The day blends temple devotion, sacred neighborhoods, boat views, and the unforgettable rhythm of Ganga Aarti."], places: "Kashi Vishwanath, Annapurna, Tulsi Manas, Sankat Mochan. Sunset boat ride + Ganga Aarti at Dashashwamedh." },
-    { day: 12, title: "Sarnath - The Buddha's first sermon", mood: "Wheel of dharma", icon: "fa-dharmachakra", accent: "#9b7f35", bg: "linear-gradient(135deg, #fffbe8 0%, #d9c37a 100%)", lines: ["Sarnath shifts the journey into stillness, where Buddha first shared the path of awakening.", "The monuments and museum create a contemplative day after the intensity of Kashi's sacred fire."], places: "Dhamek Stupa, Sarnath Museum, Mulagandha Kuti Vihar." },
-    { day: 13, title: "Bodh Gaya - Enlightenment", mood: "Awakening ground", icon: "fa-leaf", accent: "#5f8f3e", bg: "linear-gradient(135deg, #f1ffe9 0%, #b9db9a 100%)", lines: ["Bodh Gaya carries a rare quiet, centered around the place where meditation became enlightenment.", "The evening is kept open for prayer, silence, and absorbing the atmosphere around Mahabodhi."], places: "Mahabodhi Temple Complex, evening prayers." },
-    { day: 14, title: "Buddhist trail", mood: "Monastery circuit", icon: "fa-spa", accent: "#6f8f9f", bg: "linear-gradient(135deg, #eafdff 0%, #b4d6df 100%)", lines: ["A global Buddhist landscape unfolds through monasteries, statues, and traditions from many countries.", "The day feels spacious and reflective, ideal for slow walking and quiet observation."], places: "Bodhi Tree, Great Buddha Statue, Thai/Japanese/Bhutanese monasteries, Sujata Garh." },
-    { day: 15, title: "Optional Rajgir/Nalanda", mood: "Wisdom ruins", icon: "fa-book-open", accent: "#8c5c9f", bg: "linear-gradient(135deg, #f8ecff 0%, #d4b5e1 100%)", lines: ["Ancient learning comes alive through Nalanda's ruins and Rajgir's hills of discourse and meditation.", "This optional excursion adds a scholarly layer to the pilgrimage before the return journey begins."], places: "Excursion to ancient universities & Griddhakuta Hill." },
-    { day: 16, title: "Departure with blessings", mood: "Homeward grace", icon: "fa-sun", accent: "#c08a2b", bg: "linear-gradient(135deg, #fff7e4 0%, #efcf8e 100%)", lines: ["The final day is kept simple, allowing the journey's temples, rivers, chants, and silences to settle.", "You depart with blessings gathered across cities, forests, ghats, monasteries, and sacred roads."], places: "Drop at Gaya/Varanasi/Patna airport." }
+    { day: 1, title: "Arrival in Lucknow - The city of Nawabs", mood: "Nawabi welcome", icon: "fa-archway", accent: "#b46a2a", lines: ["Ease into Uttar Pradesh with old-world courtyards, refined markets, and the warmth of Awadhi hospitality.", "The first evening stays unhurried, giving your journey a graceful beginning before the sacred trail deepens."], places: "Bada Imambara, Rumi Darwaza, Hazratganj Market" },
+    { day: 2, title: "Naimisharanya - Forest of sages", mood: "Ancient silence", icon: "fa-tree", accent: "#4f7f52", lines: ["This day moves through a legendary forest where sages are believed to have preserved timeless wisdom.", "Soft temple bells and shaded paths make the route feel meditative rather than rushed."], places: "Chakratirth, Sita Kund, Lalita Devi Temple, Vyas Gaddi" },
+    { day: 3, title: "Ayodhya - Birthplace of Lord Ram", mood: "Ram bhakti", icon: "fa-hands-praying", accent: "#d27a21", lines: ["Ayodhya greets you with devotion woven into river ghats, temple lanes, and the sound of evening aarti.", "The day is designed for darshan, reflection, and a gentle walk through the birthplace of faith."], places: "Shri Ram Janmabhoomi, Hanuman Garhi, Saryu Aarti at Ram Ki Paidi" },
+    { day: 4, title: "Ayodhya's hidden gems", mood: "Temple lanes", icon: "fa-gopuram", accent: "#c4573f", lines: ["Beyond the main shrines, Ayodhya reveals quieter corners where legends sit close to daily life.", "Each stop adds texture to the city, from palace devotion to ancient Shiva worship and river memories."], places: "Kanak Bhawan, Treta Ke Thakur, Nageshwarnath, Guptar Ghat, Sugriv Parvat" },
+    { day: 5, title: "Chappiya - Swaminarayan Janmbhoomi", mood: "Village devotion", icon: "fa-seedling", accent: "#7d8c2f", lines: ["A calmer countryside rhythm shapes this day, connecting pilgrimage with simple village grace.", "The visit offers a devotional pause before the route turns toward the confluence at Prayagraj."], places: "Swaminarayan Temple, village tranquility" },
+    { day: 6, title: "Prayagraj - Triveni Sangam", mood: "Sacred waters", icon: "fa-water", accent: "#247b8f", lines: ["At Sangam, three sacred rivers become a single prayer, drawing pilgrims into a ritual of renewal.", "The schedule leaves space for a holy dip, quiet offerings, and the hum of riverside devotion."], places: "Holy dip at Sangam, Bade Hanuman Mandir, Alopi Devi Temple" },
+    { day: 7, title: "Prayagraj heritage walk", mood: "Freedom trail", icon: "fa-landmark", accent: "#6d5aa8", lines: ["This day balances sacred geography with modern Indian history, museums, gardens, and memory-filled walks.", "Prayagraj becomes more than a confluence; it becomes a city of ideas, resistance, and legacy."], places: "Anand Bhawan Museum, Khusro Bagh, Akshay Vat Tree" },
+    { day: 8, title: "Chitrakoot - Ram's exile", mood: "Epic landscape", icon: "fa-mountain-sun", accent: "#9a6a2f", lines: ["Chitrakoot feels like scripture turned into landscape, with hills, ghats, and stories of exile.", "The day invites a slower devotional pace through places connected with Lord Ram's forest years."], places: "Ram Ghat, Kamadgiri Parikrama, Bharat Milap Mandir" },
+    { day: 9, title: "Chitrakoot caves & ashrams", mood: "Ashram calm", icon: "fa-person-hiking", accent: "#8f5e45", lines: ["Caves, springs, and hillside shrines bring Chitrakoot's natural spirituality into focus.", "It is a day for gentle exploration, where each site feels intimate and rooted in ancient tapasya."], places: "Gupt Godavari, Hanuman Dhara, Sati Anusuya Ashram, Spatik Shila" },
+    { day: 10, title: "Varanasi arrival", mood: "Kashi threshold", icon: "fa-fire-flame-curved", accent: "#b64024", lines: ["The arrival in Varanasi is intentionally soft, allowing Kashi to unfold through ghats and evening light.", "Assi Ghat offers the first glimpse of a city where ordinary time seems to bend toward eternity."], places: "Drive to Varanasi, evening at Assi Ghat" },
+    { day: 11, title: "Kashi Vishwanath & Ganga Aarti", mood: "Eternal flame", icon: "fa-om", accent: "#d18b16", lines: ["This is the luminous heart of the route, centered on Jyotirlinga darshan and the river's evening fire ritual.", "The day blends temple devotion, sacred neighborhoods, boat views, and the unforgettable rhythm of Ganga Aarti."], places: "Kashi Vishwanath, Annapurna, Tulsi Manas, Sankat Mochan. Sunset boat ride + Ganga Aarti at Dashashwamedh" },
+    { day: 12, title: "Sarnath - The Buddha's first sermon", mood: "Wheel of dharma", icon: "fa-dharmachakra", accent: "#9b7f35", lines: ["Sarnath shifts the journey into stillness, where Buddha first shared the path of awakening.", "The monuments and museum create a contemplative day after the intensity of Kashi's sacred fire."], places: "Dhamek Stupa, Sarnath Museum, Mulagandha Kuti Vihar" },
+    { day: 13, title: "Bodh Gaya - Enlightenment", mood: "Awakening ground", icon: "fa-leaf", accent: "#5f8f3e", lines: ["Bodh Gaya carries a rare quiet, centered around the place where meditation became enlightenment.", "The evening is kept open for prayer, silence, and absorbing the atmosphere around Mahabodhi."], places: "Mahabodhi Temple Complex, evening prayers" },
+    { day: 14, title: "Buddhist trail", mood: "Monastery circuit", icon: "fa-spa", accent: "#6f8f9f", lines: ["A global Buddhist landscape unfolds through monasteries, statues, and traditions from many countries.", "The day feels spacious and reflective, ideal for slow walking and quiet observation."], places: "Bodhi Tree, Great Buddha Statue, Thai/Japanese/Bhutanese monasteries, Sujata Garh" },
+    { day: 15, title: "Optional Rajgir/Nalanda", mood: "Wisdom ruins", icon: "fa-book-open", accent: "#8c5c9f", lines: ["Ancient learning comes alive through Nalanda's ruins and Rajgir's hills of discourse and meditation.", "This optional excursion adds a scholarly layer to the pilgrimage before the return journey begins."], places: "Excursion to ancient universities & Griddhakuta Hill" },
+    { day: 16, title: "Departure with blessings", mood: "Homeward grace", icon: "fa-sun", accent: "#c08a2b", lines: ["The final day is kept simple, allowing the journey's temples, rivers, chants, and silences to settle.", "You depart with blessings gathered across cities, forests, ghats, monasteries, and sacred roads."], places: "Drop at Gaya/Varanasi/Patna airport" }
   ];
 
   const timelineDiv = document.getElementById('timeline');
@@ -123,9 +109,7 @@
     const timelineItem = document.createElement('div');
     timelineItem.className = 'timeline-item';
     timelineItem.style.setProperty('--day-accent', item.accent);
-    timelineItem.style.setProperty('--day-bg', item.bg);
     timelineItem.innerHTML = `
-      <div class="timeline-marker">${item.day}</div>
       <div class="timeline-content">
         <div class="day-topline">
           <span class="day-number">DAY ${item.day}</span>
@@ -142,12 +126,10 @@
     timelineItem.addEventListener('click', () => {
       timelineItem.classList.toggle('active');
     });
-    // open first as default
     if(idx === 0) timelineItem.classList.add('active');
     timelineDiv.appendChild(timelineItem);
   });
 
-  // Sacred Places Grid - unique regions
   const sacredPlaces = [
     { name: "Varanasi", desc: "The city of light where death is liberation.", img: "https://placehold.co/600x400/DFB88C/2d2418?text=Ganga+ghats" },
     { name: "Ayodhya", desc: "Ram's birthplace, resonating with divine vibrations.", img: "https://placehold.co/600x400/E6C99E/2d2418?text=Ram+Mandir" },
@@ -169,16 +151,12 @@
     grid.appendChild(card);
   });
 
-  // CTA interaction
-  const ctaBtn = document.getElementById('ctaBtn');
-  if (ctaBtn) {
-    ctaBtn.addEventListener('click', () => {
-      alert("🙏 Send 'Namaste' on WhatsApp +91 9935353482 to receive the complete spiritual e-brochure.");
-    });
-  }
+  // document.getElementById('bookNowBtn')?.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   alert("🙏 Send 'Namaste' on WhatsApp +919682701873 to receive the complete spiritual e-brochure.");
+  // });
 </script>
 
-<!-- custom cursor effect -->
 <script>
   const cursor = document.createElement('div'); cursor.className = 'cursor'; 
   const follower = document.createElement('div'); follower.className = 'cursor-follower';
